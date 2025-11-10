@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank Melasa Syariah - Keuangan Halal & Modern</title>
+    <meta
+      name="description"
+      content="Bank Melasa Syariah — Solusi perbankan syariah modern dengan produk lengkap, simulasi interaktif, dan layanan amanah."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  </head>
+  <body>
+    <!-- Floating Navbar Modern -->
+    <nav class="floating-nav" aria-label="Primary Navigation">
+      <div class="nav-bg"></div>
+      <ul class="nav" role="menubar">
+        <li class="nav-item">
+          <button data-target="hero" class="nav-btn active">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg>
+            <span>Home</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button data-target="tentang" class="nav-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+              />
+            </svg>
+            <span>Tentang</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button data-target="produk" class="nav-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
+            </svg>
+            <span>Produk</span>
+          </button>
+        </li>
+        <li class="nav-item center">
+          <a
+            class="center-btn"
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            title="Buka Rekening"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+              />
+            </svg>
+            <span class="center-text">Buka Rekening</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <button data-target="simulasi" class="nav-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"
+              />
+            </svg>
+            <span>Simulasi</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button data-target="kantor" class="nav-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+              />
+            </svg>
+            <span>Cabang</span>
+          </button>
+        </li>
+      </ul>
+      <div class="active-indicator" id="activeIndicator"></div>
+    </nav>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <img
+            id="bankLogo"
+            src="logo bank.jpg"
+            alt="Bank Melasa Syariah"
+            onerror="this.style.display='none'"
+          />
+          <div class="brand-text">
+            <h1>Bank Melasa Syariah</h1>
+            <p class="tagline">Bersama Membangun Keuangan Halal</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="mainContent">
+      <!-- Hero Section -->
+      <section id="hero" class="hero-section">
+        <div class="hero-bg">
+          <img
+            src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?w=1920&q=80"
+            alt="Banking"
+            class="hero-image"
+          />
+        </div>
+        <div class="hero-content container">
+          <div class="hero-badge">PT Bank Melasa Syariah, Tbk.</div>
+          <h2 class="hero-title">Keuangan Amanah, Tanpa Riba, Tanpa Drama</h2>
+          <p class="hero-subtitle">
+            Kami menggabungkan prinsip syariah dan teknologi modern untuk solusi
+            perbankan terbaik Anda
+          </p>
+          <div class="hero-cta">
+            <a href="#produk" class="btn btn-primary">Jelajahi Produk</a>
+            <a href="#simulasi" class="btn btn-secondary">Coba Simulasi</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tentang Kami Section -->
+      <section id="tentang" class="section tentang-section">
+        <div class="container">
+          <div class="section-head">
+            <h3>Tentang Bank Melasa Syariah</h3>
+            <p class="muted">
+              Mengenal lebih dekat perbankan syariah yang amanah
+            </p>
+          </div>
+
+          <div class="tentang-grid">
+            <!-- Pengertian -->
+            <div class="tentang-card">
+              <div class="tentang-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                  />
+                </svg>
+              </div>
+              <h4>Pengertian Bank Syariah</h4>
+              <p>
+                Bank Syariah adalah lembaga keuangan yang menjalankan kegiatan
+                usaha berdasarkan prinsip syariah Islam. Prinsip utamanya adalah
+                larangan riba (bunga), gharar (ketidakpastian), dan maysir
+                (spekulasi). Bank Syariah menggunakan sistem bagi hasil, jual
+                beli, dan sewa yang sesuai dengan hukum Islam.
+              </p>
+            </div>
+
+            <!-- Visi -->
+            <div class="tentang-card">
+              <div class="tentang-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
+                  />
+                </svg>
+              </div>
+              <h4>Visi Kami</h4>
+              <p>
+                Menjadi bank syariah terkemuka di Indonesia yang memberikan
+                solusi keuangan syariah terbaik, inovatif, dan terpercaya untuk
+                kesejahteraan umat. Kami berkomitmen untuk menjadi pilihan utama
+                masyarakat dalam layanan perbankan yang sesuai dengan prinsip
+                syariah Islam.
+              </p>
+            </div>
+
+            <!-- Misi -->
+            <div class="tentang-card">
+              <div class="tentang-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"
+                  />
+                </svg>
+              </div>
+              <h4>Misi Kami</h4>
+              <ul class="misi-list">
+                <li>
+                  Menyediakan produk dan layanan perbankan syariah yang
+                  berkualitas dan inovatif
+                </li>
+                <li>
+                  Memberikan pelayanan terbaik dengan prinsip amanah,
+                  profesional, dan transparan
+                </li>
+                <li>
+                  Mengembangkan ekonomi umat melalui pembiayaan yang produktif
+                  dan halal
+                </li>
+                <li>Meningkatkan literasi keuangan syariah di masyarakat</li>
+                <li>
+                  Menerapkan tata kelola perusahaan yang baik (Good Corporate
+                  Governance)
+                </li>
+              </ul>
+            </div>
+
+            <!-- Perbedaan Bank Syariah vs Konvensional -->
+            <div class="tentang-card full-width">
+              <div class="tentang-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"
+                  />
+                </svg>
+              </div>
+              <h4>Perbedaan Bank Syariah & Bank Konvensional</h4>
+              <div class="comparison-table">
+                <div class="comparison-row">
+                  <div class="comparison-header">Aspek</div>
+                  <div class="comparison-header">Bank Syariah</div>
+                  <div class="comparison-header">Bank Konvensional</div>
+                </div>
+                <div class="comparison-row">
+                  <div class="comparison-cell">
+                    <strong>Prinsip Operasional</strong>
+                  </div>
+                  <div class="comparison-cell">
+                    Berdasarkan prinsip syariah Islam (Al-Quran & Hadist)
+                  </div>
+                  <div class="comparison-cell">
+                    Berdasarkan prinsip ekonomi konvensional
+                  </div>
+                </div>
+                <div class="comparison-row">
+                  <div class="comparison-cell">
+                    <strong>Sistem Bunga</strong>
+                  </div>
+                  <div class="comparison-cell">
+                    Tidak menggunakan bunga (riba), menggunakan bagi hasil
+                  </div>
+                  <div class="comparison-cell">
+                    Menggunakan sistem bunga (interest)
+                  </div>
+                </div>
+                <div class="comparison-row">
+                  <div class="comparison-cell">
+                    <strong>Akad/Kontrak</strong>
+                  </div>
+                  <div class="comparison-cell">
+                    Mudharabah, Musyarakah, Murabahah, Ijarah, dll
+                  </div>
+                  <div class="comparison-cell">Perjanjian kredit standar</div>
+                </div>
+                <div class="comparison-row">
+                  <div class="comparison-cell"><strong>Pengawasan</strong></div>
+                  <div class="comparison-cell">
+                    OJK + Dewan Pengawas Syariah (DPS)
+                  </div>
+                  <div class="comparison-cell">OJK</div>
+                </div>
+                <div class="comparison-row">
+                  <div class="comparison-cell"><strong>Orientasi</strong></div>
+                  <div class="comparison-cell">
+                    Profit & Falah (kesejahteraan dunia-akhirat)
+                  </div>
+                  <div class="comparison-cell">Profit oriented</div>
+                </div>
+                <div class="comparison-row">
+                  <div class="comparison-cell">
+                    <strong>Hubungan dengan Nasabah</strong>
+                  </div>
+                  <div class="comparison-cell">Kemitraan (partnership)</div>
+                  <div class="comparison-cell">Debitur-Kreditur</div>
+                </div>
+                <div class="comparison-row">
+                  <div class="comparison-cell"><strong>Investasi</strong></div>
+                  <div class="comparison-cell">
+                    Hanya pada sektor halal dan produktif
+                  </div>
+                  <div class="comparison-cell">Bebas, selama legal</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Produk Section -->
+      <section id="produk" class="section produk-section">
+        <div class="container">
+          <div class="section-head">
+            <h3>Produk Unggulan Kami</h3>
+            <p class="muted">Pilih kategori produk sesuai kebutuhan Anda</p>
+          </div>
+
+          <!-- Tab Navigation -->
+          <div class="tab-nav">
+            <button class="tab-btn active" data-category="funding">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"
+                />
+              </svg>
+              Funding (Simpanan)
+            </button>
+            <button class="tab-btn" data-category="financing">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"
+                />
+              </svg>
+              Financing (Pembiayaan)
+            </button>
+            <button class="tab-btn" data-category="fee_based">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"
+                />
+              </svg>
+              Fee Based Income
+            </button>
+          </div>
+
+          <!-- Product Carousel Container -->
+          <div class="product-carousel-wrapper">
+            <button class="carousel-btn prev" aria-label="Previous">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+              </svg>
+            </button>
+            <div class="product-carousel" id="productCarousel"></div>
+            <button class="carousel-btn next" aria-label="Next">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Simulasi Section -->
+      <section id="simulasi" class="section simulasi-section">
+        <div class="container">
+          <div class="section-head">
+            <h3>Kalkulator Pembiayaan Syariah</h3>
+            <p class="muted">
+              Hitung angsuran Anda sekarang. Transparan dan amanah.
+            </p>
+          </div>
+          <div class="simulasi-panel">
+            <div class="simulasi-form">
+              <div class="form-group">
+                <label for="jumlahPinjaman">Jumlah Pembiayaan</label>
+                <div class="input-wrapper">
+                  <span class="input-prefix">Rp</span>
+                  <input
+                    type="number"
+                    id="jumlahPinjaman"
+                    value="50000000"
+                    min="1000000"
+                    step="1000000"
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="jangkaWaktu">Jangka Waktu (Bulan)</label>
+                <input
+                  type="range"
+                  id="jangkaWaktu"
+                  min="6"
+                  max="180"
+                  value="36"
+                  step="6"
+                />
+                <div class="range-value">
+                  <span id="jangkaWaktuValue">36</span> Bulan
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="margin">Nisbah/Margin (%)</label>
+                <input
+                  type="range"
+                  id="margin"
+                  min="4"
+                  max="15"
+                  value="7.5"
+                  step="0.5"
+                />
+                <div class="range-value">
+                  <span id="marginValue">7.5</span>%
+                </div>
+              </div>
+              <button class="btn btn-primary btn-calculate" id="calculateBtn">
+                Hitung Angsuran
+              </button>
+            </div>
+            <div class="simulasi-result">
+              <h4>Estimasi Hasil Perhitungan</h4>
+              <div class="result-box">
+                <p class="result-label">Angsuran Bulanan</p>
+                <p class="result-value" id="hasilAngsuran">Rp 0</p>
+                <div class="result-details">
+                  <div class="detail-item">
+                    <span>Total Pembiayaan</span>
+                    <strong id="totalPembiayaan">Rp 0</strong>
+                  </div>
+                  <div class="detail-item">
+                    <span>Total Margin</span>
+                    <strong id="totalMargin">Rp 0</strong>
+                  </div>
+                </div>
+              </div>
+              <p class="small-note">
+                * Perhitungan ini adalah simulasi awal. Nilai akhir ditentukan
+                berdasarkan akad dan negosiasi Bank.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kantor Cabang Section -->
+      <section id="kantor" class="section kantor-section">
+        <div class="container">
+          <div class="section-head">
+            <h3>Kantor Cabang Kami</h3>
+            <p class="muted">
+              Amanah dan profesional, siap melayani di seluruh cabang utama
+            </p>
+          </div>
+          <div class="kantor-grid">
+            <div class="cabang-card">
+              <div class="cabang-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"
+                  />
+                </svg>
+              </div>
+              <h4>Kantor Pusat</h4>
+              <p>Jl. Jenderal Sudirman Kav. 52-53, Jakarta Pusat 10210</p>
+              <p class="muted">Telp: (021) 8567-9000</p>
+              <a
+                href="https://maps.google.com"
+                target="_blank"
+                class="btn btn-outline"
+                >Lihat di Peta</a
+              >
+            </div>
+            <div class="cabang-card">
+              <div class="cabang-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"
+                  />
+                </svg>
+              </div>
+              <h4>Cabang Surabaya</h4>
+              <p>Jl. Raya Gubeng No. 100, Surabaya</p>
+              <p class="muted">Telp: (031) 500-2000</p>
+              <a
+                href="https://maps.google.com"
+                target="_blank"
+                class="btn btn-outline"
+                >Lihat di Peta</a
+              >
+            </div>
+            <div class="cabang-card">
+              <div class="cabang-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"
+                  />
+                </svg>
+              </div>
+              <h4>Cabang Bandung</h4>
+              <p>Jl. Asia Afrika No. 8, Bandung</p>
+              <p class="muted">Telp: (022) 420-3000</p>
+              <a
+                href="https://maps.google.com"
+                target="_blank"
+                class="btn btn-outline"
+                >Lihat di Peta</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kontak Section -->
+      <section id="kontak" class="section kontak-section">
+        <div class="container">
+          <h3>Kontak & Informasi</h3>
+          <p class="muted">
+            Call Center: 1500-777 • Email: layanan@melasasyariah.co.id
+          </p>
+          <p class="muted">
+            Diawasi oleh OJK, Islamic Banking, & Dewan Pengawas Syariah
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal Detail Produk -->
+    <div id="modal" class="modal" aria-hidden="true">
+      <div class="modal-overlay"></div>
+      <div class="modal-panel">
+        <button id="modalClose" class="modal-close" aria-label="Tutup">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+          </svg>
+        </button>
+        <div id="modalInner" class="modal-inner"></div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          &copy; <span id="year"></span> Bank Melasa Syariah — Keuangan Amanah,
+          No Drama.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
