@@ -109,6 +109,14 @@
     <main id="mainContent">
       <!-- Hero Section -->
       <section id="hero" class="hero-section">
+        <canvas id="particleCanvas" class="particle-canvas"></canvas>
+        <div class="floating-shapes">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
+          <div class="shape shape-4"></div>
+          <div class="shape shape-5"></div>
+        </div>
         <div class="hero-bg">
           <img
             src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?w=1920&q=80"
@@ -140,26 +148,25 @@
             </p>
           </div>
 
-          <div class="tentang-grid">
-            <!-- Pengertian -->
-            <div class="tentang-card">
-              <div class="tentang-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
-                  />
-                </svg>
-              </div>
-              <h4>Pengertian Bank Syariah</h4>
-              <p>
-                Bank Syariah adalah lembaga keuangan yang menjalankan kegiatan
-                usaha berdasarkan prinsip syariah Islam. Prinsip utamanya adalah
-                larangan riba (bunga), gharar (ketidakpastian), dan maysir
-                (spekulasi). Bank Syariah menggunakan sistem bagi hasil, jual
-                beli, dan sewa yang sesuai dengan hukum Islam.
-              </p>
+          <!-- Pengertian Bank Syariah -->
+          <div class="tentang-card full-width">
+            <div class="tentang-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                />
+              </svg>
             </div>
+            <h4>Pengertian Bank Syariah</h4>
+            <p>
+              Bank Syariah merupakan Bank yang menjalankan kegiatan usahanya
+              berdasarkan Prinsip Syariah, yang berdasarkan Al-Quran, Hadist,
+              Ijma, dan Qiyas.
+            </p>
+          </div>
 
+          <!-- Visi & Misi Grid -->
+          <div class="tentang-grid">
             <!-- Visi -->
             <div class="tentang-card">
               <div class="tentang-icon">
@@ -171,11 +178,10 @@
               </div>
               <h4>Visi Kami</h4>
               <p>
-                Menjadi bank syariah terkemuka di Indonesia yang memberikan
-                solusi keuangan syariah terbaik, inovatif, dan terpercaya untuk
-                kesejahteraan umat. Kami berkomitmen untuk menjadi pilihan utama
-                masyarakat dalam layanan perbankan yang sesuai dengan prinsip
-                syariah Islam.
+                Menjadi Bank Syariah terdepan yang Terpercaya dalam pengelolaan
+                dana, Transparan dalam praktik bagi hasil dan penimpanan dana,
+                serta Akuntabel dalam tata kelola perusahaan, demi mewujudkan
+                kemaslahatan ekonomi umat.
               </p>
             </div>
 
@@ -191,100 +197,104 @@
               <h4>Misi Kami</h4>
               <ul class="misi-list">
                 <li>
-                  Menyediakan produk dan layanan perbankan syariah yang
-                  berkualitas dan inovatif
+                  Menyediakan layanan perbankan syariah terbaik dengan prinsip
+                  kehati-hatian (prudence) dan integritas tinggi, memastikan
+                  setiap produk dan akad sesuai dengan syariat.
                 </li>
                 <li>
-                  Memberikan pelayanan terbaik dengan prinsip amanah,
-                  profesional, dan transparan
+                  Menyajikan informasi biaya, risiko, dan mekanisme bagi hasil
+                  (nisbah) secara jelas dan mudah dipahami oleh seluruh nasabah
+                  dan pemangku kepentingan.
                 </li>
                 <li>
-                  Mengembangkan ekonomi umat melalui pembiayaan yang produktif
-                  dan halal
+                  Melaksanakan Good Corporate Governance (GCG) secara konsisten
+                  dan bertanggung jawab, didukung oleh sistem audit dan
+                  pelaporan yang kredibel untuk menjamin pertanggungjawaban
+                  kepada nasabah dan shareholder.
                 </li>
-                <li>Meningkatkan literasi keuangan syariah di masyarakat</li>
                 <li>
-                  Menerapkan tata kelola perusahaan yang baik (Good Corporate
-                  Governance)
+                  Terus mengembangkan produk dan layanan yang inovatif dan
+                  relevan, yang sekaligus memperkuat fondasi amanah,
+                  transparansi, dan keadilan dalam bertransaksi.
                 </li>
               </ul>
             </div>
+          </div>
 
-            <!-- Perbedaan Bank Syariah vs Konvensional -->
-            <div class="tentang-card full-width">
-              <div class="tentang-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"
-                  />
-                </svg>
+          <!-- Perbedaan Bank Syariah vs Konvensional -->
+          <div class="tentang-card full-width">
+            <div class="tentang-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"
+                />
+              </svg>
+            </div>
+            <h4>Perbedaan Bank Syariah & Bank Konvensional</h4>
+            <div class="comparison-table">
+              <div class="comparison-row">
+                <div class="comparison-header">Aspek</div>
+                <div class="comparison-header">Bank Syariah</div>
+                <div class="comparison-header">Bank Konvensional</div>
               </div>
-              <h4>Perbedaan Bank Syariah & Bank Konvensional</h4>
-              <div class="comparison-table">
-                <div class="comparison-row">
-                  <div class="comparison-header">Aspek</div>
-                  <div class="comparison-header">Bank Syariah</div>
-                  <div class="comparison-header">Bank Konvensional</div>
+              <div class="comparison-row">
+                <div class="comparison-cell">
+                  <strong>Prinsip Operasional</strong>
                 </div>
-                <div class="comparison-row">
-                  <div class="comparison-cell">
-                    <strong>Prinsip Operasional</strong>
-                  </div>
-                  <div class="comparison-cell">
-                    Berdasarkan prinsip syariah Islam (Al-Quran & Hadist)
-                  </div>
-                  <div class="comparison-cell">
-                    Berdasarkan prinsip ekonomi konvensional
-                  </div>
+                <div class="comparison-cell">
+                  Berdasarkan prinsip syariah Islam (Al-Quran & Hadist)
                 </div>
-                <div class="comparison-row">
-                  <div class="comparison-cell">
-                    <strong>Sistem Bunga</strong>
-                  </div>
-                  <div class="comparison-cell">
-                    Tidak menggunakan bunga (riba), menggunakan bagi hasil
-                  </div>
-                  <div class="comparison-cell">
-                    Menggunakan sistem bunga (interest)
-                  </div>
+                <div class="comparison-cell">
+                  Berdasarkan prinsip ekonomi konvensional
                 </div>
-                <div class="comparison-row">
-                  <div class="comparison-cell">
-                    <strong>Akad/Kontrak</strong>
-                  </div>
-                  <div class="comparison-cell">
-                    Mudharabah, Musyarakah, Murabahah, Ijarah, dll
-                  </div>
-                  <div class="comparison-cell">Perjanjian kredit standar</div>
+              </div>
+              <div class="comparison-row">
+                <div class="comparison-cell">
+                  <strong>Sistem Bunga</strong>
                 </div>
-                <div class="comparison-row">
-                  <div class="comparison-cell"><strong>Pengawasan</strong></div>
-                  <div class="comparison-cell">
-                    OJK + Dewan Pengawas Syariah (DPS)
-                  </div>
-                  <div class="comparison-cell">OJK</div>
+                <div class="comparison-cell">
+                  Tidak menggunakan bunga (riba), menggunakan bagi hasil
                 </div>
-                <div class="comparison-row">
-                  <div class="comparison-cell"><strong>Orientasi</strong></div>
-                  <div class="comparison-cell">
-                    Profit & Falah (kesejahteraan dunia-akhirat)
-                  </div>
-                  <div class="comparison-cell">Profit oriented</div>
+                <div class="comparison-cell">
+                  Menggunakan sistem bunga (interest)
                 </div>
-                <div class="comparison-row">
-                  <div class="comparison-cell">
-                    <strong>Hubungan dengan Nasabah</strong>
-                  </div>
-                  <div class="comparison-cell">Kemitraan (partnership)</div>
-                  <div class="comparison-cell">Debitur-Kreditur</div>
+              </div>
+              <div class="comparison-row">
+                <div class="comparison-cell">
+                  <strong>Akad/Kontrak</strong>
                 </div>
-                <div class="comparison-row">
-                  <div class="comparison-cell"><strong>Investasi</strong></div>
-                  <div class="comparison-cell">
-                    Hanya pada sektor halal dan produktif
-                  </div>
-                  <div class="comparison-cell">Bebas, selama legal</div>
+                <div class="comparison-cell">
+                  Mudharabah, Musyarakah, Murabahah, Ijarah, dll
                 </div>
+                <div class="comparison-cell">Perjanjian kredit standar</div>
+              </div>
+              <div class="comparison-row">
+                <div class="comparison-cell"><strong>Pengawasan</strong></div>
+                <div class="comparison-cell">
+                  OJK + Dewan Pengawas Syariah (DPS)
+                </div>
+                <div class="comparison-cell">OJK</div>
+              </div>
+              <div class="comparison-row">
+                <div class="comparison-cell"><strong>Orientasi</strong></div>
+                <div class="comparison-cell">
+                  Profit & Falah (kesejahteraan dunia-akhirat)
+                </div>
+                <div class="comparison-cell">Profit oriented</div>
+              </div>
+              <div class="comparison-row">
+                <div class="comparison-cell">
+                  <strong>Hubungan dengan Nasabah</strong>
+                </div>
+                <div class="comparison-cell">Kemitraan (partnership)</div>
+                <div class="comparison-cell">Debitur-Kreditur</div>
+              </div>
+              <div class="comparison-row">
+                <div class="comparison-cell"><strong>Investasi</strong></div>
+                <div class="comparison-cell">
+                  Hanya pada sektor halal dan produktif
+                </div>
+                <div class="comparison-cell">Bebas, selama legal</div>
               </div>
             </div>
           </div>
@@ -533,5 +543,136 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+      // Particle Animation
+      const canvas = document.getElementById("particleCanvas");
+      const ctx = canvas.getContext("2d");
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const particles = [];
+      const particleCount = 80;
+
+      class Particle {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 3 + 1;
+          this.speedX = Math.random() * 2 - 1;
+          this.speedY = Math.random() * 2 - 1;
+          this.color = `rgba(${102 + Math.random() * 50}, ${
+            126 + Math.random() * 50
+          }, ${234}, ${Math.random() * 0.5 + 0.3})`;
+        }
+
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+
+          if (this.x > canvas.width) this.x = 0;
+          if (this.x < 0) this.x = canvas.width;
+          if (this.y > canvas.height) this.y = 0;
+          if (this.y < 0) this.y = canvas.height;
+        }
+
+        draw() {
+          ctx.fillStyle = this.color;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      function init() {
+        for (let i = 0; i < particleCount; i++) {
+          particles.push(new Particle());
+        }
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (let i = 0; i < particles.length; i++) {
+          particles[i].update();
+          particles[i].draw();
+
+          for (let j = i; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < 100) {
+              ctx.strokeStyle = `rgba(102, 126, 234, ${0.2 - distance / 500})`;
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      init();
+      animate();
+
+      window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      });
+
+      // Simple Zoom Effect - removed 3D tilt
+      // Cards now only zoom in/out from center via CSS hover
+
+      // Cursor Trail Effect
+      const cursorDot = document.createElement("div");
+      cursorDot.className = "cursor-dot";
+      document.body.appendChild(cursorDot);
+
+      const cursorOutline = document.createElement("div");
+      cursorOutline.className = "cursor-outline";
+      document.body.appendChild(cursorOutline);
+
+      let mouseX = 0,
+        mouseY = 0;
+      let outlineX = 0,
+        outlineY = 0;
+
+      document.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        cursorDot.style.left = mouseX + "px";
+        cursorDot.style.top = mouseY + "px";
+      });
+
+      function animateCursor() {
+        outlineX += (mouseX - outlineX) * 0.15;
+        outlineY += (mouseY - outlineY) * 0.15;
+
+        cursorOutline.style.left = outlineX + "px";
+        cursorOutline.style.top = outlineY + "px";
+
+        requestAnimationFrame(animateCursor);
+      }
+
+      animateCursor();
+
+      // Parallax Effect
+      window.addEventListener("scroll", () => {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll(
+          ".hero-bg, .floating-shapes"
+        );
+
+        parallaxElements.forEach((el) => {
+          const speed = el.dataset.speed || 0.5;
+          el.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+      });
+    </script>
   </body>
 </html>

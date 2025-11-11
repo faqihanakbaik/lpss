@@ -1,0 +1,179 @@
+═══════════════════════════════════════════════════════════════
+  NETLIFY DEPLOY - QUICK GUIDE
+  Cara Tercepat Deploy Website
+═══════════════════════════════════════════════════════════════
+
+🚨 FIX ERROR AUTHENTICATION
+═══════════════════════════════════════════════════════════════
+
+Error: "Email address is invalid"
+
+SOLUSI CEPAT:
+1. Gunakan Sign Up dengan Google/GitHub (PALING MUDAH!)
+   - Buka: https://app.netlify.com/signup
+   - Klik "Sign up with Google" atau "Sign up with GitHub"
+   - Authorize → Done!
+
+2. Atau buat akun dengan email VALID:
+   - Format: nama@gmail.com (harus lengkap)
+   - Check inbox untuk verifikasi
+   - Klik link verifikasi
+   - Login kembali
+
+3. Clear browser cache:
+   - Ctrl+Shift+Delete
+   - Clear cookies and cache
+   - Refresh halaman
+
+4. Coba browser lain:
+   - Chrome (recommended)
+   - Firefox
+   - Incognito mode
+
+═══════════════════════════════════════════════════════════════
+
+🚀 CARA TERCEPAT: DRAG & DROP
+═══════════════════════════════════════════════════════════════
+
+STEP 1: Buat Akun
+- Buka: https://app.netlify.com/signup
+- Sign up with Google (PALING MUDAH!)
+- Atau sign up with email (verifikasi dulu)
+
+STEP 2: Siapkan Folder
+- Buat folder baru: bank-melasa-syariah-deploy
+- Copy file ini saja:
+  ✅ index.html
+  ✅ styles.css
+  ✅ script.js
+  ✅ logo bank.jpg
+  ❌ JANGAN copy file .md dan .txt
+
+STEP 3: Deploy
+- Login ke Netlify
+- Scroll ke bawah
+- Lihat kotak "Want to deploy a new site..."
+- DRAG & DROP folder ke kotak
+- Tunggu 1-2 menit
+- ✅ DONE! Website online!
+
+STEP 4: Custom URL (Opsional)
+- Klik "Site settings"
+- Klik "Change site name"
+- Isi: bank-melasa-syariah
+- URL jadi: https://bank-melasa-syariah.netlify.app
+
+═══════════════════════════════════════════════════════════════
+
+📝 CHECKLIST
+═══════════════════════════════════════════════════════════════
+
+Sebelum Deploy:
+□ Test website di local (buka index.html)
+□ Semua gambar terlihat
+□ Semua fitur berfungsi
+□ Ganti nomor WhatsApp (jika perlu)
+
+Saat Deploy:
+□ Akun Netlify sudah dibuat
+□ Email sudah diverifikasi (jika pakai email)
+□ Folder sudah siap (hanya file penting)
+□ Drag & drop ke Netlify
+
+Setelah Deploy:
+□ Website bisa diakses
+□ Test semua fitur
+□ Test di mobile
+□ Share link
+
+═══════════════════════════════════════════════════════════════
+
+🔄 UPDATE WEBSITE
+═══════════════════════════════════════════════════════════════
+
+Cara 1: Drag & Drop Lagi
+- Edit file di local
+- Drag & drop folder lagi ke Netlify
+- Netlify akan update otomatis
+
+Cara 2: Via GitHub (Jika sudah connect)
+- Edit file
+- git add .
+- git commit -m "Update"
+- git push
+- Netlify auto-deploy
+
+═══════════════════════════════════════════════════════════════
+
+🌐 URL WEBSITE
+═══════════════════════════════════════════════════════════════
+
+Default: https://random-name-123.netlify.app
+Custom: https://bank-melasa-syariah.netlify.app
+
+Cara ganti:
+1. Site settings
+2. Change site name
+3. Isi nama yang diinginkan
+4. Save
+
+═══════════════════════════════════════════════════════════════
+
+🐛 TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════
+
+Website tidak muncul:
+- Pastikan index.html ada di root folder
+- Check deploy log untuk error
+- Try deploy ulang
+
+Gambar tidak muncul:
+- Check path gambar (harus relative)
+- Pastikan file gambar terupload
+- Hard refresh (Ctrl+F5)
+
+Authentication error:
+- Sign up dengan Google/GitHub
+- Clear browser cache
+- Try browser lain
+- Verifikasi email
+
+═══════════════════════════════════════════════════════════════
+
+💡 TIPS
+═══════════════════════════════════════════════════════════════
+
+1. Gunakan Sign Up dengan Google (paling mudah!)
+2. Hanya upload file yang diperlukan (html, css, js, images)
+3. Test di local sebelum deploy
+4. Custom site name untuk URL yang bagus
+5. Share link setelah deploy
+
+═══════════════════════════════════════════════════════════════
+
+✅ HASIL AKHIR
+═══════════════════════════════════════════════════════════════
+
+Website Bank Melasa Syariah akan online di:
+https://your-site-name.netlify.app
+
+Fitur Netlify (GRATIS):
+✅ HTTPS/SSL otomatis
+✅ CDN global (cepat di seluruh dunia)
+✅ Unlimited bandwidth
+✅ Auto-deploy (jika via GitHub)
+✅ Custom domain support
+
+═══════════════════════════════════════════════════════════════
+
+📞 BANTUAN
+═══════════════════════════════════════════════════════════════
+
+Baca panduan lengkap: NETLIFY_GUIDE.md
+Netlify Docs: https://docs.netlify.com
+Support: https://www.netlify.com/support/
+
+═══════════════════════════════════════════════════════════════
+
+Good luck! 🚀
+Website kamu akan online dalam 2 menit!

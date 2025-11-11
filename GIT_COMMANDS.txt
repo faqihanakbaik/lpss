@@ -1,0 +1,284 @@
+═══════════════════════════════════════════════════════════════
+  GIT COMMANDS CHEAT SHEET
+  Quick Reference untuk Upload & Update
+═══════════════════════════════════════════════════════════════
+
+📤 UPLOAD PERTAMA KALI (INITIAL COMMIT)
+═══════════════════════════════════════════════════════════════
+
+# 1. Masuk ke folder project
+cd "C:\Users\YourName\OneDrive\Desktop\Lps\lps 2"
+
+# 2. Initialize Git
+git init
+
+# 3. Rename README
+ren README_GITHUB.md README.md
+
+# 4. Add semua file
+git add .
+
+# 5. Commit
+git commit -m "Initial commit - Bank Melasa Syariah website"
+
+# 6. Tambah remote (GANTI URL!)
+git remote add origin https://github.com/USERNAME/REPO_NAME.git
+
+# 7. Push
+git branch -M main
+git push -u origin main
+
+═══════════════════════════════════════════════════════════════
+
+🔄 UPDATE WEBSITE (SETELAH EDIT)
+═══════════════════════════════════════════════════════════════
+
+# 1. Check status (lihat file yang berubah)
+git status
+
+# 2. Add file yang berubah
+git add .
+# atau add file spesifik:
+git add index.html styles.css
+
+# 3. Commit dengan pesan
+git commit -m "Update: deskripsi perubahan"
+
+# 4. Push ke GitHub
+git push
+
+═══════════════════════════════════════════════════════════════
+
+📥 DOWNLOAD/CLONE REPOSITORY
+═══════════════════════════════════════════════════════════════
+
+# Clone repository
+git clone https://github.com/USERNAME/REPO_NAME.git
+
+# Masuk ke folder
+cd REPO_NAME
+
+═══════════════════════════════════════════════════════════════
+
+🔍 CHECK STATUS & INFO
+═══════════════════════════════════════════════════════════════
+
+# Lihat status file
+git status
+
+# Lihat history commit
+git log
+
+# Lihat history singkat
+git log --oneline
+
+# Lihat remote URL
+git remote -v
+
+# Lihat branch
+git branch
+
+═══════════════════════════════════════════════════════════════
+
+🌿 BRANCH MANAGEMENT
+═══════════════════════════════════════════════════════════════
+
+# Buat branch baru
+git branch nama-branch
+
+# Pindah ke branch
+git checkout nama-branch
+
+# Buat dan pindah sekaligus
+git checkout -b nama-branch
+
+# Merge branch
+git checkout main
+git merge nama-branch
+
+# Hapus branch
+git branch -d nama-branch
+
+═══════════════════════════════════════════════════════════════
+
+↩️ UNDO CHANGES
+═══════════════════════════════════════════════════════════════
+
+# Undo perubahan file (belum di-add)
+git checkout -- nama-file
+
+# Undo add (unstage)
+git reset HEAD nama-file
+
+# Undo commit terakhir (keep changes)
+git reset --soft HEAD~1
+
+# Undo commit terakhir (discard changes)
+git reset --hard HEAD~1
+
+═══════════════════════════════════════════════════════════════
+
+🔄 SYNC DENGAN GITHUB
+═══════════════════════════════════════════════════════════════
+
+# Pull (download perubahan dari GitHub)
+git pull
+
+# Pull dengan rebase
+git pull --rebase
+
+# Fetch (download tanpa merge)
+git fetch
+
+═══════════════════════════════════════════════════════════════
+
+🏷️ TAG & RELEASE
+═══════════════════════════════════════════════════════════════
+
+# Buat tag
+git tag v1.0.0
+
+# Buat tag dengan message
+git tag -a v1.0.0 -m "Version 1.0.0"
+
+# Push tag ke GitHub
+git push --tags
+
+# Lihat semua tag
+git tag
+
+═══════════════════════════════════════════════════════════════
+
+🔧 CONFIGURATION
+═══════════════════════════════════════════════════════════════
+
+# Set username
+git config --global user.name "Nama Kamu"
+
+# Set email
+git config --global user.email "email@example.com"
+
+# Lihat config
+git config --list
+
+# Set default editor
+git config --global core.editor "code"
+
+═══════════════════════════════════════════════════════════════
+
+🚨 TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════
+
+# Error: "Permission denied"
+# Solusi: Generate Personal Access Token di GitHub
+# Settings → Developer settings → Personal access tokens
+
+# Error: "Repository not found"
+# Solusi: Check URL dengan: git remote -v
+
+# Error: "Failed to push"
+# Solusi: Pull dulu, lalu push
+git pull origin main
+git push
+
+# Error: "Merge conflict"
+# Solusi: Edit file yang conflict, lalu:
+git add .
+git commit -m "Resolve merge conflict"
+git push
+
+═══════════════════════════════════════════════════════════════
+
+📝 COMMIT MESSAGE BEST PRACTICES
+═══════════════════════════════════════════════════════════════
+
+Format:
+[Type]: [Short description]
+
+Types:
+- feat: Fitur baru
+- fix: Bug fix
+- docs: Update dokumentasi
+- style: Format code (tidak mengubah logic)
+- refactor: Refactor code
+- test: Tambah test
+- chore: Update dependencies, dll
+
+Contoh:
+git commit -m "feat: Add simulasi pembiayaan"
+git commit -m "fix: Fix gambar kosong di financing"
+git commit -m "docs: Update README"
+git commit -m "style: Format CSS"
+
+═══════════════════════════════════════════════════════════════
+
+🎯 COMMON WORKFLOWS
+═══════════════════════════════════════════════════════════════
+
+WORKFLOW 1: Update File
+1. Edit file di local
+2. git add .
+3. git commit -m "Update: deskripsi"
+4. git push
+
+WORKFLOW 2: Fix Bug
+1. git checkout -b fix-bug
+2. Edit file
+3. git add .
+4. git commit -m "fix: deskripsi bug"
+5. git checkout main
+6. git merge fix-bug
+7. git push
+
+WORKFLOW 3: Collaborate
+1. git pull (download perubahan teman)
+2. Edit file
+3. git add .
+4. git commit -m "Update: deskripsi"
+5. git push
+
+═══════════════════════════════════════════════════════════════
+
+💡 TIPS & TRICKS
+═══════════════════════════════════════════════════════════════
+
+1. Commit sering dengan pesan yang jelas
+2. Pull sebelum push untuk avoid conflict
+3. Gunakan .gitignore untuk file yang tidak perlu
+4. Buat branch untuk fitur baru
+5. Test di local sebelum push
+6. Backup code sebelum reset/revert
+7. Gunakan git status untuk check perubahan
+8. Baca error message dengan teliti
+
+═══════════════════════════════════════════════════════════════
+
+🔗 USEFUL LINKS
+═══════════════════════════════════════════════════════════════
+
+Git Documentation: https://git-scm.com/doc
+GitHub Guides: https://guides.github.com
+Git Cheat Sheet: https://education.github.com/git-cheat-sheet-education.pdf
+GitHub Pages: https://pages.github.com
+
+═══════════════════════════════════════════════════════════════
+
+✅ QUICK CHECKLIST
+═══════════════════════════════════════════════════════════════
+
+Upload Pertama Kali:
+□ git init
+□ git add .
+□ git commit -m "Initial commit"
+□ git remote add origin [URL]
+□ git push -u origin main
+
+Update Website:
+□ Edit file
+□ git add .
+□ git commit -m "Update: ..."
+□ git push
+
+═══════════════════════════════════════════════════════════════
+
+Good luck! 🚀

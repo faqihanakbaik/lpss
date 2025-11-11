@@ -20,241 +20,472 @@ document.addEventListener("DOMContentLoaded", () => {
 const productData = {
   funding: [
     {
-      id: "tabungan-wadiah",
-      title: "Tabungan iB Wadiah",
-      desc: "Tabungan dengan akad wadiah (titipan) yang aman dan fleksibel",
+      id: "tabungan-t-trip",
+      title: "Tabungan T-Trip iB",
+      desc: "Tabungan wisata syariah untuk merencanakan perjalanan Anda",
+      definisi:
+        "Tabungan T-Trip iB adalah produk simpanan berjangka dengan akad Mudharabah Muthlaqah yang dirancang khusus untuk membantu nasabah merencanakan dan mewujudkan perjalanan wisata impian mereka dengan cara menabung secara rutin dan terencana.",
       image:
-        "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&q=80",
+        "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&q=80",
       details: {
         syarat: [
-          "KTP/Paspor & NPWP",
-          "Setoran Awal: Rp 50.000",
-          "Akad: Wadiah (Titipan Murni)",
+          "WNI berusia minimal 17 tahun atau diwakili wali",
+          "Mengisi formulir pembukaan rekening",
+          "Fotokopi KTP/paspor dan Pas Foto baru",
+          "Setoran awal minimal Rp50.000",
         ],
         fitur:
-          "Kartu Debit GPN, Mobile Banking, E-Statement, Dana dijamin aman dan siap tarik. Bank dapat memberikan bonus (sukarela).",
+          "Setoran awal dan setoran rutin bulanan ringan. Nasabah mendapat bagi hasil sesuai nisbah yang disepakati bank. Mobile banking. Mendapatkan laporan transaksi (e-statement). Akad mudharabah Muthlaqah. Tabungan hanya dapat diambil ketika perjanjian telah selesai.",
         tarif:
-          "Biaya Administrasi Bulanan: Rp 5.000. Biaya Penutupan Rekening: Rp 25.000. Bebas biaya tarik tunai ATM bersama (sesuai kuota).",
+          "Setoran awal Rp. 50.000. Penutupan Rekening Rp. 20.000. Penutupan sebelum Jatuh Tempo Rp. 50.000. Penutupan saat jatuh tempo Gratis. Biaya penggantian buku Rp. 10.000. Perpanjangan kontrak: Rp 20.000",
       },
     },
     {
-      id: "tabungan-mudharabah",
-      title: "Tabungan iB Mudharabah",
-      desc: "Tabungan dengan sistem bagi hasil yang menguntungkan",
+      id: "tabungan-hijrah-baitullah",
+      title: "Tabungan Hijrah Baitullah iB",
+      desc: "Tabungan haji dan umroh untuk mewujudkan ibadah Anda",
+      definisi:
+        "Tabungan Hijrah Baitullah iB adalah produk simpanan syariah yang dirancang khusus untuk membantu nasabah mempersiapkan dana ibadah haji dan umroh dengan setoran yang fleksibel, terhubung langsung dengan sistem SISKOHAT untuk kemudahan pendaftaran haji.",
       image:
-        "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&q=80",
+        "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=400&q=80",
       details: {
         syarat: [
-          "KTP/Paspor & NPWP",
-          "Setoran Awal: Rp 100.000",
-          "Akad: Mudharabah (Bagi Hasil)",
+          "Memberikan Identitas Diri KITAP/KITAS/KTP",
+          "Membawa NPWP",
+          "Mengisi Formulir Pembukaan Rekening",
+          "Memiliki Paspor",
         ],
         fitur:
-          "Nisbah Bagi Hasil (Profit Sharing) yang kompetitif, Mobile Banking, E-Statement. Cocok untuk investasi dana harian.",
+          "Setoran awal ringan. Bebas Biaya Administrasi. Setoran fleksibel. Terhubung dengan SISKOHAT. Aman dan dijamin LPS. Tabungan hanya dapat diambil jika perjanjian telah usai.",
         tarif:
-          "Biaya Administrasi Bulanan: Rp 7.500. Biaya Penutupan Rekening: Rp 30.000.",
+          "Pembukaan Rekening Tabungan Haji Dewasa: Rp100.000, Tabungan Haji Anak: Rp50.000. Setoran awal minimum Rp 100.000. Biaya Haji Reguler Rp. 90.000.000. Biaya Umrah Reguler Rp. 25.000.000-30.000.000. Setoran Porsi Haji: Rp25.100.000, Setoran Porsi Umrah: Rp 2.000.000. Biaya Penutupan Rekening Sebelum Mendapatkan Porsi Haji: Rp 100.000",
       },
     },
     {
-      id: "deposito-mudharabah",
-      title: "Deposito iB Mudharabah",
-      desc: "Investasi berjangka dengan profit rate tertinggi",
+      id: "deposito-lock",
+      title: "Deposito Lock iB",
+      desc: "Investasi berjangka dengan bagi hasil yang menarik",
+      definisi:
+        "Deposito Lock iB adalah produk investasi berjangka dengan akad Mudharabah Muthlaqah yang menawarkan bagi hasil kompetitif dengan jangka waktu 1, 3, 6, dan 12 bulan, memberikan kepastian dan keamanan investasi sesuai prinsip syariah.",
       image:
         "https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?w=400&q=80",
       details: {
         syarat: [
-          "KTP/Paspor & NPWP",
-          "Minimal Penempatan: Rp 8.000.000",
-          "Jangka Waktu: 1, 3, 6, 12 Bulan",
+          "KTP atau identitas diri lain yang berlaku (paspor/KITAS untuk WNA)",
+          "NPWP atau surat pernyataan jika tidak punya",
+          "Mengisi formulir pembukaan rekening deposito",
+          "Memiliki rekening relasi dengan mata uang yang sama",
         ],
         fitur:
-          "Profit Rate tertinggi, Bagi Hasil dihitung secara harian, dapat diperpanjang secara otomatis (ARO).",
+          "Pokok Deposito diperpanjang otomatis saat jatuh tempo (ARO). Pokok dan bagi hasil Deposito diperpanjang otomatis saat jatuh tempo (ARO Kapitalisir). Deposito Cair saat jatuh tempo (Non ARO). Fitur Zakat atau Non Zakat. Jangka waktu: 1, 3, 6, dan 12 bulan.",
         tarif:
-          "Biaya Materai: Sesuai ketentuan. Biaya Pencairan Sebelum Jatuh Tempo: Denda pinalti sesuai nisbah Bank.",
+          "Setoran Awal: Rp 5.000.000. Biaya Penutupan Rp. 30.000 Bila terjadi perubahan biaya akan diinformasikan melalui media yang dianggap cukup oleh Bank. Biaya Pajak 20%. Bea meterai pada advis dan atau biaya lainnya jika ada sesuai dengan regulasi atau ketentuan yang berlaku.",
       },
     },
     {
       id: "deposito-on-call",
-      title: "Deposito On Call (DOC)",
+      title: "Deposito On Call iB Amanah",
       desc: "Deposito fleksibel untuk dana jangka pendek 7-30 hari",
+      definisi:
+        "Deposito On Call dengan akad Mudharabah Mutlaqah adalah produk simpanan investasi berjangka pendek yang memungkinkan nasabah memperoleh bagi hasil optimal dan kompetitif dengan jangka waktu singkat 7-30 hari, pencairan disertai pemberitahuan sebelumnya (on call) minimal 3 hari kerja.",
       image:
         "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&q=80",
       details: {
         syarat: [
-          "Nasabah Giro/Tabungan Melasa",
-          "Penempatan: Minimal 7 hari, Maksimal 30 hari",
-          "Akad: Mudharabah",
+          "Individu: KTP atau identitas diri lain yang berlaku (paspor/KITAS untuk WNA)",
+          "NPWP atau surat pernyataan jika tidak punya",
+          "Mengisi formulir pembukaan rekening deposito",
+          "Memiliki rekening relasi dengan mata uang yang sama dengan deposito",
         ],
         fitur:
-          "Pencairan fleksibel, cocok untuk dana idle jangka pendek. Nisbah bagi hasil yang menarik untuk tenor singkat.",
-        tarif: "Tidak ada biaya administrasi bulanan.",
-      },
-    },
-    {
-      id: "giro-wadiah",
-      title: "Giro iB Wadiah",
-      desc: "Rekening giro untuk transaksi bisnis yang lancar",
-      image:
-        "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&q=80",
-      details: {
-        syarat: [
-          "KTP/NPWP, SIUP & TDP (Untuk badan usaha)",
-          "Setoran Awal: Rp 1.000.000",
-          "Akad: Wadiah (Titipan Murni)",
-        ],
-        fitur:
-          "Cek/Bilyet Giro, layanan RTGS/SKN, kemudahan transaksi bisnis. Bonus (jika ada) bersifat sukarela.",
+          "Penempatan Deposito: Rp 1.000.000.000,-. Tenor/Bagi Hasil Nisbah: 1-7 Hari: 25%, 8-14 Hari: 30%, 15-21 Hari: 35%, 22-29 Hari: 40%. Penempatan Bagi Hasil: Giro/Tabungan. Status Perpanjangan: Non ARO. Bukti Kepemilikan: Bilyet Deposito. Pencairan disertai pemberitahuan sebelumnya (on call) minimal 3 hari kerja.",
         tarif:
-          "Biaya Administrasi Bulanan: Rp 15.000. Biaya cetak Cek/BG (sesuai ketentuan Bank).",
+          "Biaya Materai Saat Pencairan: Rp 10.000. Pajak bagi hasil: 20%. Biaya transfer antarbank berlaku.",
       },
     },
     {
-      id: "tabungan-haji",
-      title: "Tabungan Haji & Umrah",
-      desc: "Wujudkan impian ibadah haji dan umrah Anda",
+      id: "tabunganku",
+      title: "Tabunganku iB",
+      definisi:
+        "Tabunganku iB adalah produk simpanan tabungan syariah dengan akad Wadiah Yad Dhamanah yang diperuntukkan bagi seseorang yang telah mempunyai KTP dengan setoran awal ringan, membantu nasabah mengelola keuangan dengan mudah dan dapat diambil kapan saja saat jam operasional.",
+      desc: "Tabungan dengan setoran awal ringan untuk semua kalangan",
       image:
-        "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=400&q=80",
-      details: {
-        syarat: ["KTP & NPWP", "Setoran Awal: Rp 100.000", "Akad: Mudharabah"],
-        fitur:
-          "Bagi hasil kompetitif, dapat digunakan untuk pendaftaran haji, asuransi jiwa gratis.",
-        tarif: "Bebas biaya administrasi bulanan.",
-      },
-    },
-    {
-      id: "tabungan-pendidikan",
-      title: "Tabungan Rencana iB",
-      desc: "Tabungan berjangka untuk masa depan pendidikan",
-      image:
-        "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=400&q=80",
+        "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&q=80",
       details: {
         syarat: [
-          "KTP & NPWP",
-          "Setoran Bulanan: Mulai Rp 100.000",
-          "Jangka Waktu: 1-10 tahun",
+          "Warga Negara Indonesia berusia minimal 17 tahun",
+          "Mengisi dan menandatangani formulir pembukaan rekening tabungan",
+          "Melampirkan fotokopi KTP/paspor",
+          "Menyetorkan saldo awal minimal Rp100.000",
+          "NPWP (jika ada)",
         ],
         fitur:
-          "Setoran rutin bulanan, bagi hasil menarik, asuransi jiwa, cocok untuk dana pendidikan.",
-        tarif: "Biaya Administrasi: Rp 5.000/bulan.",
+          "Setoran awal ringan. Kartu Debit dan Buku Tabungan. Mobile banking. e-chanel BMS Mobile, BNS net banking, notifikasi sms dan email. Akad Wadiah Yad Dhamanah. Tabungan dapat diambil kapan saja ketika jam operasional.",
+        tarif:
+          "Setoran awal Rp. 100.000. Biaya Administrasi GRATIS. Penutupan Rekening Rp. 20.000. Biaya Dormant Rp. 5.000. Biaya pengecekan saldo di ATM bank lain Rp 4.000. Biaya penggantian buku tabungan Rp. 5.000. Biaya pergantian Kartu ATM BNS Debit Rp 25.000. Transfer antar bank: Transfer Online Rp 6.500, BI FAST Rp 2.500. Biaya Penarikan Rp 2.500 di bawah Rp 5.000.000",
       },
     },
     {
-      id: "giro-valuta",
-      title: "Giro Valuta Asing",
-      desc: "Giro dalam mata uang asing untuk transaksi internasional",
-      image:
-        "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=400&q=80",
-      details: {
-        syarat: [
-          "KTP/Paspor & NPWP",
-          "Setoran Awal: USD 500 atau ekuivalen",
-          "Mata Uang: USD, SGD, EUR",
-        ],
-        fitur:
-          "Transaksi internasional mudah, layanan SWIFT, internet banking.",
-        tarif: "Biaya Administrasi: Sesuai mata uang.",
-      },
-    },
-    {
-      id: "tabungan-bisnis",
-      title: "Tabungan iB Bisnis",
-      desc: "Solusi tabungan khusus untuk pelaku usaha",
-      image:
-        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&q=80",
-      details: {
-        syarat: [
-          "SIUP/TDP/Akta Perusahaan",
-          "Setoran Awal: Rp 500.000",
-          "Akad: Mudharabah",
-        ],
-        fitur:
-          "Bagi hasil kompetitif, transaksi unlimited, mobile banking bisnis.",
-        tarif: "Biaya Administrasi: Rp 10.000/bulan.",
-      },
-    },
-    {
-      id: "giro-prioritas",
-      title: "Giro iB Prioritas",
-      desc: "Layanan giro premium dengan benefit eksklusif",
+      id: "tabungan-prioritas-safwah",
+      title: "Tabungan Prioritas Safwah iB",
+      desc: "Tabungan prioritas dengan layanan eksklusif dan bagi hasil menarik",
+      definisi:
+        "Tabungan Prioritas Safwah iB adalah produk simpanan prioritas berakad Mudharabah Mutlaqah, secara eksklusif ditujukan untuk nasabah individu dengan saldo dana kelolaan besar dan frekuensi transaksi tinggi, memberikan pelayanan premium yang cepat, aman, bebas riba, serta menawarkan imbal hasil berupa porsi bagi hasil dan reward berupa hibah yang lebih kompetitif.",
       image:
         "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=400&q=80",
       details: {
-        syarat: ["Saldo Minimal: Rp 100.000.000", "KTP & NPWP", "Akad: Wadiah"],
+        syarat: [
+          "Saldo Akumulatif Minimum Rp. 300.000.000",
+          "Mengisi dan menyetujui syarat layanan prioritas",
+          "WNA (Paspor)/WNI (KTP)",
+          "Tidak tercatat daftar Hitam di OJK",
+          "Dana berasal dari sumber yang Halal",
+          "Aktif bertransaksi di bank BMS Syariah",
+        ],
         fitur:
-          "Relationship Manager dedicated, lounge akses, bonus menarik, prioritas layanan.",
-        tarif: "Bebas biaya administrasi.",
+          "Kartu Shar-E Debit Prioritas. Mobile Banking. Limit transaksi yang lebih besar. Ruangan Khusus. M-Banking. Buku Tabungan. Layanan SMS Dan Notifikasi. Gmail. Mendapatkan Merchendice hari special. Bagi Hasil Yang menarik yaitu 40%(nasabah) : 60%(bank). Akad Mudharabah Mutlaqah.",
+        tarif:
+          "Setoran Awal: Rp. 50.000.000 - Rp 100.000.000. Saldo Minimum Mengendap: Rp. 500.000.000. Biaya Administrasi Kartu Debit: Rp. Rp 20.000 per bulan. Biaya Penutupan Rekening: Rp. 100.000. Biaya Rekening Dormant: Rp. 10.000",
       },
     },
     {
-      id: "tabungan-melasa-muda",
-      title: "Tabungan Melasa Muda",
-      desc: "Tabungan khusus untuk generasi muda dan pelajar",
+      id: "tabungan-si-pintar",
+      title: "Tabungan Si-Pintar iB",
+      desc: "Tabungan khusus untuk pelajar dari PAUD hingga SMA",
+      definisi:
+        "Tabungan Si-Pintar iB adalah produk simpanan syariah dengan akad Wadiah Yad Dhamanah yang dirancang khusus untuk pelajar dari PAUD hingga SMA, membantu menumbuhkan kebiasaan menabung sejak dini dengan setoran awal yang sangat ringan dan berbagai fasilitas edukatif.",
       image:
         "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&q=80",
       details: {
         syarat: [
-          "Usia 17-25 tahun",
-          "Kartu Pelajar/Mahasiswa",
-          "Setoran Awal: Rp 10.000",
+          "Merupakan siswa PAUD/TK/RA, SD/MI, SMP/MTs, SMA/MA atau sederajat",
+          "Mengisi formulir aplikasi pembukaan rekening",
+          "Melakukan setoran awal minimal Rp1.000",
+          "Melampirkan E-KTP Orang Tua/Wali, Kartu Keluarga, KIA atau Akta Kelahiran atau Kartu Pelajar",
+          "Nama dan Alamat Sekolah atau Pondok Pesantren/Madrasah",
         ],
         fitur:
-          "Bebas biaya admin, bagi hasil menarik, kartu debit gratis, mobile banking.",
-        tarif: "Bebas biaya administrasi hingga usia 25 tahun.",
+          "Mendapatkan Buku Tabungan. Mendapatkan Kartu Debit. Mendapatkan Sosialisasi Pengetahuan. Setoran Awal Minimum. Mendapatkan SMS dan Notifikasi. Akad Wadiah Yad Dhamanah. Penarikan dapat dilakukan kapan saja ketika jam operasional.",
+        tarif:
+          "Setoran Awal: Rp5.000. Saldo Minimal: Rp10.000. Setoran Minimal: Rp5.000. Sms Notifikasi: All Provider. Fasilitas Kartu ATM Silver Batas Transfer Harian: On Us Rp 50.000.000, Off Us Rp 20.000.000. Batas Transfer Per Transaksi: On Us Rp 25.000.000, Off Us Rp 10.000.000. Batas Penarikan Harian di ATM: On Us Rp 5.000.000, Off Us Rp 5.000.000",
       },
     },
     {
-      id: "deposito-emas",
-      title: "Deposito iB Emas",
-      desc: "Investasi deposito dengan underlying emas",
+      id: "tabungan-tijarah",
+      title: "Tabungan Tijarah iB",
+      desc: "Tabungan bisnis untuk pelaku usaha dengan bagi hasil menarik",
+      definisi:
+        "Tabungan Tijarah iB adalah produk simpanan bisnis dengan akad Mudharabah Mutlaqah yang dirancang khusus untuk pelaku usaha dan perusahaan, menawarkan kemudahan transaksi bisnis dengan bagi hasil yang menarik (40% nasabah : 60% bank) serta berbagai fasilitas perbankan modern.",
+      image:
+        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&q=80",
+      details: {
+        syarat: [
+          "UNTUK INDIVIDU MELAMPIRKAN KARTU IDENTITAS DIRI (KTP) DAN NPWP",
+          "DOKUMEN TAMBAHAN UNTUK PERUSAHAAN (NON INDIVIDU) MELIPUTI KTP PEJABAT PERUSAHAAN YANG BERWENANG, AKTA PENDIRIAN PERUSAHAAN DAN PERUBAHAN TERAKHIR, NPWP, SIUP/TDP, NIB SERTA DOMISILI PERUSAHAAN",
+          "MENGISI DAN MENANDATANGANI FORMULIR PEMBUKAAN REKENING SECARA LENGKAP DAN BENAR",
+        ],
+        fitur:
+          "PEMBAYARAN BILL PAYMENT (LISTRIK, INTERNET, AIR, DAN TELEPON). AKSES MOBILE BANKING APLIKASI TIJA-SYARIAH. BUKU FISIK TABUNGAN. KARTU DEBIT, TERSEDIA DUA PILIHAN JENIS KARTU ATM YAITU PLATINUM DAN DZAHABUN UNTUK NASABAH PERORANGAN SERTA ATM DZAHABUN UNTUK NON PERORANGAN. BAGI HASIL YANG MENARIK UNTUK NASABAH 40% DAN BANK 60%. Akad Mudharabah Mutlaqah.",
+        tarif:
+          "Setoran Awal Mininum: Rp 100.000. Setoran Minimum Selanjutnya: Rp50.000. Saldo Minimum: Rp 500.000. Biaya Penutupan Atau Pembukaan Rekening: Rp25.000. Biaya Kartu Debit yang rusak/hilang: Rp25.000. Biaya Penggantian Buku Tabungan yang Hilang: Rp25.000. Biaya Dormant: Rp 10.000",
+      },
+    },
+    {
+      id: "tabungan-mulia-pensiunan",
+      title: "Tabungan iB Mulia Pensiunan",
+      desc: "Tabungan khusus untuk persiapan masa pensiun",
+      definisi:
+        "Tabungan iB Mulia Pensiunan Syariah adalah produk simpanan berjangka dengan akad Mudharabah Mutlaqah yang diperuntukan bagi nasabah perorangan atau karyawan perusahaan yang berkeinginan mempersiapkan jaminan finansial untuk masa hari tua atau purnabakti, dana hanya dapat dicairkan saat nasabah mencapai usia pensiun atau batas waktu yang disepakati.",
+      image:
+        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80",
+      details: {
+        syarat: [
+          "Mengisi formulir aplikasi pembukaan rekening",
+          "Melakukan setoran awal minimal Rp10.000",
+          "Melampirkan E-KTP, Surat Keterangan Bukti Perekaman dari Dukcapil setempat (bagi calon nasabah yang belum memiliki e-KTP)",
+          "Surat Keterangan Domisili (bagi calon nasabah yang berasal dari luar daerah)",
+          "NPWP (Khusus Nasabah wajib pajak), Kartu Keluarga, Surat Keterangan Pensiun",
+          "Surat Keterangan Jabatan Terakhir (untuk nasabah pra pensiun)",
+        ],
+        fitur:
+          "Setoran awal: Rp.10.000. Setoran minimal: Rp.10.000. Fasilitas kartu ATM: Gold. Batas transfer harian: on us Rp. 75.000.000, off us Rp. 30.000.000. Batas transfer per transaksi: on us Rp. 25.000.000, off us Rp. 10.000.000. Batas penarikan harian di ATM: on us Rp. 10,000.000, off us Rp. 5.000.000. Bagi Hasil yang menarik yaitu 40% untuk nasabah dan 60% untuk bank. Akad Mudharabah Mutlaqah.",
+        tarif:
+          "Biaya Materai: Rp 10.000. Biaya Penutupan Rekening: Rp 10.000. Biaya Adm. Rekening Dorman Per Bulan: Rp 5.000. Biaya Aktivasi Rekening Dorman: Rp 2.500. Biaya Administrasi Rekening Dibawah Saldo Minimum: Rp 5.000. Biaya Pergantian Buku Tabungan Karena Habis/Penuh: Rp 2.500. Biaya Pergantian Buku Tabungan Karena Rusak: Rp 5.000. Biaya Penerbitan Kartu ATM: Rp 16.500. Biaya Administrasi ATM Per Bulan: Rp 6.500. Biaya Pergantian Kartu Expired, hilang, rusak: Rp 25.000. Biaya Transfer ke Atm Bank Lain: Rp 6.500",
+      },
+    },
+    {
+      id: "tabungan-my-qurbani",
+      title: "Tabungan My Qurbani iB",
+      desc: "Tabungan berencana untuk persiapan qurban",
+      definisi:
+        "Tabungan My Qurbani iB adalah produk simpanan dengan akad Wadiah Yad Dhamanah yang dirancang khusus untuk membantu nasabah mempersiapkan dana qurban dengan cara menabung secara rutin, penarikan hanya dapat dilakukan menjelang Idul Adha atau sesuai kesepakatan.",
+      image:
+        "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=400&q=80",
+      details: {
+        syarat: [
+          "WNI",
+          "Mengisi Formulir pembukaan tabungan Qurban",
+          "Fotokopi KTP dan dokumen pendukung",
+        ],
+        fitur:
+          "Setoran awal ringan. Setoran dapat dilakukan harian, mingguan, atau bulanan. Tidak ada biaya administrasi bulanan. Penarikan hanya dapat dilakukan menjelang Idul Adha atau sesuai kesepakatan. Tidak ada bagi hasil karena menggunakan akad wadiah (titipan). Akad Wadiah Yad Dhamanah.",
+        tarif:
+          "Setoran Awal Minimum: Rp50.000. Setoran Selanjutnya Minimum Rp100.000. Saldo Minimum Mengendap: Umumnya antara Rp10.000 hingga Rp50.000. Biaya Penutupan Rekening: Dikenakan jika rekening ditutup di luar tujuan qurban atau sebelum jatuh tempo, berkisar antara Rp5.000 hingga Rp25.000. Penarikan Dana: Bersifat non-transaksional, dana biasanya tidak dapat ditarik sewaktu-waktu dan hanya bisa diambil saat mendekati Hari Raya Idul Adha atau setelah target qurban tercapai.",
+      },
+    },
+    {
+      id: "tabungan-emas-slahah",
+      title: "Tabungan Emas-slahah",
+      desc: "Investasi emas dengan cara mencicil secara syariah",
+      definisi:
+        "Tabungan Emas-slahah dengan Akad Wadiah Yad Dhamanah adalah layanan simpanan dalam bentuk saldo emas digital atau fisik yang memungkinkan nasabah berinvestasi dalam emas dengan cara mencicil atau menabung secara rutin, emas dapat dicairkan atau ditarik kapan saja dengan datang langsung ke kantor cabang.",
       image:
         "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=400&q=80",
       details: {
         syarat: [
-          "Minimal: 10 gram emas",
-          "Jangka Waktu: 3, 6, 12 bulan",
-          "Akad: Mudharabah",
+          "Rekening dapat berlaku untuk warga Negara Indonesia (WNI)",
+          "Wajib melampirkan kelengkapan dokumen (KTP,NPWP,Paspor)",
+          "Tidak tercantum dalam daftar hitam yang masih berlaku yang diterbitkan oleh BI",
+          "Mempunyai rekening tabungan reguler di Bank Melasa Syariah",
+          "Berumur minimal 17 tahun",
         ],
         fitur:
-          "Return mengikuti harga emas, aman dari inflasi, dapat dicairkan dalam bentuk emas atau uang.",
-        tarif: "Biaya Administrasi: 0.5% dari nilai emas.",
+          "Setoran ringan. BMS Mobile Banking. Fasilitas E-Mas untuk melihat Saldo. Buku Tabungan. Investasi Emas Syariah. Auto Debet Infaq. Akad Wadiah Yad Dhamanah. Emas dapat dicairkan atau ditarik kapan saja dengan datang langsung ke kantor cabang.",
+        tarif:
+          "Setoran Awal: Rp50.000. Minimal Setoran Wajib Auto Debet: Rp50.000. Minimal Setoran Manual/Top Up: Rp10.000. Saldo Minimum: Rp10.000. Minimal target dana (hold): Rp600.000. Penarikan darurat: Rp50.000. Penutupan rekening: Rp50.000. Ganti buku karena rusak: Rp15.000",
+      },
+    },
+    {
+      id: "tabungan-edudream",
+      title: "Tabungan EduDream iB",
+      desc: "Tabungan pendidikan untuk masa depan anak",
+      definisi:
+        "Tabungan EduDream iB adalah produk simpanan dengan akad Wadiah Yad Dhamanah yang dirancang khusus untuk membantu orang tua mempersiapkan dana pendidikan anak dengan setoran ringan dan bebas biaya administrasi, dana hanya dapat ditarik pada waktu tertentu seperti saat pembayaran uang sekolah atau awal tahun ajaran.",
+      image:
+        "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=400&q=80",
+      details: {
+        syarat: [
+          "Perorangan WNI",
+          "Mengisi formulir pembukaan rekening Tabungan Pendidikan Al-'Ilm",
+          "FC KTP/SIM/Paspor (untuk orang tua/wali)",
+          "FC NPWP",
+          "Kartu Pelajar (untuk pelajar)",
+        ],
+        fitur:
+          "Setoran ringan dan bebas biaya administrasi. Buku Tabungan. BLS Mobile Banking. Notifikasi dan sms. Beasiswa. Dana hanya dapat ditarik pada waktu tertentu, seperti saat pembayaran uang sekolah, semester, atau awal tahun ajaran. Akad Wadiah Yad Dhamanah.",
+        tarif:
+          "Setoran Awal: Rp 50.000. Setoran Rutin Minimum per Bulan: Rp 20.000. Biaya Administrasi: Gratis. Biaya Penutupan Rekening: Rp 10.000",
+      },
+    },
+    {
+      id: "tabungan-globalunity",
+      title: "Tabungan GlobalUnity iB",
+      desc: "Tabungan valuta asing untuk transaksi internasional",
+      definisi:
+        "Tabungan GlobalUnity iB adalah produk simpanan valuta asing dengan akad Wadiah Yad Dhamanah dan Sharf yang tersedia dalam mata uang USD, GBP, EUR, SGD, dan AUD, memungkinkan nasabah melakukan transaksi internasional dengan mudah dan sesuai prinsip syariah.",
+      image:
+        "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=400&q=80",
+      details: {
+        syarat: [
+          "WNI: Berusia minimal 18 tahun atau sudah menikah, Mengisi formulir pembukaan rekening, Menyerahkan fotokopi KTP dan NPWP (jika ada), Menyetorkan dana awal USD 300 atau setara Rp 4.800.000",
+          "WNA: Berusia minimal 18 tahun, Mengisi formulir pembukaan rekening, Menyerahkan Paspor dan Kartu Izin Tinggal (KITAS/KITAP) yang masih berlaku, Menyetorkan dana awal USD 300 atau setara Rp 4.800.000",
+        ],
+        fitur:
+          "Mata Uang Tersedia USD, GBP, EUR, SGD, AUD. Akad Syariah: Wadiah Yad Dhamanah & Sharf. Imbalan (Hibah) Dapat diberikan sukarela oleh bank. Akses Transaksi Online Banking, Mobile Banking, Kantor Cabang. Kartu Debit Global Bisa digunakan untuk transaksi internasional. Kepatuhan Syariah Disertifikasi oleh Dewan Pengawas Syariah. Tabungan dapat digunakan untuk transaksi atau penarikan valuta asing kapan saja.",
+        tarif:
+          "Setoran Awal Minimum: Rp 4.800.000 (setara USD 300). Saldo Minimum: Rp3.200.000 (setara USD 200). Administrasi Bulanan Gratis, jika saldo ≥USD 200. Biaya Saldo di Bawah Minimum USD 2 per bulan (jika saldo < USD 200). Biaya Penutupan Rekening USD 5. Transfer Antar Negara Mengikuti biaya bank koresponden (sekitar USD 10–15). Tarik Tunai di ATM Luar Negeri Gratis di jaringan Bank Nusantara Syariah dan mitra global",
+      },
+    },
+    {
+      id: "giro-mytijarah",
+      title: "Giro MyTijarah iB",
+      desc: "Giro bisnis syariah untuk transaksi perusahaan",
+      definisi:
+        "Giro Bisnis Syariah adalah simpanan rekening giro yang dikelola sesuai prinsip Islam tanpa riba menggunakan akad Mudharabah Muthlaqah, digunakan oleh perusahaan, lembaga, dan pengusaha untuk transaksi non-tunai harian seperti pembayaran dan transfer dana, nasabah dapat menyetor dan menarik dana kapan saja serta memperoleh bagi hasil sesuai kesepakatan.",
+      image:
+        "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&q=80",
+      details: {
+        syarat: [
+          "Nasabah perorangan: KTP/Paspor KITAS/KITAP, NPWP, Mengisi formulir aplikasi pembukaan rekening giro syariah, Menyetor dana sesuai dengan ketentuan minimal yang ditetapkan bank, Menyiapkan contoh tanda tangan sebagai otorisasi transaksi",
+          "Nasabah perusahaan/badan usaha: Fotokopi KTP/Paspor KITAS/KITAP dari setiap pengurus yang berwenang, NPWP pengurus, Fotokopi Akta Pendirian dan Anggaran Dasar perusahaan beserta perubahannya (jika ada), Fotokopi SIUP, TDP, atau dokumen izin usaha lainnya, Surat Keterangan Domisili Usaha (SKDU)",
+        ],
+        fitur:
+          "Berdasarkan akad Mudharabah Muthlaqah. Bukti kepemilikan electronic statement. Tersedia fitur Virtual Account Cash Management Service (CMS). Multi-Currency. Media Penarikan Fleksibel.",
+        tarif:
+          "IDR: Setoran Awal Mininum: Rp1.000.000, Setoran Minimum Selanjutnya: Rp100.000, Saldo Minimum: Rp1.000.000, Biaya Administrasi per Bulan: Rp20.000, Biaya Administrasi ATM per Bulan: Rp15.000 (Kartu ATM Platinum), Biaya Penutupan Rekening: Rp100.000, Biaya Dormant: Rp25.000. USD: Setoran Awal Minimal: $100, Setoran Minimum: $100, Biaya Administrasi Bulanan: $5, Biaya Administrasi Bulanan Tambahan Jika Saldo di Bawah $500: $2, Biaya Penutupan Rekening: $10, Biaya Setoran Bank Notes Cabang Jakarta: 0.2%, Cabang Luar Jakarta: 0.3%, Biaya Penarikan Bank Notes Cabang Jakarta: 0.12%, Cabang Luar Jakarta: 0.14%, Biaya Materai: Rp10.000/bulan",
+      },
+    },
+    {
+      id: "giro-platinum",
+      title: "Giro Platinum iB",
+      desc: "Giro premium dengan layanan eksklusif",
+      definisi:
+        "Giro Platinum iB adalah produk simpanan syariah premium dengan akad Wadiah yang memungkinkan kemudahan transaksi karena dapat dicairkan kapan saja dengan cek/bilyet giro, memberikan keamanan dan kepastian manfaat bagi nasabah perorangan maupun badan usaha.",
+      image:
+        "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=400&q=80",
+      details: {
+        syarat: [
+          "Nasabah perorangan: KTP/Paspor KITAS/KITAP, NPWP, Mengisi formulir aplikasi pembukaan rekening giro syariah, Menyetor dana sesuai dengan ketentuan minimal yang ditetapkan bank, Menyiapkan contoh tanda tangan sebagai otorisasi transaksi",
+          "Nasabah perusahaan/badan usaha: Fotokopi KTP/Paspor KITAS/KITAP dari setiap pengurus yang berwenang, NPWP pengurus, Fotokopi Akta Pendirian dan Anggaran Dasar perusahaan beserta perubahannya (jika ada), Fotokopi SIUP, TDP, atau dokumen izin usaha lainnya, Surat Keterangan Domisili Usaha (SKDU)",
+        ],
+        fitur:
+          "Kartu Shar-e Debit (untuk rekening perorangan). Cek dan Bilyet Giro. Layanan Mobile Banking (untuk rekening perorangan). Akad Wadiah.",
+        tarif:
+          "PERORANGAN: Setoran Awal: Rp500.000. Setoran Minimal: Rp500.000. Penutupan Rekening: Rp50.000. NON-PERORANGAN: Setoran Awal: Rp1.000.000. Setoran Minimal: Rp1.000.000. Penutupan Rekening: Rp50.000. Biaya Administrasi: Rp15.000. Biaya Buku Cek/BG 10 Lembar: Rp130.000. Biaya Buku Cek/BG 25 Lembar: Rp300.000. Biaya Cetak Rek Koran Per Lembar: Rp500. Biaya Materai: Rp10.000",
+      },
+    },
+    {
+      id: "reksa-dana",
+      title: "Reksa Dana Syariah",
+      desc: "Investasi reksa dana sesuai prinsip syariah",
+      definisi:
+        "Reksa Dana Syariah adalah produk investasi dengan akad Mudharabah Muqayyadah yang berbasis prinsip syariah, diawasi Dewan Pengawas Syariah (DPS), investasi hanya pada efek syariah dengan mekanisme cleansing (pembersihan pendapatan non-halal) untuk memastikan kehalalan investasi.",
+      image:
+        "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&q=80",
+      details: {
+        syarat: [
+          "Formulir data nasabah & pembukaan rekening nasabah perorangan atau non perorangan (apabila nasabah belum memiliki rekening di Bank Melasa Syariah)",
+          "Formulir pembukaan reksa dana nasabah perorangan atau non-perorangan",
+          "Formulir investasi reksa dana nasabah perorangan atau non-perorangan",
+          "Nasabah Perorangan (WNI): e-KTP, NPWP (jika ada)",
+          "Nasabah Non-Perorangan: NPWP, e-KTP Pengurus, Akta Pendirian, SKDU/SITU/SKDP, SIUP/Izin Usaha Lainnya, Analisis Yuridis",
+        ],
+        fitur:
+          "Berbasis prinsip syariah. Diawasi Dewan Pengawas Syariah (DPS). Investasi pada Efek Syariah. Cleansing (Pembersihan Pendapatan Non-Halal). Akad Mudharabah Muqayyadah.",
+        tarif:
+          "Biaya pengelolaan: Selama berinvestasi. Biaya pengalihan: Saat ganti produk. Biaya penjualan unit: Saat mencairkan dana. Biaya pembelian unit: Saat membeli unit. Minimum transaksi awal Rp1.000.000. Minimum Top Up Rp100.000",
+      },
+    },
+    {
+      id: "sya-inves-go",
+      title: "Sya-Inves GO",
+      desc: "Special Investment dengan akad Mudharabah Muqayadah",
+      definisi:
+        "Sya-Inves GO adalah produk investasi khusus dengan akad Mudharabah Muqayadah yang ditujukan untuk nasabah dengan dana kelolaan besar (minimum Rp100 juta), menawarkan diversifikasi aset halal dengan transparansi penuh, bagi hasil langsung (profit sharing), dan pencatatan off-balance sheet.",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80",
+      details: {
+        syarat: [
+          "Mengisi formulir aplikasi pembukaan rekening",
+          "Melakukan setoran sebagai saldo penempatan minimal Rp1.000.000.000 (Satu Milyar Rupiah)",
+          "Melampirkan Kartu identitas: Fotocopy KTP Pengurus, Fotocopy Akta Pendirian, Fotocopy NIB, Fotocopy NPWP, Ijin Domisili dan atau Keterangan Perusahaan dan Pemerintah Setempat",
+        ],
+        fitur:
+          "Nilai investasi - Minimum Rp100 juta atau setara untuk mata uang asing dalam bentuk USD. Jangka waktu/tenor - Dapat dilakukan baik untuk jangka pendek maupun jangka panjang Tenor investasi dana disesuaikan dengan aset dasar yang didanai, sehingga jatuh tempo investasi dana sama dengan jatuh tempo aset dasar. Pilihan jangka waktu yang fleksibel. Diversifikasi aset yang halal. Transparansi dan Pengawasan. Pencatatan Off-Balance Sheet. Bagi Hasil Langsung (Profit Sharing). Akad Mudharabah Muqayadah.",
+        tarif:
+          "Biaya Materai Saat Pencairan: Rp 10.000. Pajak bagi hasil: 20%. Biaya transfer antarbank berlaku",
       },
     },
   ],
   financing: [
     {
+      id: "al-qardh-social",
+      title: "Al-Qardh Social",
+      desc: "Pinjaman sosial tanpa imbalan untuk keperluan darurat",
+      definisi:
+        "Al-Qardh Social adalah produk pinjaman kebajikan dengan akad Qard yang diperuntukkan bagi kebutuhan sosial, kemanusiaan, atau darurat tanpa margin keuntungan, bank hanya meminta pengembalian pokok pinjaman, dana berasal dari dana sosial (zakat, infaq, dana kebajikan bank) dan seluruh proses bebas riba dan gharar.",
+      image:
+        "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=400&q=80",
+      details: {
+        syarat: [
+          "Warga Negara Indonesia (WNI) Berusia minimal 18 tahun atau sudah menikah",
+          "Memiliki KTP dan KK Sebagai identitas dan verifikasi",
+          "Surat Keterangan Tidak Mampu / Tujuan Sosial Dibutuhkan untuk menilai kelayakan sosial",
+          "Rekening di Bank Syariah Terkait Untuk pencairan dan pengembalian dana",
+          "Bersedia Mengembalikan Pokok Pinjaman Dengan komitmen moral dan tertulis",
+        ],
+        fitur:
+          "Akad Qard: Akad pinjaman kebajikan tanpa tambahan imbalan (bunga). Tujuan Sosial: Diperuntukkan bagi kebutuhan sosial, kemanusiaan, atau darurat. Tanpa Margin Keuntungan: Bank tidak mengambil keuntungan, hanya pengembalian pokok. Tenor Pendek-Menengah: Jangka waktu pengembalian biasanya 3-24 bulan. Cicilan Fleksibel: Dapat dicicil sesuai kemampuan nasabah. Sumber Dana Sosial: Dana berasal dari dana sosial (zakat, infaq, dana kebajikan bank). Bebas Riba dan Gharar: Seluruh proses mengikuti prinsip syariah.",
+        tarif:
+          "Biaya Administrasi Sekadar untuk menutup biaya operasional (misalnya Rp10.000-Rp25.000). Denda (opsional & non-profit) Jika ada keterlambatan, denda tidak menjadi keuntungan bank, tapi disalurkan untuk dana sosial. Biaya Materai Sesuai ketentuan transaksi",
+      },
+    },
+    {
+      id: "gadai-emas",
+      title: "Gadai Emas Albarkah Syariah",
+      desc: "Solusi dana cepat dengan jaminan emas",
+      definisi:
+        "Gadai Emas Albarkah Syariah adalah produk pembiayaan dengan akad Rahn dan Ijarah yang memberikan solusi dana cepat dengan jaminan emas perhiasan atau batangan, maksimal pinjaman 80% dari taksiran harga pasar dengan jangka waktu hingga 4 bulan dan dapat diperpanjang.",
+      image:
+        "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=400&q=80",
+      details: {
+        syarat: [
+          "Perorangan (WNI), pemilik usaha, dan badan usaha yang memiliki legalitas",
+          "Mengisi formulir permohonan",
+          "Menunjukkan asli bukti identitas dan menyerahkan foto copy bukti identitas",
+          "Menyerahkan barang gadai berupa emas perhiasan atau lantakkan",
+          "Menandatangani Akad/Perjanjian Gadai",
+        ],
+        fitur:
+          "Reservasi gadai via aplikasi mobile. Pembayaran produk digital (tebus ulang/perpanjang). Simulasi info harga emas real-time. Layanan pick-up emas. Jenis Agunan: Emas Perhiasan, Emas batangan/bersertifikat. Maksimal Pinjaman: 80% dari taksiran harga pasar. Akad Rahn dan Ijarah. Proses: Nasabah datang bawa persyaratan → Petugas menaksir Emas dan memberi info pinjaman optimal → Tandatangan Akad oleh Nasabah dan petugas → Pencairan pinjaman pada rekening nasabah.",
+        tarif:
+          "Biaya Pendaftaran: Rp 15.000. Biaya Transaksi (UJRAH) per transaksi: Rp 6.500. Biaya Pembatalan: Rp 5.000. Jangka waktu pinjaman hingga 4 bulan, dapat diperpanjang.",
+      },
+    },
+    {
+      id: "pembiayaan-multiguna",
+      title: "Pembiayaan Hijrah Multiguna",
+      desc: "Pembiayaan fleksibel untuk berbagai kebutuhan",
+      definisi:
+        "Pembiayaan Hijrah Multiguna adalah produk pembiayaan dengan akad Murabahah yang memberikan solusi fleksibel untuk berbagai kebutuhan nasabah perorangan dengan angsuran tetap, proses mudah dan cepat, tanpa agunan, dan tidak diwajibkan uang muka.",
+      image:
+        "https://images.unsplash.com/photo-1554224154-22dec7ec8818?w=400&q=80",
+      details: {
+        syarat: [
+          "Nasabah Perorangan",
+          "Tidak termasuk dalam Daftar Pembiayaan Bermasalah",
+          "Dapat Dicover asuransi (opsional)",
+        ],
+        fitur:
+          "Menenangkan karena sesuai dengan prinsip syariah. Angsuran tetap hingga akhir pembiayaan sesuai perjanjian. Mudah, dapatkan persetujuan pembiayaan Anda dengan persyaratan pengajuan yang mudah dan proses pembiayaan yang singkat. Tidak memerlukan agunan. Tidak diwajibkan adanya uang muka. Akad Murabahah.",
+        tarif:
+          "Waktu pembiayaan 12-96 bulan. Limit pembiayaan 5 juta-200 juta. Income - Jabodetabek: 3 juta, Non Jabodetabek: 2 juta. Biaya Administrasi. Biaya Materai. Biaya Asuransi (jika ada)",
+      },
+    },
+    {
       id: "pembiayaan-rumah",
-      title: "Pembiayaan Rumah iB",
+      title: "Sakinah Home Financing (KPR)",
       desc: "Wujudkan rumah impian dengan akad murabahah",
+      definisi:
+        "Sakinah Home Financing (KPR) adalah produk pembiayaan kepemilikan rumah dengan akad Jual Beli (Murabahah) yang membantu nasabah mewujudkan rumah impian dengan cicilan flat, total harga jual disepakati di awal (transparan), tenor hingga 20 tahun, dan dapat digunakan untuk rumah baru maupun bekas.",
       image:
         "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&q=80",
       details: {
         syarat: [
-          "WNI, Usia Min. 21 Tahun",
-          "Lama Kerja/Usaha Min. 2 Tahun",
-          "Jaminan: Objek yang dibiayai",
+          "Warga Negara Indonesia (WNI)",
+          "Berusia minimal 21 tahun atau telah menikah",
+          "Usia maksimal saat pelunasan adalah 55 tahun",
+          "Minimal masa kerja 6 bulan - 1 tahun (untuk karyawan)",
+          "Minimal masa usaha 1 - 2 tahun (untuk wiraswasta)",
+          "Melengkapi dokumen permohonan",
         ],
         fitur:
-          "Akad Jual Beli (Murabahah), Cicilan Flat, Total Harga Jual Disepakati di Awal (Transparan). Tenor hingga 15 tahun.",
+          "Proses permohonan yang mudah serta cepat. Fleksibel untuk membeli rumah baru maupun bekas. Plafon pembiayaan yang besar. Jangka waktu pembiayaan yang panjang. Fasilitas auto debit dari tabungan induk. Akad Jual Beli (Murabahah), Cicilan Flat, Total Harga Jual Disepakati di Awal (Transparan). Tenor hingga 20 tahun.",
         tarif:
-          "Biaya Administrasi: 1% dari Plafon. Biaya Provisi: 0,5% dari Plafon. Biaya Asuransi & Notaris (Sesuai Tagihan Pihak ke-3).",
+          "Biaya Administrasi: Sesuai Kebijakan Bank. Biaya Notaris: Sesuai kebijakan bank. Biaya Materai: Bervariasi sesuai jumlah dokumen. Biaya Asuransi: Mengikuti tarif yang diberlakukan perusahaan asuransi syariah. Biaya Appraisal: Rp 500.000 - Rp.1.000.000. Biaya Pelunasan Dipercepat: Gratis. Biaya Ta'widh: ± 0,1% - 0,2% dari cicilan yang yang terlambat. Margin Pertahun adalah 2,5%, Margin Selama 20 Tahun adalah 50%",
       },
     },
     {
       id: "pembiayaan-kendaraan",
-      title: "Pembiayaan Kendaraan iB",
+      title: "Vehicle Syariah Financing (VEHIRA)",
       desc: "Miliki kendaraan impian dengan cicilan syariah",
+      definisi:
+        "Vehicle Syariah Financing (VEHIRA) adalah produk pembiayaan kendaraan dengan akad Murabahah untuk kendaraan roda dua atau roda empat, baik baru, bekas, maupun berbasis listrik, dengan maksimal pembiayaan Rp 500 juta, margin 12% per tahun, dan jangka waktu maksimal 5 tahun.",
       image:
         "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=400&q=80",
       details: {
         syarat: [
-          "WNI, Usia Min. 21 Tahun",
-          "Lama Kerja/Usaha Min. 1 Tahun",
-          "DP: Minimal 20% (Mobil), 10% (Motor)",
+          "Warga Negara Indonesia (WNI)",
+          "Berusia minimal 21 tahun atau telah menikah",
+          "Usia maksimal saat pelunasan adalah 55 tahun",
+          "Minimal masa kerja 1 tahun (untuk karyawan)",
+          "Minimal masa usaha 2 tahun (untuk wiraswasta)",
+          "Melengkapi dokumen permohonan",
         ],
         fitur:
-          "Akad Jual Beli, Kepastian harga jual, Tenor hingga 5 tahun. Simulasi tersedia.",
+          "Pokok Pembiayaan - Maksimal sebesar Rp 500.000.000. Margin - 12% per tahun. Jangka Waktu Pembiayaan - Maksimal s.d 5 Tahun. Jenis Agunan - Kendaraan bermotor yang menjadi objek pembiayaan. Uang Muka - 10%. Akad Murabahah. Untuk kendaraan roda dua atau roda empat, baik baru, bekas, maupun berbasis listrik.",
         tarif:
-          "Biaya Administrasi: 1% dari Plafon. Biaya Asuransi, Fidusia (Sesuai Tagihan Pihak ke-3).",
+          "Biaya Administrasi: Sesuai Kebijakan Bank. Biaya Notaris: Sesuai kebijakan bank. Biaya Materai: Bervariasi sesuai jumlah dokumen. Biaya Asuransi: Mengikuti tarif yang diberlakukan perusahaan asuransi syariah. Biaya Appraisal: Rp 300.000. Biaya Pelunasan Dipercepat: Rp 100.000. Biaya Ta'widh: Rp 50.000",
       },
     },
     {
@@ -275,21 +506,23 @@ const productData = {
       },
     },
     {
-      id: "al-qardh-card",
-      title: "Al-Qardh Card",
-      desc: "Kartu kredit syariah dengan fitur cashback",
+      id: "pembiayaan-emas",
+      title: "C&E Cicilan Emas",
+      desc: "Miliki emas batangan dengan cara mencicil",
+      definisi:
+        "C&E Cicilan Emas adalah produk pembiayaan dengan akad Murabahah yang memungkinkan nasabah memiliki emas batangan bersertifikat dengan cara mencicil, memberikan kemudahan berinvestasi emas tanpa harus membayar tunai sekaligus.",
       image:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&q=80",
+        "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=400&q=80",
       details: {
         syarat: [
-          "Usia Min. 21 Tahun",
-          "Penghasilan Min. Rp 3.000.000/bulan",
-          "Akad: Kafalah, Qardh, dan Ijarah",
+          "KTP",
+          "NPWP (Pembiayaan > Rp50 juta) (Maksimal Limit Rp150 juta)",
+          "Minimal usia 21 tahun, maksimal 60 tahun",
         ],
         fitur:
-          "Maksimal Transaksi: Rp 8.000.000. Welcome Bonus Cashback, Smartspending (cicilan 0%), Smartsaqadah, Smartbill (Autodebet Tagihan).",
+          "Fasilitas pembayaran Online/Offline. Jangka waktu pembiayaan fleksibel. Mendapatkan sertifikat emas/bukti kepemilikan. Akad Murabahah. Uang Muka (DP): 10%-30% dari harga emas.",
         tarif:
-          "Bebas Riba. Biaya Iuran Tahunan: Sesuai kategori kartu. Denda keterlambatan (Ta'widh) digunakan untuk dana sosial.",
+          "Uang Muka (DP): 10%-30% dari harga emas. Sebagai tanda keseriusan dan mengurangi jumlah cicilan. Biaya Administrasi: 1% dari total pembiayaan. Untuk menutupi biaya proses dan pengurusan akad. Denda Keterlambatan: Dikenakan jika nasabah terlambat membayar. Tidak menjadi keuntungan bank, tapi disalurkan untuk dana sosial. Margin Keuntungan Bank: Disepakati di awal antara bank dan nasabah. Bersifat tetap (tidak berubah selama masa cicilan).",
       },
     },
     {
@@ -310,110 +543,26 @@ const productData = {
       },
     },
     {
-      id: "pembiayaan-modal-kerja",
-      title: "Pembiayaan Modal Kerja",
-      desc: "Solusi modal usaha untuk UMKM",
+      id: "al-qardh-card",
+      title: "Al-Qardh Card",
+      desc: "Kartu kredit syariah dengan fitur cashback dan smartspending",
       image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80",
+        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&q=80",
       details: {
         syarat: [
-          "Usaha berjalan min. 2 tahun",
-          "Laporan keuangan",
-          "Jaminan sesuai plafon",
+          "Warga Negara Indonesia (WNI)",
+          "Minimum 21 tahun",
+          "Menyerahkan Fotokopi KTP, NPWP, dan Paspor",
+          "Memiliki rekening Tabungan di Bank BMS",
+          "Mengisi formulir (data diri, profil resiko)",
+          "Menandatangani akad",
+          "Penghasilan Minimum Rp 3.000.000 hingga Rp 5.000.000 per bulan",
+          "Tidak masuk blacklist SLIK OJK",
         ],
         fitur:
-          "Plafon hingga Rp 2 miliar, tenor fleksibel, akad mudharabah/musyarakah.",
-        tarif: "Nisbah bagi hasil kompetitif.",
-      },
-    },
-    {
-      id: "pembiayaan-investasi",
-      title: "Pembiayaan Investasi iB",
-      desc: "Pembiayaan untuk investasi aset produktif",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80",
-      details: {
-        syarat: ["Proposal investasi", "Feasibility study", "Jaminan aset"],
-        fitur:
-          "Plafon besar, tenor panjang hingga 15 tahun, akad musyarakah mutanaqisah.",
-        tarif: "Margin kompetitif sesuai negosiasi.",
-      },
-    },
-    {
-      id: "pembiayaan-mikro",
-      title: "Pembiayaan Mikro iB",
-      desc: "Pembiayaan khusus untuk usaha mikro",
-      image:
-        "https://images.unsplash.com/photo-1556740758-90de374c12ad?w=400&q=80",
-      details: {
-        syarat: ["Usaha mikro aktif", "KTP & KK", "Jaminan ringan"],
-        fitur:
-          "Plafon Rp 5-50 juta, proses mudah dan cepat, pendampingan usaha.",
-        tarif: "Margin flat kompetitif.",
-      },
-    },
-    {
-      id: "pembiayaan-emas-cicil",
-      title: "Cicil Emas iB",
-      desc: "Miliki emas dengan cara mencicil",
-      image:
-        "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=400&q=80",
-      details: {
-        syarat: ["Usia min. 21 tahun", "Penghasilan tetap", "DP 20%"],
-        fitur:
-          "Emas batangan bersertifikat, cicilan ringan, tenor hingga 3 tahun.",
-        tarif: "Margin flat 8-12% per tahun.",
-      },
-    },
-    {
-      id: "pembiayaan-pensiun",
-      title: "Pembiayaan Pensiun",
-      desc: "Pembiayaan khusus untuk pensiunan",
-      image:
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80",
-      details: {
-        syarat: [
-          "Pensiunan PNS/TNI/Polri/Swasta",
-          "Usia max. 70 tahun",
-          "SK Pensiun",
-        ],
-        fitur:
-          "Plafon hingga Rp 200 juta, angsuran dipotong dari pensiun, proses mudah.",
-        tarif: "Margin kompetitif untuk pensiunan.",
-      },
-    },
-    {
-      id: "pembiayaan-pendidikan",
-      title: "Pembiayaan Pendidikan",
-      desc: "Wujudkan pendidikan terbaik untuk buah hati",
-      image:
-        "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=400&q=80",
-      details: {
-        syarat: [
-          "Orang tua/wali",
-          "Surat penerimaan sekolah/kampus",
-          "Slip gaji",
-        ],
-        fitur:
-          "Cover biaya kuliah/sekolah, tenor hingga masa studi, tanpa jaminan untuk nominal tertentu.",
-        tarif: "Margin kompetitif, subsidi untuk prestasi.",
-      },
-    },
-    {
-      id: "pembiayaan-syariah-pegawai",
-      title: "Pembiayaan Syariah Pegawai",
-      desc: "Pembiayaan khusus karyawan dengan potongan gaji",
-      image:
-        "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&q=80",
-      details: {
-        syarat: [
-          "Karyawan tetap",
-          "Masa kerja min. 1 tahun",
-          "Kerjasama dengan perusahaan",
-        ],
-        fitur:
-          "Plafon hingga 5x gaji, angsuran potong gaji, proses cepat tanpa survey.",
-        tarif: "Margin khusus karyawan.",
+          "Welcome Bonus - Cashback hingga Rp150 ribu dengan aktivasi dan transaksi pertama minimal Rp1. Smartspending - Fitur keringanan pembayaran tagihan melalui cicilan 0% hingga 12 bulan. Smartsadaqah - Fitur donasi secara rutin setiap bulan secara autodebet dengan Lazis yang berkerja sama dengan Bank Brilliant Core syariah. Smartbill - Fitur pembayaran tagihan rutin bulanan secara autodebet seperti tagihan listrik, air, asuransi, internet/wifi, dll. Maximal Transaksi sebesar Rp 8.000.000. Akad: Kafalah, Qardh, dan Ijarah.",
+        tarif:
+          "Ijarah Fee: Rp. 300.000 per tahun. Biaya Penarikan Tunai: Rp 25.000 - Rp 50.000 per transaksi penarikan. Biaya Penggantian Kartu Hilang/Rusak: Rp 50.000. Biaya Kelebihan Limit (Overlimit Fee) Rp 100.000 - Rp 250.000 per kejadian. Denda Keterlambatan (Ta'widh): Rp 45.000. Biaya Cetak Tagihan Kertas: Rp 20.000 per lembar",
       },
     },
   ],
@@ -422,162 +571,195 @@ const productData = {
       id: "safe-deposit-box",
       title: "Safe Deposit Box (SDB) iB",
       desc: "Penyimpanan barang berharga dengan keamanan tinggi",
+      definisi:
+        "Safe Deposit Box (SDB) iB adalah layanan penyewaan kotak penyimpanan dengan akad Ijarah yang menyediakan tempat aman untuk menyimpan barang berharga dengan sistem keamanan 24 jam, akses kunci ganda, dan kerahasiaan aset terjamin.",
       image:
         "https://images.unsplash.com/photo-1582139329536-e7284fece509?w=400&q=80",
       details: {
         syarat: [
-          "Nasabah Giro/Tabungan Melasa",
-          "Akad: Ijarah (Sewa)",
-          "Ukuran: Small, Medium, Large",
+          "Merupakan nasabah Bank Melasa Syariah",
+          "Mengisi dan menandatangani formulir permohonan penyewaan SDB dan perjanjian sewa-menyewa (Akad Ijarah)",
+          "Memberi Dokumen KTP, NPWP, Pas Foto, Kartu Keluarga (KK) atau akta kelahiran, Paspor",
+          "Surat Kuasa, SIUP, TDP, atau NIB (Nomor Induk Berusaha), Fotokopi Akta Pendirian Perusahaan dan perubahannya (nonperorangan)",
+          "Menandatangani surat pernyataan bahwa barang yang disimpan bukan barang terlarang",
         ],
         fitur:
-          "Penyimpanan barang berharga (Emas, Surat Berharga) dengan keamanan tinggi dan asuransi. Akses kantor pusat/cabang tertentu.",
+          "Akses Kunci Ganda. Ruang Khazanah (Vault) Khusus. Sistem Keamanan 24 Jam. Berbagai Pilihan Ukuran. Kerahasiaan Aset Terjamin. Mendapat Kartu SDB. Ruang Khusus Pemeriksaan Aset. Akad Ijarah. Aset hanya dapat diambil jika nasabah mengkonfirmasi dan datang langsung ke cabang membawa tanda kepemilikan SDB.",
         tarif:
-          "Biaya Sewa Tahunan: Tergantung ukuran (Mulai dari Rp 300.000/tahun). Biaya Jaminan Kunci: Rp 1.000.000.",
+          "Ukuran Box [Sewa per Tahun]: Kecil (3 inch x 10 inch x 24 inch) > Rp. 500.000. Sedang (5 inch x 10 inch x 24 inch) > Rp. 600.000. Besar (10 inch x 10 inch x 24 inch) > Rp. 800.000. Biaya administrasi perpanjangan Rp75.000. Harga jaminan Kunci Rp900.000/2 kunci. Kehilangan Kunci (1 kunci): Rp 580.000",
       },
     },
     {
       id: "inkaso-syariah",
       title: "Layanan Inkaso iB",
       desc: "Layanan penagihan cek/bilyet giro",
+      definisi:
+        "Layanan Inkaso iB adalah layanan penagihan dengan akad Wakalah untuk warkat berharga seperti cek, bilyet giro, wesel, dan promissory notes yang dapat dilaksanakan di seluruh kantor cabang, tersedia bagi nasabah maupun non-nasabah dengan proses 1-3 hari kerja.",
       image:
         "https://images.unsplash.com/photo-1554224154-22dec7ec8818?w=400&q=80",
       details: {
         syarat: [
-          "Nasabah Giro/Tabungan bisnis",
-          "Akad: Wakalah (Perwakilan)",
-          "Jenis: Inkaso Masuk & Inkaso Keluar",
+          "Dokumen Identitas WNI: Kartu Tanda Penduduk (KTP), WNA: Paspor dan KIMS/KITAS/KITAP",
+          "Pengirim inkaso menyerahkan surat atau dokumen berharga kepada cabang untuk ditagihkan kepada pembayaran inkaso di tempat/kota lain di Indonesia",
         ],
         fitur:
-          "Layanan penagihan cek/bilyet giro dari bank lain atas nama nasabah. Memudahkan transaksi bisnis jarak jauh.",
+          "Dapat dilaksanakan diseluruh kantor cabang tersedia bagi nasabah maupun bukan nasabah. Pembayaran hasil penagihan dapat dilaksanakan secara tunai/non tunai. Warkat yang dapat diinkasokan: Warkat yang tertariknya Bank/Lembaga Keuangan Bukan Bank: Wesel, Cel, Bilyet Giro dan Cek Perjalanan. Warkat yang tertariknya bukan bank & juga bukan LKBB: Wesel, Promissory Notes (Promes) yang tertariknya perorangan atau perusahaan. Akad Wakalah. Proses bisa memakan waktu 1–3 hari kerja, tergantung lokasi dan jenis inkaso (dalam kota atau luar kota).",
         tarif:
-          "Biaya Jasa (Fee) Inkaso: Sesuai nominal dan jarak (Lokal/Luar Kota).",
+          "Nasabah Bank Melasa Syariah: Rp. 10.000. Non Nasabah As-salam Bank/titipan bank lain: Rp. 25.000",
       },
     },
     {
       id: "transfer-rtgs",
-      title: "Transfer RTGS / SKN",
-      desc: "Transfer dana antar bank real-time",
+      title: "Kiriman uang melalui RTGS",
+      desc: "Transfer dana antar bank real-time untuk nominal besar",
+      definisi:
+        "Kiriman uang melalui RTGS adalah layanan transfer dengan akad Wakalah untuk transaksi dana antar bank secara real-time dengan nominal besar (≥ Rp100 juta), dana diterima di bank tujuan dalam waktu sangat cepat dan terverifikasi langsung di sistem Bank Indonesia.",
       image:
         "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&q=80",
       details: {
         syarat: [
-          "Nasabah Bank Melasa",
-          "RTGS: Min. Rp 100 juta",
-          "SKN: Semua nominal",
+          "Nasabah memiliki rekening aktif di Bank",
+          "Mengisi formulir BI-RTGS lengkap dan benar",
+          "Transaksi dilakukan pada jam operasional BI-RTGS (06.30 s/d 16.30)",
+          "Nominal transfer besar (umumnya ≥ Rp100 juta)",
+          "Membayar ujrah (biaya imbalan jasa)",
+          "Tujuan transaksi harus jelas dan halal",
         ],
         fitur:
-          "Transfer dana ke bank lain secara real-time (RTGS) atau kliring (SKN) melalui teller dan Mobile Banking.",
+          "Transaksi dapat dilakukan di Counter Bank (Teller) dan tidak harus datang ke Bank bisa melalui Handphone aplikasi perbankan digital (Internet Banking, Mobile Banking). Mendapatkan bukti transaksi dan nomor referensi BI (menunjukkan bahwa transaksi tersebut terverifikasi dan tercatat di sistem BI.). Real Time (Transaksi diproses secara langsung saat instruksi diterima, sehingga dana diterima di bank tujuan dalam waktu yang sangat cepat). Dilengkapi dengan manajemen risiko untuk meminimalkan risiko kegagalan dan penipuan. Akad Wakalah.",
         tarif:
-          "Biaya RTGS: Rp 25.000/transaksi. Biaya SKN: Rp 5.000/transaksi.",
+          "Biaya Ujrah (Belum termasuk pajak) JAM OPERASIONAL DAN TARIF BIAYA: 06.30-10.00 WIB > Rp. 6.000, 10.00-14.00 WIB > Rp. 15.000, 14.00-16.30 WIB > Rp. 21.000. Minimal Nominal Transaksi Rp. 100.000.000",
       },
     },
     {
-      id: "mobile-banking",
-      title: "Melasa Mobile Banking",
-      desc: "Banking di genggaman Anda 24/7",
+      id: "kiriman-uang-sknbi",
+      title: "Kiriman uang melalui SKNBI",
+      desc: "Transfer antar bank dengan biaya efisien",
+      definisi:
+        "Kiriman uang melalui SKNBI adalah layanan transfer antarbank dengan akad Wakalah yang berbasis syariah, cocok untuk nominal menengah (hingga Rp 1 M) dengan biaya lebih efisien dari RTGS, proses penyelesaian dana dilakukan secara kolektif dalam beberapa siklus kliring per hari kerja.",
       image:
-        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&q=80",
+        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&q=80",
       details: {
         syarat: [
-          "Nasabah Bank Melasa",
-          "Smartphone Android/iOS",
-          "Registrasi di cabang/online",
+          "Menunjukkan bukti identitas asli, (KTP), SIM, atau Paspor",
+          "Mengisi formulir secara lengkap dan sesuai",
+          "Menyerahkan warkat (untuk kliring)",
+          "Menyetorkan dana sesuai jumlah yang di transfer, baik secara tunai, debet",
+          "Batas Nominal SKNBI maksimal Rp 1 Miliar per transaksi",
+          "Membayar biaya layanan transfer/kliring sebesar Rp2.900",
+          "Transaksi harus dilakukan pada Hari Kerja Bank dan dalam Jam Operasional",
         ],
         fitur:
-          "Transfer antar/intra bank (RTGS/SKN), Pembayaran Tagihan (Listrik, Air, Internet), Top-Up E-Wallet, Zakat, Infaq, Sedekah (ZISWAF).",
+          "Layanan transfer antarbank berbasis syariah. Adanya imbalan jasa (ujrah) yang sah dan disepakati. Efisiensi biaya (lebih murah dari RTGS). Cocok untuk nominal menengah (hingga Rp 1 M). Transaksi dilakukan dengan prinsip kepercayaan (wakalah) antara nasabah dan bank. Akad Wakalah. Proses penyelesaian (settlement) dana dilakukan secara kolektif (netting) dan terjadwal dalam beberapa kali siklus kliring per hari kerja Senin-jumat pukul 08.00-15.00 WIB.",
         tarif:
-          "Bebas biaya bulanan. Biaya Transfer Antar Bank (BI-FAST): Rp 2.500.",
-      },
-    },
-    {
-      id: "kliring",
-      title: "Layanan Kliring",
-      desc: "Kliring cek dan bilyet giro",
-      image:
-        "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=400&q=80",
-      details: {
-        syarat: ["Nasabah Giro", "Cek/BG dari bank lain", "Akad: Wakalah"],
-        fitur:
-          "Proses kliring cepat, notifikasi real-time, riwayat transaksi lengkap.",
-        tarif: "Biaya Kliring: Rp 5.000/lembar.",
+          "Biaya kiriman uang SKNBI (non-RTGS) Rp 2.900. Layanan Kliring Warkat Debit sebesar Rp. 5.000/DKE. Layanan Pembayaran Reguler sebesar Rp. 5.000/rincian DKE. Layanan Penagihan Reguler sebesar Rp. 5.000/rincian DKE. Biaya Administrasi Kliring Debet (Setoran Cek/BG): Rp. 3.000. Biaya warkat debit (jika ada) Rp 1.000, Komponen tambahan untuk pengiriman warkat debit. Biaya pembatalan Rp 5.000, Jika kiriman dibatalkan oleh pengirim (contoh bank syariah)",
       },
     },
     {
       id: "bank-garansi",
-      title: "Bank Garansi iB",
+      title: "Bank Garansi iB (Garansi Ta'awun)",
       desc: "Jaminan bank untuk tender dan kontrak",
+      definisi:
+        "Bank Garansi iB (Garansi Ta'awun) adalah layanan jaminan bank dengan akad Kafalah Bil Ujroh yang diberikan kepada nasabah perorangan dan badan usaha untuk keperluan tender, pelaksanaan proyek, uang muka, dan pemeliharaan, merupakan non-funded facility tanpa pencairan dana.",
       image:
         "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&q=80",
       details: {
         syarat: [
-          "Perusahaan/Perorangan",
-          "Dokumen tender/kontrak",
-          "Jaminan counter",
+          "Pemohon adalah perorangan, badan usaha, atau badan hukum",
+          "Usaha minimal telah berjalan 3 tahun",
+          "Tidak masuk ke dalam Daftar Hitam Bank Indonesia dan hasil SLIK OJK dinyatakan clear",
+          "Menyertakan underlying penerbitan bank garansi",
+          "Dokumen identitas pemohon dan legalitas usaha",
+          "Copy rekening 6 bulan terakhir",
+          "Copy laporan keuangan atau catatan transaksi usaha minimal 3 tahun terakhir",
         ],
         fitur:
-          "Bank Garansi untuk tender, pelaksanaan, uang muka, pemeliharaan. Proses cepat.",
-        tarif: "Fee: 1-3% per tahun dari nilai garansi.",
+          "Jenis Akad: Kafalah Bil Ujroh. Target Nasabah: Nasabah perorangan dan badan usaha. Jangka Waktu Bank Garansi: Sesuai dokumen tender/kontrak kerja/SPK/dokumen lainnya dari pemilik proyek. Non-funded facility (tanpa pencairan dana). Ada surat jaminan dari bank. Dikenakan ujrah (fee jasa). Untuk berbagai tujuan (tender, pelaksanaan, pembayaran). Bank Garansi untuk tender, pelaksanaan, uang muka, pemeliharaan. Proses cepat.",
+        tarif:
+          "Biaya Penerbitan Bank Garansi: Admin: Rp150.000, Komisi: sesuai ketentuan yang berlaku. Biaya Administrasi (Bank Handling Fee): RP. 200.000. Bea Materai Rp 10.000. Fee: 1-3% per tahun dari nilai garansi.",
       },
     },
     {
-      id: "remittance",
-      title: "Layanan Remittance",
-      desc: "Kirim dan terima uang dari luar negeri",
+      id: "jual-beli-valuta-asing",
+      title: "Jual Beli Valuta Asing",
+      desc: "Transaksi valuta asing sesuai prinsip syariah",
+      definisi:
+        "Jual Beli Valuta Asing adalah layanan transaksi jual beli valuta asing dengan akad Sharf secara tunai (spot) untuk berbagai mata uang seperti USD, SGD, EUR, JPY, AUD, SAR dengan kurs transparan mengikuti pergerakan pasar, hanya untuk tujuan syar'i seperti perjalanan, pendidikan, atau dagang internasional.",
       image:
         "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=400&q=80",
       details: {
         syarat: [
-          "Nasabah Bank Melasa",
-          "Dokumen identitas",
-          "Tujuan pengiriman jelas",
+          "Memiliki rekening tabungan atau giro syariah di bank",
+          "Membawa KTP/paspor (untuk individu)",
+          "Untuk transaksi bisnis: dokumen legal usaha (SIUP, NPWP, Akta Usaha)",
+          "Mengisi formulir transaksi valas syariah",
+          "Transaksi dilakukan tunai atau transfer langsung (spot), tidak boleh ditunda",
         ],
         fitur:
-          "Kirim uang ke 200+ negara, terima remittance dari luar negeri, kurs kompetitif.",
-        tarif: "Fee mulai dari Rp 50.000, tergantung negara tujuan.",
+          "Transaksi jual beli valuta asing (valas) antar dua mata uang yang berbeda berdasarkan akad sharf secara tunai (spot). Dapat dilakukan melalui counter bank atau aplikasi mobile banking syariah. Kurs jual dan beli transparan, mengikuti pergerakan pasar. Hanya berlaku untuk tujuan syar'i, seperti: Keperluan perjalanan ke luar negeri, Pembayaran biaya pendidikan di luar negeri, Keperluan dagang internasional. Mata uang yang dilayani: USD, SGD, EUR, JPY, AUD, SAR, dan lainnya. Akad Sharf.",
+        tarif:
+          "Biaya Administrasi Per transaksi Rp10.000 - Rp25.000. Kurs Jual/Beli Mengikuti Kurs Harian BSI Berdasarkan Update pada transaksi. Pajak Transaksi (jika berlaku) Sesuai Peraturan pemerintah Mengacu ketentuan BI",
       },
     },
     {
-      id: "virtual-account",
-      title: "Virtual Account Melasa",
-      desc: "Solusi pembayaran untuk bisnis online",
+      id: "payment-point",
+      title: "Payment Point (PPOB)",
+      desc: "Pembayaran multi tagihan dalam satu platform",
+      definisi:
+        "Payment Point (PPOB) adalah layanan pembayaran multi tagihan dalam satu platform yang memudahkan nasabah membayar berbagai tagihan seperti listrik, air, telepon, internet, BPJS, dan lainnya secara praktis melalui counter bank atau aplikasi mobile banking.",
       image:
         "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&q=80",
       details: {
-        syarat: ["Perusahaan/UMKM", "Rekening bisnis", "API integration"],
+        syarat: [
+          "Memiliki rekening di bank syariah penyedia layanan",
+          "Mengisi dan mendatangani Formulir wakalah bil ujrah",
+          "Menyediakan saldo yang cukup untuk pembayaran dan biaya ujrah",
+          "Menyertakan data lengkap tagihan (ID pelanggan, nomor meter, dsb)",
+        ],
         fitur:
-          "Virtual account unik untuk setiap customer, auto-reconciliation, notifikasi real-time.",
-        tarif: "Setup fee: Rp 500.000. Transaction fee: Rp 2.000/transaksi.",
+          "LAYANAN PEMBAYARAN MULTI TAGIHAN {PLN, PDAM, Telpon dan Internet, BPJS, Zakat, Infaq, dan tagihan lainnya}. Jaringan Luas (dapat dilakukan melalui kantor cabang, ATM syariah, mobile banking syariah, dan mitra agen bank). KONFIRMASI OTOMATIS (bukti pembayaran atau notifikasi langsung setelah transaksi berhasil). TRANSAKSI REAL-TIME (pembayaran diproses secara langsung ke pihak penyedia layanan). Akad Wakalah Bil Ujrah.",
+        tarif:
+          "BIAYA TRANSAKSI/UJRAH Misalnya: Rp 3.000-Rp 5.000 per transaksi tergantung jenis tagihan (disepakati di awal sebagai imbalan jasa perwakilan bank). BIAYA ADMINISTRASI BULANAN Jika Menggunakan layanan autodebet, bisa dikenakan Rp 2.000/bulan",
       },
     },
     {
-      id: "bill-payment",
-      title: "Bill Payment Otomatis",
-      desc: "Bayar tagihan rutin secara otomatis",
+      id: "letter-of-credit",
+      title: "Letter of Credit (L/C) Syariah",
+      desc: "Jasa penjaminan pembayaran untuk transaksi perdagangan",
+      image:
+        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&q=80",
+      details: {
+        syarat: [
+          "Memiliki rekening di Bank Melasa Syariah",
+          "Untuk LC kebutuhan luar negeri, nasabah wajib memiliki tanda pengenal sebagai importir atau Angka Pengenal Impor (API)",
+          "Menyerahkan agunan yang ditentukan Bank Melasa Syariah",
+          "Memiliki legalitas usaha (akta pendirian & perubahan, NIB & NPWP)",
+          "Mempunyai dokumen transaksi (kontrak invoice dsb)",
+        ],
+        fitur:
+          "Akad: wakalah bil ujrah (akad perwakilan dengan imbalan jasa). Pembayaran berbasis dokumen. Fee berupa ujrah transparan. Verifikasi Dokumen (Document Checking). Notifikasi Pembayaran. Jasa penjaminan pembayaran untuk importir (muwakkil) sebagai pembeli, untuk menjamin pembayaran kepada eksportir (beneficiary) dengan syarat penyerahan dokumen pengiriman yang lengkap. Transaksi perdagangan internasional/domestik menjadi aman dan dapat diselesaikan segera setelah dokumen diverifikasi.",
+        tarif:
+          "Biaya Pelayanan Impor dan Ekspor sesuai dengan tarif yang berlaku di bank. L/C hijra advising dan L/C hijra transfer (pengalihan) tersedia.",
+      },
+    },
+    {
+      id: "standing-instruction",
+      title: "Standing Instruction",
+      desc: "Transfer atau pembayaran rutin secara otomatis",
       image:
         "https://images.unsplash.com/photo-1554224154-22dec7ec8818?w=400&q=80",
       details: {
         syarat: [
-          "Nasabah Bank Melasa",
-          "Saldo mencukupi",
-          "Registrasi auto-debit",
+          "Memiliki Rekening Aktif di bank penyedia layanan",
+          "Saldo Mencukupi untuk setiap transaksi yang dijadwalkan",
+          "Mengisi Formulir Standing Instruction berisi: Nama dan nomor rekening sumber, Nama dan nomor rekening tujuan, Nominal transaksi, frekuensi & tanggal pelaksanaan",
+          "Menandatangani Akad/Perjanjian Layanan (untuk bank syariah: sesuai akad wakalah bil ujrah)",
+          "Menyetujui Biaya dan Syarat Penggunaan Layanan",
         ],
         fitur:
-          "Auto-debit untuk listrik, air, internet, telepon, asuransi. Tidak perlu ingat tanggal jatuh tempo.",
-        tarif: "Bebas biaya layanan.",
-      },
-    },
-    {
-      id: "zakat-infaq",
-      title: "Zakat & Infaq Digital",
-      desc: "Salurkan zakat dan infaq dengan mudah",
-      image:
-        "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=400&q=80",
-      details: {
-        syarat: ["Nasabah Bank Melasa", "Mobile Banking/Internet Banking"],
-        fitur:
-          "Bayar zakat fitrah, zakat mal, infaq, sedekah. Tersalur ke lembaga amil zakat terpercaya. Laporan penyaluran transparan.",
-        tarif: "Bebas biaya administrasi.",
+          "Transfer Otomatis Berkala - Bank akan secara otomatis mentransfer dana ke rekening tujuan sesuai jadwal (harian, mingguan, atau bulanan). Pembayaran Tagihan Otomatis - Dapat digunakan untuk membayar tagihan listrik, air, internet, zakat, infaq, atau cicilan pembiayaan secara otomatis. Setoran ke Tabungan/Investasi - Otomatis menyetor dana ke rekening tabungan berjangka, deposito, atau reksa dana syariah. Notifikasi Transaksi - Nasabah akan menerima SMS/email setiap kali transaksi. Perubahan dan Pembatalan Mudah - Nasabah dapat mengubah nominal, tanggal, atau menghentikan layanan kapan pun melalui mobile banking atau datang ke cabang. Akad Wakalah Bil Ujrah.",
+        tarif:
+          "Biaya Pendaftaran Rp 15.000. Biaya Transaksi otomatis (UJRAH) per transaksi Rp 6.500. Biaya Pembatalan Jika dilakukan sebelum jangka waktu Rp 5.000. Pajak/Fee Tambahan Sesuai ketentuan OJK & Bank Indonesia",
       },
     },
     {
@@ -587,10 +769,16 @@ const productData = {
       image:
         "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&q=80",
       details: {
-        syarat: ["Perusahaan", "Kerjasama payroll", "Daftar karyawan"],
+        syarat: [
+          "Kartu identitas diri (KTP) dan NPWP",
+          "Melampirkan dokumen Perjanjian Kerja Sama (PKS)",
+          "Mengisi dan menandatangani formulir pembukaan rekening secara lengkap dan benar",
+          "Memiliki tabungan di bank melasa syariah",
+        ],
         fitur:
-          "Transfer gaji massal, laporan lengkap, integrasi dengan sistem HR, notifikasi ke karyawan.",
-        tarif: "Fee: Rp 2.000/karyawan/bulan.",
+          "Mendapat fasilitas Electronic Statement (e-statement). Kemudahan bertransaksi menggunakan layanan SMS notifikasi dan aplikasi mobile banking M-Syariah. Mendapatkan Pelaporan keuangan: Menyediakan laporan pengeluaran gaji yang jelas dan rapi untuk kebutuhan audit atau pemantauan kesehatan keuangan. Transfer gaji massal, laporan lengkap, integrasi dengan sistem HR, notifikasi ke karyawan. Akad Wadiah Yad Dhamanah.",
+        tarif:
+          "Saldo Awal: Berdasarkan Gaji. Biaya Payroll: 20 - < 25 pegawai: Rp2.000, > 25 pegawai: Gratis. Biaya Cetak Laporan Keuangan: Rp. 10.000-Rp.25.000",
       },
     },
   ],
@@ -788,6 +976,14 @@ function openModal(product) {
     .map((s) => `<li>${s}</li>`)
     .join("");
 
+  const definisiSection = product.definisi
+    ? `<div style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); 
+                   padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; border-left: 4px solid #667eea;">
+                <h3 style="margin-top: 0; color: #667eea; font-size: 1.1rem;">📖 Definisi Produk</h3>
+                <p style="margin-bottom: 0; line-height: 1.8; color: #334155;">${product.definisi}</p>
+            </div>`
+    : "";
+
   modalInner.innerHTML = `
         <div class="modal-detail-grid">
             <img src="${product.image}" 
@@ -795,6 +991,7 @@ function openModal(product) {
                  onerror="this.src='https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=400&q=80'">
             <div>
                 <h2>${product.title}</h2>
+                ${definisiSection}
                 <h3>Syarat Pembukaan/Pengajuan</h3>
                 <ul>${syaratList}</ul>
                 <h3>Fitur & Keunggulan</h3>
