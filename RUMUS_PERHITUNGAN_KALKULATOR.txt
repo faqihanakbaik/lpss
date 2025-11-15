@@ -1,0 +1,274 @@
+═══════════════════════════════════════════════════════════════
+  RUMUS PERHITUNGAN KALKULATOR BANK MELASA SYARIAH
+  Sesuai Prinsip Perbankan Syariah
+═══════════════════════════════════════════════════════════════
+
+📊 1. KALKULATOR FUNDING (BAGI HASIL SIMPANAN)
+
+AKAD: Mudharabah Muthlaqah
+PRODUK: Tabungan, Deposito, Giro
+
+═══════════════════════════════════════════════════════════════
+
+INPUT YANG DIPERLUKAN:
+✅ Nominal Simpanan (Rp)
+✅ Jangka Waktu (bulan)
+✅ Nisbah Bagi Hasil (% untuk nasabah)
+✅ Equivalent Rate (% per tahun)
+
+═══════════════════════════════════════════════════════════════
+
+RUMUS PERHITUNGAN:
+
+Step 1: Hitung Pendapatan Bank per Tahun
+        Pendapatan Bank = Nominal Simpanan × Equivalent Rate
+
+Step 2: Hitung Porsi Nasabah per Tahun
+        Porsi Nasabah = Pendapatan Bank × Nisbah Nasabah
+
+Step 3: Hitung Bagi Hasil per Bulan
+        Bagi Hasil per Bulan = Porsi Nasabah ÷ 12
+
+Step 4: Hitung Total Bagi Hasil
+        Total Bagi Hasil = Bagi Hasil per Bulan × Jangka Waktu
+
+Step 5: Hitung Total Akhir
+        Total Akhir = Nominal Simpanan + Total Bagi Hasil
+
+═══════════════════════════════════════════════════════════════
+
+CONTOH PERHITUNGAN:
+
+INPUT:
+- Nominal Simpanan: Rp 10.000.000
+- Jangka Waktu: 12 bulan
+- Nisbah Nasabah: 40%
+- Equivalent Rate: 5% per tahun
+
+PERHITUNGAN:
+1. Pendapatan Bank = Rp 10.000.000 × 5% = Rp 500.000
+2. Porsi Nasabah = Rp 500.000 × 40% = Rp 200.000
+3. Bagi Hasil per Bulan = Rp 200.000 ÷ 12 = Rp 16.667
+4. Total Bagi Hasil = Rp 16.667 × 12 = Rp 200.000
+5. Total Akhir = Rp 10.000.000 + Rp 200.000 = Rp 10.200.000
+
+OUTPUT:
+✅ Bagi Hasil per Bulan: Rp 16.667
+✅ Total Bagi Hasil: Rp 200.000
+✅ Total Akhir: Rp 10.200.000
+
+═══════════════════════════════════════════════════════════════
+
+💰 2. KALKULATOR FINANCING (PEMBIAYAAN)
+
+AKAD: Murabahah (Jual Beli dengan Margin)
+PRODUK: KPR, Kendaraan, Multiguna, Modal Kerja
+
+═══════════════════════════════════════════════════════════════
+
+INPUT YANG DIPERLUKAN:
+✅ Harga Total / OTR (Rp)
+✅ Jangka Waktu (bulan)
+✅ Uang Muka / DP (%)
+✅ Margin (% per tahun)
+
+═══════════════════════════════════════════════════════════════
+
+RUMUS PERHITUNGAN:
+
+Step 1: Hitung Uang Muka (DP)
+        Uang Muka = Harga Total × DP%
+
+Step 2: Hitung Jumlah Pembiayaan
+        Jumlah Pembiayaan = Harga Total - Uang Muka
+
+Step 3: Hitung Total Margin (Flat)
+        Total Margin = Jumlah Pembiayaan × Margin × (Jangka Waktu ÷ 12)
+
+Step 4: Hitung Total Pembiayaan
+        Total Pembiayaan = Jumlah Pembiayaan + Total Margin
+
+Step 5: Hitung Angsuran Bulanan
+        Angsuran Bulanan = Total Pembiayaan ÷ Jangka Waktu
+
+═══════════════════════════════════════════════════════════════
+
+CONTOH PERHITUNGAN:
+
+INPUT:
+- Harga Total: Rp 50.000.000
+- DP: 20%
+- Jangka Waktu: 36 bulan
+- Margin: 7.5% per tahun
+
+PERHITUNGAN:
+1. Uang Muka = Rp 50.000.000 × 20% = Rp 10.000.000
+2. Jumlah Pembiayaan = Rp 50.000.000 - Rp 10.000.000 = Rp 40.000.000
+3. Total Margin = Rp 40.000.000 × 7.5% × (36 ÷ 12) = Rp 9.000.000
+4. Total Pembiayaan = Rp 40.000.000 + Rp 9.000.000 = Rp 49.000.000
+5. Angsuran Bulanan = Rp 49.000.000 ÷ 36 = Rp 1.361.111
+
+OUTPUT:
+✅ Angsuran Bulanan: Rp 1.361.111
+✅ Uang Muka: Rp 10.000.000
+✅ Jumlah Pembiayaan: Rp 40.000.000
+✅ Total Margin: Rp 9.000.000
+✅ Total Pembiayaan: Rp 49.000.000
+
+CATATAN PENTING:
+💡 Margin bersifat FLAT (tetap) sesuai prinsip Murabahah
+💡 Tidak ada bunga berbunga seperti di bank konvensional
+💡 Total yang harus dibayar sudah pasti dari awal (transparan)
+
+═══════════════════════════════════════════════════════════════
+
+💳 3. KALKULATOR FEE BASED (BIAYA LAYANAN)
+
+AKAD: Wakalah Bil Ujrah (Perwakilan dengan Imbalan)
+PRODUK: Transfer, SMS Banking, ATM, Administrasi, Valas
+
+═══════════════════════════════════════════════════════════════
+
+INPUT YANG DIPERLUKAN:
+✅ Jenis Layanan
+✅ Frekuensi Transaksi per Bulan
+✅ Nominal Transaksi (untuk Valas)
+
+═══════════════════════════════════════════════════════════════
+
+TARIF LAYANAN:
+
+1. Transfer Antar Bank: Rp 6.500 per transaksi
+2. SMS Banking: Rp 500 per transaksi
+3. Kartu ATM: Rp 2.500 per transaksi
+4. Administrasi Bulanan: Rp 15.000 per bulan
+5. Transaksi Valas: 0.2% dari nominal transaksi
+
+═══════════════════════════════════════════════════════════════
+
+RUMUS PERHITUNGAN:
+
+Step 1: Tentukan Biaya per Transaksi
+        Biaya = Tarif sesuai jenis layanan
+
+Step 2: Hitung Total Biaya per Bulan
+        Total Biaya Bulan = Biaya per Transaksi × Frekuensi
+
+Step 3: Hitung Total Biaya per Tahun
+        Total Biaya Tahun = Total Biaya Bulan × 12
+
+═══════════════════════════════════════════════════════════════
+
+CONTOH PERHITUNGAN 1 (Transfer):
+
+INPUT:
+- Jenis Layanan: Transfer Antar Bank
+- Frekuensi: 10 kali per bulan
+
+PERHITUNGAN:
+1. Biaya per Transaksi = Rp 6.500
+2. Total Biaya per Bulan = Rp 6.500 × 10 = Rp 65.000
+3. Total Biaya per Tahun = Rp 65.000 × 12 = Rp 780.000
+
+OUTPUT:
+✅ Total Biaya per Bulan: Rp 65.000
+✅ Total Biaya per Tahun: Rp 780.000
+
+═══════════════════════════════════════════════════════════════
+
+CONTOH PERHITUNGAN 2 (Valas):
+
+INPUT:
+- Jenis Layanan: Transaksi Valas
+- Frekuensi: 5 kali per bulan
+- Nominal per Transaksi: Rp 10.000.000
+
+PERHITUNGAN:
+1. Biaya per Transaksi = Rp 10.000.000 × 0.2% = Rp 20.000
+2. Total Biaya per Bulan = Rp 20.000 × 5 = Rp 100.000
+3. Total Biaya per Tahun = Rp 100.000 × 12 = Rp 1.200.000
+
+OUTPUT:
+✅ Total Biaya per Bulan: Rp 100.000
+✅ Total Biaya per Tahun: Rp 1.200.000
+
+═══════════════════════════════════════════════════════════════
+
+🔍 CARA MELIHAT PERHITUNGAN DETAIL:
+
+1. Buka website di browser
+2. Tekan F12 untuk buka Developer Tools
+3. Klik tab "Console"
+4. Ubah nilai di kalkulator
+5. Lihat perhitungan detail di console
+
+Console akan menampilkan:
+- Semua input yang digunakan
+- Setiap step perhitungan
+- Hasil akhir dengan format Rupiah
+
+═══════════════════════════════════════════════════════════════
+
+📱 FITUR TAMBAHAN DI UI:
+
+✅ Info Box Rumus
+   - Setiap kalkulator menampilkan rumus perhitungan
+   - Warna biru dengan border kiri
+   - Font yang mudah dibaca
+   - Penjelasan step by step
+
+✅ Console Logging
+   - Perhitungan detail di browser console
+   - Format yang rapi dan terstruktur
+   - Memudahkan debugging dan verifikasi
+
+✅ Auto Calculate
+   - Hasil langsung update saat input berubah
+   - Tidak perlu klik tombol hitung
+   - Real-time calculation
+
+✅ Animasi GSAP
+   - Angka naik smooth dengan animasi
+   - Duration 1 detik
+   - Easing: power2.out
+
+═══════════════════════════════════════════════════════════════
+
+💡 TIPS PENGGUNAAN:
+
+1. FUNDING:
+   - Gunakan untuk simulasi tabungan/deposito
+   - Nisbah 40% adalah standar umum
+   - Equivalent rate sesuai kondisi pasar
+
+2. FINANCING:
+   - DP minimal 10-20% untuk pembiayaan
+   - Margin 7-12% adalah range normal
+   - Jangka waktu sesuaikan dengan kemampuan
+
+3. FEE BASED:
+   - Hitung biaya transaksi bulanan
+   - Bandingkan dengan bank lain
+   - Optimalkan frekuensi transaksi
+
+═══════════════════════════════════════════════════════════════
+
+✅ VALIDASI PERHITUNGAN:
+
+Semua rumus sudah disesuaikan dengan:
+✅ Prinsip Syariah (Mudharabah, Murabahah, Wakalah)
+✅ Praktik Perbankan Syariah Indonesia
+✅ Standar OJK dan DSN-MUI
+✅ Transparansi dan keadilan
+
+═══════════════════════════════════════════════════════════════
+
+🎉 STATUS: LENGKAP & AKURAT!
+
+Semua kalkulator sudah dilengkapi dengan:
+- Rumus perhitungan yang jelas
+- Penjelasan step by step
+- Console logging untuk verifikasi
+- UI yang informatif dan user-friendly
+
+═══════════════════════════════════════════════════════════════

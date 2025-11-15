@@ -1,0 +1,229 @@
+═══════════════════════════════════════════════════════════════
+  FITUR BARU: KALKULATOR DINAMIS BERDASARKAN KATEGORI PRODUK
+  Tanggal: 15 November 2025
+═══════════════════════════════════════════════════════════════
+
+🎯 KONSEP:
+
+Kalkulator di section Simulasi sekarang berubah otomatis sesuai dengan
+kategori produk yang dipilih user:
+
+1. Klik tab "Funding" → Kalkulator Bagi Hasil Simpanan
+2. Klik tab "Financing" → Kalkulator Angsuran Pembiayaan  
+3. Klik tab "Fee Based" → Kalkulator Biaya Layanan
+
+═══════════════════════════════════════════════════════════════
+
+💰 1. KALKULATOR FUNDING (BAGI HASIL SIMPANAN)
+
+UNTUK: Tabungan, Deposito, Giro
+
+INPUT:
+- Nominal Simpanan (Rp 100.000 - unlimited)
+- Jangka Waktu (1-60 bulan)
+- Nisbah Bagi Hasil (30%-60% untuk nasabah)
+- Equivalent Rate (2%-8% per tahun)
+
+OUTPUT:
+- Bagi Hasil per Bulan
+- Nominal Simpanan
+- Total Bagi Hasil (selama jangka waktu)
+- Total Akhir (simpanan + bagi hasil)
+
+RUMUS:
+Bagi Hasil per Tahun = Nominal × Equivalent Rate
+Bagi Hasil Nasabah = Bagi Hasil per Tahun × Nisbah
+Bagi Hasil per Bulan = Bagi Hasil Nasabah / 12
+Total Bagi Hasil = Bagi Hasil per Bulan × Jangka Waktu
+Total Akhir = Nominal + Total Bagi Hasil
+
+CONTOH:
+- Nominal: Rp 10.000.000
+- Jangka Waktu: 12 bulan
+- Nisbah: 40% (nasabah)
+- Equivalent Rate: 5% per tahun
+
+Hasil:
+- Bagi Hasil per Tahun: Rp 500.000
+- Bagi Hasil Nasabah: Rp 200.000 (40%)
+- Bagi Hasil per Bulan: Rp 16.667
+- Total Bagi Hasil: Rp 200.000
+- Total Akhir: Rp 10.200.000
+
+═══════════════════════════════════════════════════════════════
+
+🏠 2. KALKULATOR FINANCING (PEMBIAYAAN)
+
+UNTUK: KPR, Kendaraan, Multiguna, Modal Kerja
+
+INPUT:
+- Harga Total / OTR (Rp 1.000.000 - unlimited)
+- Jangka Waktu (6-180 bulan)
+- Uang Muka / DP (0%-50%)
+- Nisbah/Margin (4%-15% per tahun)
+
+OUTPUT:
+- Angsuran Bulanan
+- Harga Total
+- Uang Muka (DP)
+- Jumlah Pembiayaan (setelah DP)
+- Total Margin
+- Total Pembiayaan (yang harus dibayar)
+
+RUMUS:
+Uang Muka = Harga Total × DP%
+Jumlah Pembiayaan = Harga Total - Uang Muka
+Total Margin = Jumlah Pembiayaan × Margin × (Jangka Waktu / 12)
+Total Pembiayaan = Jumlah Pembiayaan + Total Margin
+Angsuran Bulanan = Total Pembiayaan / Jangka Waktu
+
+CONTOH:
+- Harga Total: Rp 50.000.000
+- DP: 20% = Rp 10.000.000
+- Jumlah Pembiayaan: Rp 40.000.000
+- Jangka Waktu: 36 bulan
+- Margin: 7.5% per tahun
+
+Hasil:
+- Total Margin: Rp 9.000.000
+- Total Pembiayaan: Rp 49.000.000
+- Angsuran Bulanan: Rp 1.361.111
+
+═══════════════════════════════════════════════════════════════
+
+💳 3. KALKULATOR FEE BASED (BIAYA LAYANAN)
+
+UNTUK: Transfer, SMS Banking, ATM, Administrasi, Valas
+
+INPUT:
+- Jenis Layanan (dropdown):
+  • Transfer Antar Bank
+  • SMS Banking
+  • Kartu ATM
+  • Administrasi Bulanan
+  • Transaksi Valas
+- Frekuensi Transaksi per Bulan (1-100 kali)
+- Nominal per Transaksi (untuk Valas)
+
+OUTPUT:
+- Total Biaya per Bulan
+- Jenis Layanan
+- Biaya per Transaksi
+- Frekuensi
+- Total per Tahun
+
+TARIF:
+- Transfer Antar Bank: Rp 6.500
+- SMS Banking: Rp 500
+- Kartu ATM: Rp 2.500
+- Administrasi Bulanan: Rp 15.000
+- Transaksi Valas: 0.2% dari nominal
+
+RUMUS:
+Biaya per Transaksi = Tarif sesuai jenis
+Total Biaya Bulan = Biaya per Transaksi × Frekuensi
+Total Biaya Tahun = Total Biaya Bulan × 12
+
+CONTOH:
+- Jenis: Transfer Antar Bank
+- Frekuensi: 10 kali per bulan
+- Biaya per Transaksi: Rp 6.500
+
+Hasil:
+- Total Biaya per Bulan: Rp 65.000
+- Total per Tahun: Rp 780.000
+
+═══════════════════════════════════════════════════════════════
+
+🔧 IMPLEMENTASI TEKNIS:
+
+FILE BARU:
+✅ calculator-dynamic.js
+   - calculateBagiHasil() untuk Funding
+   - calculateBiayaLayanan() untuk Fee Based
+   - Menggunakan formatRupiah() dari script.js
+
+FILE DIMODIFIKASI:
+✅ index.html
+   - Tambah ID pada title dan desc simulasi
+   - Tambah ID pada panel simulasi
+   - Load calculator-dynamic.js
+
+✅ script.js
+   - Tambah variabel currentCalculatorType
+   - Tambah fungsi renderCalculator(category)
+   - Update initSimulator() untuk 3 jenis
+   - Tambah initFundingCalculator()
+   - Tambah initFinancingCalculator()
+   - Tambah initFeeBasedCalculator()
+   - Event listener pada tab untuk ganti kalkulator
+
+FLOW:
+1. User klik tab produk (Funding/Financing/Fee Based)
+2. Event listener menangkap klik
+3. Panggil renderCalculator(category)
+4. renderCalculator() mengganti HTML panel
+5. Panggil initSimulator() untuk setup event
+6. initSimulator() deteksi tipe dan panggil fungsi yang sesuai
+7. Kalkulator siap digunakan dengan auto-calculate
+
+═══════════════════════════════════════════════════════════════
+
+✨ FITUR UNGGULAN:
+
+✅ Dinamis - Kalkulator berubah sesuai kategori produk
+✅ Auto-calculate - Hasil langsung update saat input berubah
+✅ Animasi GSAP - Angka naik smooth dengan animasi
+✅ Responsive - Semua kalkulator responsive di mobile
+✅ User-friendly - Interface intuitif dan mudah dipahami
+✅ Akurat - Rumus sesuai dengan praktik perbankan syariah
+✅ Informatif - Menampilkan breakdown lengkap perhitungan
+
+═══════════════════════════════════════════════════════════════
+
+📱 RESPONSIVE DESIGN:
+
+Desktop:
+- Panel 2 kolom (form | result)
+- Detail result grid 2 kolom
+- Semua input terlihat jelas
+
+Mobile:
+- Panel 1 kolom (form di atas, result di bawah)
+- Detail result grid 1 kolom
+- Touch-friendly input controls
+
+═══════════════════════════════════════════════════════════════
+
+🎨 UI/UX IMPROVEMENTS:
+
+1. Title & Description berubah sesuai kategori
+2. Input fields sesuai dengan jenis perhitungan
+3. Result label sesuai konteks (Angsuran/Bagi Hasil/Biaya)
+4. Color scheme konsisten dengan design system
+5. Smooth transition saat ganti kalkulator
+6. Loading state dengan animasi GSAP
+
+═══════════════════════════════════════════════════════════════
+
+🎉 MANFAAT UNTUK USER:
+
+✅ Tidak perlu scroll ke section berbeda
+✅ Langsung lihat perhitungan sesuai produk yang dilihat
+✅ Lebih mudah membandingkan produk
+✅ Pengalaman yang lebih seamless
+✅ Meningkatkan engagement user
+✅ Membantu decision making
+
+═══════════════════════════════════════════════════════════════
+
+🚀 STATUS: SELESAI & SIAP DIGUNAKAN!
+
+Kalkulator dinamis sekarang berfungsi sempurna dengan 3 mode:
+- Funding: Hitung bagi hasil simpanan
+- Financing: Hitung angsuran pembiayaan (dengan DP)
+- Fee Based: Hitung biaya layanan
+
+User tinggal klik tab produk dan kalkulator otomatis berubah!
+
+═══════════════════════════════════════════════════════════════

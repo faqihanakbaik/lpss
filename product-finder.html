@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temukan Produk Anda - Bank Melasa Syariah</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .finder-container {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 2rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .finder-card {
+        background: white;
+        border-radius: 24px;
+        padding: 3rem;
+        max-width: 700px;
+        width: 100%;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      .finder-header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .finder-header h1 {
+        font-size: 2rem;
+        color: #1a202c;
+        margin-bottom: 0.5rem;
+      }
+
+      .finder-header p {
+        color: #718096;
+        font-size: 1rem;
+      }
+
+      .progress-bar {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        position: relative;
+      }
+
+      .progress-bar::before {
+        content: "";
+        position: absolute;
+        top: 20px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #e2e8f0;
+        z-index: 0;
+      }
+
+      .progress-fill {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        height: 2px;
+        background: #667eea;
+        transition: width 0.3s ease;
+        z-index: 1;
+      }
+
+      .progress-step {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: white;
+        border: 2px solid #e2e8f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        color: #cbd5e0;
+        position: relative;
+        z-index: 2;
+        transition: all 0.3s ease;
+      }
+
+      .progress-step.active {
+        border-color: #667eea;
+        color: #667eea;
+        background: white;
+      }
+
+      .progress-step.completed {
+        background: #667eea;
+        border-color: #667eea;
+        color: white;
+      }
+
+      .question-container {
+        display: none;
+      }
+
+      .question-container.active {
+        display: block;
+        animation: fadeIn 0.3s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .question-title {
+        font-size: 1.5rem;
+        color: #1a202c;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+      }
+
+      .options-grid {
+        display: grid;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .option-card {
+        padding: 1.5rem;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        background: white;
+      }
+
+      .option-card:hover {
+        border-color: #667eea;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+      }
+
+      .option-card.selected {
+        border-color: #667eea;
+        background: #f7fafc;
+      }
+
+      .option-card h4 {
+        font-size: 1.1rem;
+        color: #1a202c;
+        margin-bottom: 0.5rem;
+      }
+
+      .option-card p {
+        color: #718096;
+        font-size: 0.9rem;
+        margin: 0;
+      }
+
+      .button-group {
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+      }
+
+      .btn-finder {
+        padding: 0.875rem 2rem;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border: none;
+        font-size: 1rem;
+      }
+
+      .btn-back {
+        background: #e2e8f0;
+        color: #4a5568;
+      }
+
+      .btn-back:hover {
+        background: #cbd5e0;
+      }
+
+      .btn-next {
+        background: #667eea;
+        color: white;
+        flex: 1;
+      }
+
+      .btn-next:hover {
+        background: #5568d3;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+      }
+
+      .btn-next:disabled {
+        background: #cbd5e0;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .result-container {
+        display: none;
+        text-align: center;
+      }
+
+      .result-container.active {
+        display: block;
+        animation: fadeIn 0.5s ease;
+      }
+
+      .result-icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+      }
+
+      .result-title {
+        font-size: 1.75rem;
+        color: #1a202c;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .result-products {
+        display: grid;
+        gap: 1rem;
+        margin: 2rem 0;
+        text-align: left;
+      }
+
+      .result-product {
+        padding: 1.5rem;
+        background: #f7fafc;
+        border-radius: 12px;
+        border-left: 4px solid #667eea;
+      }
+
+      .result-product h4 {
+        color: #1a202c;
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+      }
+
+      .result-product p {
+        color: #718096;
+        margin: 0;
+        font-size: 0.95rem;
+      }
+
+      .result-actions {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .result-actions .btn-finder {
+        flex: 1;
+      }
+
+      .back-home {
+        display: inline-block;
+        margin-top: 1rem;
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .back-home:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .finder-card {
+          padding: 2rem 1.5rem;
+        }
+
+        .finder-header h1 {
+          font-size: 1.5rem;
+        }
+
+        .button-group {
+          flex-direction: column;
+        }
+
+        .result-actions {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="finder-container">
+      <div class="finder-card">
+        <div class="finder-header">
+          <h1>🎯 Temukan Produk yang Tepat untuk Anda</h1>
+          <p>Jawab beberapa pertanyaan untuk rekomendasi produk terbaik</p>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+          <div class="progress-step active" data-step="1">1</div>
+          <div class="progress-step" data-step="2">2</div>
+          <div class="progress-step" data-step="3">3</div>
+        </div>
+
+        <!-- Question 1 -->
+        <div class="question-container active" data-question="1">
+          <h2 class="question-title">Apa tujuan keuangan Anda?</h2>
+          <div class="options-grid">
+            <div class="option-card" data-value="saving">
+              <h4>💰 Menabung</h4>
+              <p>Saya ingin menyimpan uang dengan aman</p>
+            </div>
+            <div class="option-card" data-value="investment">
+              <h4>📈 Investasi</h4>
+              <p>Saya ingin mengembangkan dana dengan bagi hasil</p>
+            </div>
+            <div class="option-card" data-value="financing">
+              <h4>🏠 Pembiayaan</h4>
+              <p>Saya butuh dana untuk rumah, kendaraan, atau usaha</p>
+            </div>
+            <div class="option-card" data-value="transaction">
+              <h4>💳 Transaksi</h4>
+              <p>Saya butuh rekening untuk transaksi sehari-hari</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question-container" data-question="2">
+          <h2 class="question-title">
+            Berapa lama Anda berencana menyimpan dana?
+          </h2>
+          <div class="options-grid">
+            <div class="option-card" data-value="short">
+              <h4>⚡ Jangka Pendek</h4>
+              <p>Kurang dari 6 bulan - butuh akses cepat</p>
+            </div>
+            <div class="option-card" data-value="medium">
+              <h4>📅 Jangka Menengah</h4>
+              <p>6 bulan - 2 tahun</p>
+            </div>
+            <div class="option-card" data-value="long">
+              <h4>🎯 Jangka Panjang</h4>
+              <p>Lebih dari 2 tahun</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question-container" data-question="3">
+          <h2 class="question-title">
+            Berapa dana yang akan Anda simpan/butuhkan?
+          </h2>
+          <div class="options-grid">
+            <div class="option-card" data-value="small">
+              <h4>💵 Di bawah Rp 10 juta</h4>
+              <p>Dana kecil untuk kebutuhan sehari-hari</p>
+            </div>
+            <div class="option-card" data-value="medium">
+              <h4>💰 Rp 10 - 100 juta</h4>
+              <p>Dana menengah untuk tabungan atau investasi</p>
+            </div>
+            <div class="option-card" data-value="large">
+              <h4>💎 Di atas Rp 100 juta</h4>
+              <p>Dana besar untuk investasi atau pembiayaan</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Result -->
+        <div class="result-container" id="resultContainer">
+          <div class="result-icon">🎉</div>
+          <h2 class="result-title">Produk yang Cocok untuk Anda!</h2>
+          <div class="result-products" id="resultProducts"></div>
+          <div class="result-actions">
+            <button class="btn-finder btn-back" onclick="restartFinder()">
+              🔄 Coba Lagi
+            </button>
+            <a href="index.html#produk" class="btn-finder btn-next">
+              📦 Lihat Semua Produk
+            </a>
+          </div>
+          <a href="index.html" class="back-home">← Kembali ke Beranda</a>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="button-group" id="navigationButtons">
+          <button
+            class="btn-finder btn-back"
+            id="btnBack"
+            style="display: none"
+          >
+            ← Kembali
+          </button>
+          <button class="btn-finder btn-next" id="btnNext" disabled>
+            Lanjut →
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let currentQuestion = 1;
+      const totalQuestions = 3;
+      const answers = {};
+
+      const productRecommendations = {
+        "saving-short-small": [
+          {
+            name: "Tabunganku iB",
+            desc: "Tabungan simpel tanpa biaya admin, setoran awal hanya Rp 100.000",
+          },
+          {
+            name: "Tabungan Si-Pintar iB",
+            desc: "Khusus pelajar, setoran awal hanya Rp 5.000",
+          },
+        ],
+        "saving-medium-small": [
+          {
+            name: "Tabungan Tijarah iB",
+            desc: "Tabungan dengan bagi hasil kompetitif untuk kebutuhan bisnis",
+          },
+          {
+            name: "Tabungan Hijrah Baitullah iB",
+            desc: "Tabungan khusus persiapan ibadah umroh/haji",
+          },
+        ],
+        "saving-long-medium": [
+          {
+            name: "Deposito Lock iB",
+            desc: "Investasi jangka panjang dengan bagi hasil menarik, mulai dari Rp 5 juta",
+          },
+          {
+            name: "Tabungan Tijarah iB",
+            desc: "Tabungan bisnis dengan fitur lengkap",
+          },
+        ],
+        "investment-medium-medium": [
+          {
+            name: "Deposito Lock iB",
+            desc: "Deposito berjangka dengan nisbah kompetitif",
+          },
+          {
+            name: "Tabungan Tijarah iB",
+            desc: "Tabungan dengan bagi hasil untuk pengembangan dana",
+          },
+        ],
+        "investment-long-large": [
+          {
+            name: "Deposito Lock iB",
+            desc: "Investasi jangka panjang dengan return optimal",
+          },
+          {
+            name: "Tabungan Tijarah iB",
+            desc: "Tabungan bisnis untuk dana besar",
+          },
+        ],
+        "financing-medium-medium": [
+          {
+            name: "Pembiayaan Multiguna iB",
+            desc: "Pembiayaan fleksibel untuk berbagai kebutuhan",
+          },
+          {
+            name: "Pembiayaan Kendaraan iB",
+            desc: "Pembiayaan khusus kendaraan bermotor",
+          },
+        ],
+        "financing-long-large": [
+          {
+            name: "Pembiayaan Kepemilikan Rumah iB",
+            desc: "KPR Syariah dengan margin kompetitif",
+          },
+          {
+            name: "Pembiayaan Modal Kerja iB",
+            desc: "Pembiayaan untuk pengembangan usaha",
+          },
+        ],
+        "transaction-short-small": [
+          {
+            name: "Tabunganku iB",
+            desc: "Rekening praktis untuk transaksi harian",
+          },
+          {
+            name: "Tabungan Tijarah iB",
+            desc: "Rekening bisnis dengan fitur lengkap",
+          },
+        ],
+      };
+
+      // Initialize
+      document.querySelectorAll(".option-card").forEach((card) => {
+        card.addEventListener("click", function () {
+          const container = this.closest(".question-container");
+          container
+            .querySelectorAll(".option-card")
+            .forEach((c) => c.classList.remove("selected"));
+          this.classList.add("selected");
+
+          const question = container.dataset.question;
+          answers[`q${question}`] = this.dataset.value;
+
+          document.getElementById("btnNext").disabled = false;
+        });
+      });
+
+      document.getElementById("btnBack").addEventListener("click", () => {
+        if (currentQuestion > 1) {
+          currentQuestion--;
+          updateUI();
+        }
+      });
+
+      document.getElementById("btnNext").addEventListener("click", () => {
+        if (currentQuestion < totalQuestions) {
+          currentQuestion++;
+          updateUI();
+        } else {
+          showResults();
+        }
+      });
+
+      function updateUI() {
+        // Update questions
+        document.querySelectorAll(".question-container").forEach((q) => {
+          q.classList.remove("active");
+        });
+        document
+          .querySelector(`[data-question="${currentQuestion}"]`)
+          .classList.add("active");
+
+        // Update progress
+        document.querySelectorAll(".progress-step").forEach((step, index) => {
+          step.classList.remove("active", "completed");
+          if (index + 1 < currentQuestion) {
+            step.classList.add("completed");
+          } else if (index + 1 === currentQuestion) {
+            step.classList.add("active");
+          }
+        });
+
+        const progress = ((currentQuestion - 1) / (totalQuestions - 1)) * 100;
+        document.getElementById("progressFill").style.width = progress + "%";
+
+        // Update buttons
+        document.getElementById("btnBack").style.display =
+          currentQuestion > 1 ? "block" : "none";
+        document.getElementById("btnNext").textContent =
+          currentQuestion === totalQuestions ? "Lihat Hasil 🎯" : "Lanjut →";
+
+        // Check if current question is answered
+        const isAnswered = answers[`q${currentQuestion}`];
+        document.getElementById("btnNext").disabled = !isAnswered;
+      }
+
+      function showResults() {
+        // Hide questions and navigation
+        document
+          .querySelectorAll(".question-container")
+          .forEach((q) => q.classList.remove("active"));
+        document.getElementById("navigationButtons").style.display = "none";
+        document.querySelector(".progress-bar").style.display = "none";
+
+        // Generate recommendation key
+        const key = `${answers.q1}-${answers.q2}-${answers.q3}`;
+        let products = productRecommendations[key];
+
+        // Fallback recommendations
+        if (!products) {
+          if (answers.q1 === "saving") {
+            products = [
+              {
+                name: "Tabungan Tijarah iB",
+                desc: "Tabungan serbaguna dengan bagi hasil kompetitif",
+              },
+              {
+                name: "Deposito Lock iB",
+                desc: "Investasi aman dengan return menarik",
+              },
+            ];
+          } else if (answers.q1 === "financing") {
+            products = [
+              {
+                name: "Pembiayaan Multiguna iB",
+                desc: "Solusi pembiayaan fleksibel untuk berbagai kebutuhan",
+              },
+              {
+                name: "Pembiayaan Modal Kerja iB",
+                desc: "Pembiayaan untuk pengembangan usaha",
+              },
+            ];
+          } else {
+            products = [
+              {
+                name: "Tabungan Tijarah iB",
+                desc: "Tabungan dengan fitur lengkap",
+              },
+              {
+                name: "Tabunganku iB",
+                desc: "Tabungan praktis tanpa biaya admin",
+              },
+            ];
+          }
+        }
+
+        // Display products
+        const productsHTML = products
+          .map(
+            (p) => `
+          <div class="result-product">
+            <h4>${p.name}</h4>
+            <p>${p.desc}</p>
+          </div>
+        `
+          )
+          .join("");
+
+        document.getElementById("resultProducts").innerHTML = productsHTML;
+        document.getElementById("resultContainer").classList.add("active");
+      }
+
+      function restartFinder() {
+        currentQuestion = 1;
+        Object.keys(answers).forEach((key) => delete answers[key]);
+
+        document.getElementById("resultContainer").classList.remove("active");
+        document.getElementById("navigationButtons").style.display = "flex";
+        document.querySelector(".progress-bar").style.display = "flex";
+
+        document.querySelectorAll(".option-card").forEach((card) => {
+          card.classList.remove("selected");
+        });
+
+        updateUI();
+      }
+    </script>
+  </body>
+</html>

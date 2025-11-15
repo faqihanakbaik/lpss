@@ -1,0 +1,188 @@
+/* ═══════════════════════════════════════════════════════════════
+   FIX WHATSAPP FLOATING BUTTON - Kembalikan ke posisi asli
+   ═══════════════════════════════════════════════════════════════ */
+
+.whatsapp-float {
+  position: fixed !important;
+  bottom: 2rem !important;
+  right: 2rem !important;
+  left: auto !important;
+  top: auto !important;
+  width: 60px !important;
+  height: 60px !important;
+  background: #25d366 !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4) !important;
+  z-index: 9999 !important;
+  transition: all 0.3s ease !important;
+  animation: pulse-wa 2s infinite !important;
+  text-decoration: none !important;
+  color: white !important;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6) !important;
+  background: #20ba5a !important;
+}
+
+.whatsapp-float svg {
+  width: 32px !important;
+  height: 32px !important;
+  color: white !important;
+  fill: white !important;
+}
+
+@keyframes pulse-wa {
+  0%,
+  100% {
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.7),
+      0 0 0 10px rgba(37, 211, 102, 0.1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 1.5rem !important;
+    right: 1.5rem !important;
+    width: 56px !important;
+    height: 56px !important;
+  }
+
+  .whatsapp-float svg {
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FIX VALUE CARDS - Munculkan semua text dan penjelasan
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Pastikan value cards terlihat sempurna */
+.value-card {
+  background: white !important;
+  padding: 3rem 2rem !important;
+  border-radius: 28px !important;
+  border: 2px solid rgba(16, 185, 129, 0.2) !important;
+  box-shadow: 0 10px 40px rgba(16, 185, 129, 0.15) !important;
+  position: relative !important;
+  overflow: visible !important;
+  min-height: 300px !important;
+}
+
+/* Icon di atas */
+.value-icon {
+  width: 100px !important;
+  height: 100px !important;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto 1.5rem !important;
+  font-size: 3rem !important;
+  color: white !important;
+  box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4) !important;
+}
+
+/* Judul card */
+.value-card h4 {
+  color: #1e293b !important;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  margin: 1rem 0 0.75rem !important;
+  text-align: center !important;
+  line-height: 1.4 !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Deskripsi card */
+.value-card p {
+  color: #64748b !important;
+  font-size: 1.05rem !important;
+  line-height: 1.7 !important;
+  text-align: center !important;
+  margin: 0 !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Pastikan semua child elements terlihat */
+.value-card * {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FIX TRUST BADGES - Munculkan semua text
+   ═══════════════════════════════════════════════════════════════ */
+
+.trust-badge {
+  background: white !important;
+  padding: 2rem 1.5rem !important;
+  border-radius: 20px !important;
+  border: 2px solid rgba(16, 185, 129, 0.2) !important;
+  text-align: center !important;
+}
+
+.trust-icon {
+  font-size: 3rem !important;
+  margin-bottom: 1rem !important;
+  display: block !important;
+}
+
+.trust-badge h4 {
+  color: #1e293b !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.5rem !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.trust-badge p {
+  color: #64748b !important;
+  font-size: 0.95rem !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FIX SECTION BACKGROUNDS - Pastikan tidak menutupi
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Pastikan section tidak punya background yang menutupi */
+section {
+  position: relative !important;
+}
+
+section::before,
+section::after {
+  z-index: 0 !important;
+  opacity: 0.1 !important;
+}
+
+/* Content harus di atas background */
+.container {
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+.values-grid,
+.trust-badges {
+  position: relative !important;
+  z-index: 10 !important;
+}

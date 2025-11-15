@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tentang Kami - Bank Melasa Syariah</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="theme-lps.css" />
+    <link rel="stylesheet" href="green-theme.css" />
+    <link rel="stylesheet" href="fix-animations.css" />
+    <link rel="stylesheet" href="value-animations.css" />
+    <link rel="stylesheet" href="whatsapp-fix.css" />
+    <link rel="stylesheet" href="team-futsal-layout.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 50%, #e0f2fe 100%);
+        overflow-x: hidden;
+      }
+
+      /* Hero Section with Animated Gradient */
+      .about-hero {
+        background: linear-gradient(
+          135deg,
+          #667eea 0%,
+          #764ba2 50%,
+          #f093fb 100%
+        );
+        background-size: 200% 200%;
+        animation: gradientFlow 15s ease infinite;
+        padding: 12rem 0 8rem;
+        text-align: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      @keyframes gradientFlow {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      .about-hero::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.15) 0%,
+          transparent 70%
+        );
+        animation: rotate 20s linear infinite;
+      }
+
+      .about-hero::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 150px;
+        background: linear-gradient(180deg, transparent 0%, #f0f9ff 100%);
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Floating Particles */
+      .particles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .particle {
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        background: white;
+        border-radius: 50%;
+        opacity: 0.6;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+      }
+
+      .about-hero h1 {
+        font-size: clamp(2.5rem, 6vw, 5rem);
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        position: relative;
+        z-index: 1;
+        text-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        letter-spacing: -0.03em;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      .about-hero p {
+        font-size: 1.4rem;
+        opacity: 0.95;
+        max-width: 750px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+        text-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        line-height: 1.7;
+        animation: fadeInUp 1s ease-out 0.2s backwards;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+
+
+      /* Section Styling */
+      .about-section {
+        padding: 7rem 0;
+        background: transparent;
+        position: relative;
+      }
+
+      .about-section:nth-child(even) {
+        background: linear-gradient(
+          135deg,
+          rgba(240, 249, 255, 0.5) 0%,
+          rgba(224, 242, 254, 0.5) 100%
+        );
+      }
+
+      .section-head h3 {
+        color: #1e293b !important;
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .section-head .muted {
+        color: #64748b !important;
+      }
+
+      /* Glassmorphism Cards */
+      .tentang-card {
+        background: rgba(255, 255, 255, 0.7) !important;
+        backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid rgba(102, 126, 234, 0.2) !important;
+        box-shadow: 0 20px 60px rgba(102, 126, 234, 0.15),
+          inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+        transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+
+      .tentang-card h4 {
+        color: #1e293b !important;
+      }
+
+      .tentang-card p,
+      .tentang-card li {
+        color: #475569 !important;
+      }
+
+      .tentang-card:hover {
+        transform: translateY(-10px) scale(1.02) !important;
+        box-shadow: 0 30px 80px rgba(102, 126, 234, 0.3),
+          inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+        border-color: rgba(102, 126, 234, 0.5) !important;
+        background: rgba(255, 255, 255, 0.9) !important;
+      }
+
+      /* Value Cards */
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2.5rem;
+        margin-top: 3rem;
+      }
+
+      .value-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid rgba(102, 126, 234, 0.2);
+        padding: 3rem 2rem;
+        border-radius: 28px;
+        box-shadow: 0 20px 60px rgba(102, 126, 234, 0.15),
+          inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        text-align: center;
+        transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .value-card::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(102, 126, 234, 0.15) 0%,
+          transparent 70%
+        );
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .value-card:hover::before {
+        opacity: 1;
+        animation: rotate 10s linear infinite;
+      }
+
+      .value-card:hover {
+        transform: translateY(-15px) scale(1.05);
+        box-shadow: 0 35px 90px rgba(102, 126, 234, 0.4),
+          inset 0 1px 0 rgba(255, 255, 255, 1);
+        border-color: rgba(102, 126, 234, 0.5);
+        background: rgba(255, 255, 255, 0.95);
+      }
+
+      .value-icon {
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(
+          135deg,
+          #667eea 0%,
+          #764ba2 50%,
+          #f093fb 100%
+        );
+        background-size: 200% 200%;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        font-size: 3rem;
+        box-shadow: 0 20px 50px rgba(102, 126, 234, 0.6),
+          inset 0 2px 0 rgba(255, 255, 255, 0.3);
+        transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        animation: gradientFlow 8s ease infinite;
+        position: relative;
+      }
+
+      .value-icon::before {
+        content: "";
+        position: absolute;
+        inset: -8px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+        opacity: 0;
+        filter: blur(20px);
+        transition: opacity 0.5s ease;
+        z-index: -1;
+      }
+
+      .value-card:hover .value-icon {
+        transform: scale(1.2) rotate(360deg);
+        box-shadow: 0 25px 60px rgba(102, 126, 234, 0.8),
+          inset 0 2px 0 rgba(255, 255, 255, 0.4);
+      }
+
+      .value-card:hover .value-icon::before {
+        opacity: 1;
+      }
+
+      .value-card h4 {
+        color: #1e293b;
+        margin: 1rem 0 0.75rem;
+        font-size: 1.35rem;
+        font-weight: 700;
+      }
+
+      .value-card p {
+        color: #475569;
+        line-height: 1.7;
+        font-size: 1.05rem;
+      }
+
+      /* Stats Cards */
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2.5rem;
+        margin-top: 3rem;
+      }
+
+      .stat-card {
+        text-align: center;
+        padding: 3.5rem 2rem;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(20px) saturate(180%);
+        border-radius: 28px;
+        border: 1px solid rgba(102, 126, 234, 0.2);
+        box-shadow: 0 20px 60px rgba(102, 126, 234, 0.15),
+          inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .stat-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(102, 126, 234, 0.3),
+          transparent
+        );
+        transition: left 0.7s ease;
+      }
+
+      .stat-card:hover::before {
+        left: 100%;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-12px) scale(1.05);
+        box-shadow: 0 35px 90px rgba(102, 126, 234, 0.4),
+          inset 0 1px 0 rgba(255, 255, 255, 1);
+        border-color: rgba(102, 126, 234, 0.5);
+        background: rgba(255, 255, 255, 0.95);
+      }
+
+      .stat-number {
+        font-size: 4rem;
+        font-weight: 900;
+        background: linear-gradient(
+          135deg,
+          #667eea 0%,
+          #764ba2 50%,
+          #f093fb 100%
+        );
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 0.75rem;
+        animation: textShine 3s linear infinite;
+        filter: drop-shadow(0 0 30px rgba(102, 126, 234, 0.6));
+      }
+
+      @keyframes textShine {
+        to {
+          background-position: 200% center;
+        }
+      }
+
+      .stat-label {
+        color: #475569;
+        font-weight: 600;
+        font-size: 1.15rem;
+        letter-spacing: 0.5px;
+      }
+
+      /* Comparison Table Light Theme */
+      .comparison-table {
+        background: rgba(255, 255, 255, 0.5);
+        border: 1px solid rgba(102, 126, 234, 0.2);
+      }
+
+      .comparison-header {
+        background: linear-gradient(
+          135deg,
+          #667eea 0%,
+          #764ba2 100%
+        ) !important;
+        color: white !important;
+      }
+
+      .comparison-cell {
+        background: rgba(255, 255, 255, 0.7) !important;
+        color: #475569 !important;
+        border-color: rgba(102, 126, 234, 0.1) !important;
+      }
+
+      .comparison-cell strong {
+        color: #667eea !important;
+      }
+
+      .comparison-row:hover .comparison-cell {
+        background: rgba(102, 126, 234, 0.1) !important;
+      }
+
+      /* Footer Light */
+      .site-footer {
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%) !important;
+        color: #64748b !important;
+        border-top: 1px solid rgba(102, 126, 234, 0.2) !important;
+      }
+
+      /* Team Cards */
+      .team-card {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(20px) saturate(180%);
+        padding: 2.5rem 1.5rem;
+        border-radius: 24px;
+        text-align: center;
+        border: 2px solid rgba(16, 185, 129, 0.3);
+        transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(16, 185, 129, 0.15);
+      }
+
+      .team-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .team-card::after {
+        content: '';
+        position: absolute;
+        inset: -4px;
+        border-radius: 24px;
+        background: linear-gradient(135deg, #10b981, #059669, #047857);
+        opacity: 0;
+        filter: blur(15px);
+        transition: opacity 0.5s ease;
+        z-index: -1;
+      }
+
+      .team-card:hover {
+        transform: translateY(-15px) scale(1.08);
+        box-shadow: 0 25px 60px rgba(16, 185, 129, 0.4);
+        border-color: rgba(16, 185, 129, 0.6);
+        background: rgba(255, 255, 255, 1);
+      }
+
+      .team-card:hover::before {
+        opacity: 1;
+        animation: rotate 10s linear infinite;
+      }
+
+      .team-card:hover::after {
+        opacity: 1;
+      }
+
+      .team-avatar {
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+        background-size: 200% 200%;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        margin: 0 auto 1.5rem;
+        box-shadow: 0 15px 40px rgba(16, 185, 129, 0.5),
+                    inset 0 2px 0 rgba(255, 255, 255, 0.3);
+        transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        animation: gradientFlow 8s ease infinite;
+        position: relative;
+      }
+
+      .team-avatar::before {
+        content: '';
+        position: absolute;
+        inset: -8px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #10b981, #059669, #047857);
+        opacity: 0;
+        filter: blur(20px);
+        transition: opacity 0.5s ease;
+        z-index: -1;
+      }
+
+      .team-card:hover .team-avatar {
+        transform: scale(1.2) rotate(360deg);
+        box-shadow: 0 20px 50px rgba(16, 185, 129, 0.7),
+                    inset 0 2px 0 rgba(255, 255, 255, 0.4);
+      }
+
+      .team-card:hover .team-avatar::before {
+        opacity: 1;
+      }
+
+      .team-card h5 {
+        color: #1e293b;
+        font-size: 1.2rem;
+        font-weight: 800;
+        margin-bottom: 0.75rem;
+        line-height: 1.4;
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        transition: all 0.3s ease;
+      }
+
+      .team-card:hover h5 {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.5));
+      }
+
+      .team-role {
+        color: #10b981;
+        font-size: 0.95rem;
+        font-weight: 700;
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 0.5rem 1rem;
+        background: rgba(16, 185, 129, 0.1);
+        border-radius: 20px;
+        display: inline-block;
+        transition: all 0.3s ease;
+      }
+
+      .team-card:hover .team-role {
+        background: rgba(16, 185, 129, 0.2);
+        transform: scale(1.05);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .about-hero {
+          padding: 8rem 0 5rem;
+        }
+
+        .about-section {
+          padding: 4rem 0;
+        }
+
+        .stat-number {
+          font-size: 3rem;
+        }
+
+        .value-icon {
+          width: 80px;
+          height: 80px;
+          font-size: 2.5rem;
+        }
+
+        .team-avatar {
+          width: 85px;
+          height: 85px;
+          font-size: 2.5rem;
+        }
+        
+        .team-card h5 {
+          font-size: 1.1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Floating Navbar Modern -->
+    <nav class="floating-nav" aria-label="Primary Navigation">
+      <div class="nav-bg"></div>
+      <ul class="nav" role="menubar">
+        <li class="nav-item">
+          <a href="index.html" class="nav-btn" style="text-decoration: none">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg>
+            <span>Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-btn active" style="text-decoration: none">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+              />
+            </svg>
+            <span>Tentang Kami</span>
+          </a>
+        </li>
+        <!-- Produk removed - Buka Rekening now in center -->
+        <li class="nav-item center">
+          <a
+            class="center-btn"
+            href="https://wa.me/6281296163263"
+            target="_blank"
+            title="Buka Rekening"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+              />
+            </svg>
+            <span class="center-text">Buka Rekening</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="index.html#simulasi" class="nav-btn" style="text-decoration: none">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"
+              />
+            </svg>
+            <span>Simulasi</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="index.html#kantor" class="nav-btn" style="text-decoration: none">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+              />
+            </svg>
+            <span>Cabang</span>
+          </a>
+        </li>
+      </ul>
+      <div class="active-indicator" id="activeIndicator"></div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+      <div class="particles" id="particles"></div>
+      <div class="container">
+        <h1>Tentang Bank Melasa Syariah</h1>
+        <p style="font-size: 1.3rem; margin-top: 1rem; margin-bottom: 0.5rem;">
+          <span style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 700;">
+            🏦 Tim LPS
+          </span>
+        </p>
+        <p>
+          Bersama Membangun Keuangan Halal dengan Prinsip Amanah, Transparan,
+          dan Akuntabel
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
+
+<!-- Profil Bank -->
+<section class="about-section">
+  <div class="container">
+    <div class="section-head">
+      <h3>Profil Perusahaan</h3>
+      <p class="muted">PT Bank Melasa Syariah, Tbk.</p>
+    </div>
+    <div class="tentang-card full-width">
+      <div class="tentang-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"
+          />
+        </svg>
+      </div>
+      <h4>Tentang Bank Melasa Syariah</h4>
+      <p style="line-height: 1.8">
+        PT Bank Melasa Syariah, Tbk. adalah lembaga perbankan syariah yang
+        berkomitmen untuk menyediakan layanan keuangan yang sesuai dengan
+        prinsip-prinsip Islam. Kami hadir untuk melayani masyarakat Indonesia
+        dengan produk dan layanan perbankan yang amanah, transparan, dan
+        akuntabel.
+      </p>
+      <p style="line-height: 1.8; margin-top: 1rem">
+        Dengan dukungan teknologi modern dan sumber daya manusia yang
+        profesional, kami terus berinovasi untuk memberikan pengalaman perbankan
+        syariah terbaik bagi seluruh nasabah kami.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Visi & Misi -->
+<section class="about-section">
+  <div class="container">
+    <div class="section-head">
+      <h3>Visi & Misi</h3>
+      <p class="muted">Arah dan tujuan Bank Melasa Syariah</p>
+    </div>
+    <div class="tentang-grid">
+      <div class="tentang-card">
+        <div class="tentang-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
+            />
+          </svg>
+        </div>
+        <h4>Visi Kami</h4>
+        <p>
+          Menjadi Bank Syariah terdepan yang Terpercaya dalam pengelolaan dana,
+          Transparan dalam praktik bagi hasil dan penimpanan dana, serta
+          Akuntabel dalam tata kelola perusahaan, demi mewujudkan kemaslahatan
+          ekonomi umat.
+        </p>
+      </div>
+      <div class="tentang-card">
+        <div class="tentang-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"
+            />
+          </svg>
+        </div>
+        <h4>Misi Kami</h4>
+        <ul class="misi-list">
+          <li>
+             Menyediakan layanan perbankan syariah terbaik dengan prinsip kehati-hatian (prudence) dan
+integritas tinggi, memastikan setiap produk dan akad sesuai dengan syariat.
+          </li>
+          <li>
+             Menyajikan informasi biaya, risiko, dan mekanisme bagi hasil (nisbah) secara jelas dan mudah
+dipahami oleh seluruh nasabah dan pemangku kepentingan
+          </li>
+          <li>
+            Melaksanakan Good Corporate Governance (GCG) secara konsisten dan bertanggung jawab, didukung
+oleh sistem audit dan pelaporan yang kredibel untuk menjamin pertanggungjawaban kepada nasabah
+dan shareholder.
+          </li>
+          <li>
+           Terus mengembangkan produk dan layanan yang inovatif dan relevan, yang sekaligus memperkuat
+fondasi amanah, transparansi, dan keadilan dalam bertransaksi.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Nilai-Nilai Perusahaan -->
+<section class="about-section">
+  <div class="container">
+    <div class="section-head">
+      <h3>Nilai-Nilai Perusahaan</h3>
+      <p class="muted">Prinsip yang menjadi landasan kami</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <h4>Amanah</h4>
+        <p>
+          Menjaga kepercayaan nasabah dengan pengelolaan dana yang bertanggung
+          jawab
+        </p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🔍</div>
+        <h4>Transparan</h4>
+        <p>Keterbukaan informasi dalam setiap transaksi dan layanan</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">📊</div>
+        <h4>Akuntabel</h4>
+        <p>Pertanggungjawaban penuh dalam tata kelola perusahaan</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">✨</div>
+        <h4>Profesional</h4>
+        <p>Pelayanan terbaik dengan SDM yang kompeten dan berpengalaman</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🚀</div>
+        <h4>Inovatif</h4>
+        <p>Terus berinovasi untuk memberikan solusi keuangan terbaik</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🕌</div>
+        <h4>Syariah</h4>
+        <p>Berpegang teguh pada prinsip-prinsip syariah Islam</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Statistik -->
+<section class="about-section">
+  <div class="container">
+    <div class="section-head">
+      <h3>Bank Melasa Syariah dalam Angka</h3>
+      <p class="muted">Pencapaian dan pertumbuhan kami</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">35+</div>
+        <div class="stat-label">Produk & Layanan</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Kantor Cabang</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100K+</div>
+        <div class="stat-label">Nasabah Aktif</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">15+</div>
+        <div class="stat-label">Tahun Pengalaman</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Perbedaan Bank Syariah vs Konvensional -->
+<section class="about-section">
+  <div class="container">
+    <div class="section-head">
+      <h3>Perbedaan Bank Syariah & Bank Konvensional</h3>
+      <p class="muted">Memahami keunggulan perbankan syariah</p>
+    </div>
+    <div class="tentang-card full-width">
+      <div class="tentang-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"
+          />
+        </svg>
+      </div>
+      <h4>Perbedaan Bank Syariah & Bank Konvensional</h4>
+      <div class="comparison-table">
+        <div class="comparison-row">
+          <div class="comparison-header">Aspek</div>
+          <div class="comparison-header">Bank Syariah</div>
+          <div class="comparison-header">Bank Konvensional</div>
+        </div>
+        <div class="comparison-row">
+          <div class="comparison-cell">
+            <strong>Prinsip Operasional</strong>
+          </div>
+          <div class="comparison-cell">
+            Berdasarkan prinsip syariah Islam (Al-Quran & Hadist)
+          </div>
+          <div class="comparison-cell">
+            Berdasarkan prinsip ekonomi konvensional
+          </div>
+        </div>
+        <div class="comparison-row">
+          <div class="comparison-cell"><strong>Sistem Bunga</strong></div>
+          <div class="comparison-cell">
+            Tidak menggunakan bunga (riba), menggunakan bagi hasil
+          </div>
+          <div class="comparison-cell">Menggunakan sistem bunga (interest)</div>
+        </div>
+        <div class="comparison-row">
+          <div class="comparison-cell"><strong>Akad/Kontrak</strong></div>
+          <div class="comparison-cell">
+            Mudharabah, Musyarakah, Murabahah, Ijarah, dll
+          </div>
+          <div class="comparison-cell">Perjanjian kredit standar</div>
+        </div>
+        <div class="comparison-row">
+          <div class="comparison-cell"><strong>Pengawasan</strong></div>
+          <div class="comparison-cell">OJK + Dewan Pengawas Syariah (DPS)</div>
+          <div class="comparison-cell">OJK</div>
+        </div>
+        <div class="comparison-row">
+          <div class="comparison-cell"><strong>Orientasi</strong></div>
+          <div class="comparison-cell">
+            Profit & Falah (kesejahteraan dunia-akhirat)
+          </div>
+          <div class="comparison-cell">Profit oriented</div>
+        </div>
+        <div class="comparison-row">
+          <div class="comparison-cell">
+            <strong>Hubungan dengan Nasabah</strong>
+          </div>
+          <div class="comparison-cell">Kemitraan (partnership)</div>
+          <div class="comparison-cell">Debitur-Kreditur</div>
+        </div>
+        <div class="comparison-row">
+          <div class="comparison-cell"><strong>Investasi</strong></div>
+          <div class="comparison-cell">
+            Hanya pada sektor halal dan produktif
+          </div>
+          <div class="comparison-cell">Bebas, selama legal</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pengertian Bank Syariah -->
+<section class="about-section">
+  <div class="container">
+    <div class="section-head">
+      <h3>Pengertian Bank Syariah</h3>
+      <p class="muted">Memahami konsep perbankan syariah</p>
+    </div>
+    <div class="tentang-card full-width">
+      <div class="tentang-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+          />
+        </svg>
+      </div>
+      <h4>Apa itu Bank Syariah?</h4>
+      <p style="line-height: 1.8">
+        Bank Syariah merupakan Bank yang menjalankan kegiatan usahanya
+        berdasarkan Prinsip Syariah, yang berdasarkan Al-Quran, Hadist, Ijma,
+        dan Qiyas.
+      </p>
+      <p style="line-height: 1.8; margin-top: 1rem">
+        Dalam operasionalnya, Bank Syariah tidak menggunakan sistem bunga
+        (riba), melainkan menggunakan sistem bagi hasil dan akad-akad syariah
+        lainnya yang sesuai dengan prinsip Islam. Hal ini menjadikan Bank
+        Syariah sebagai pilihan yang tepat bagi masyarakat yang ingin
+        bertransaksi keuangan secara halal dan berkah.
+      </p>
+    </div>
+  </div>
+</section>
+
+  <!-- Tim Kami Section -->
+  <section class="about-section">
+    <div class="container">
+      <div class="section-head">
+        <h3>Tim Kami</h3>
+        <p class="muted">🏦 Tim LPS - Orang-orang hebat di balik Bank Melasa Syariah</p>
+      </div>
+
+      <!-- LPS Team - Formasi Futsal -->
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <span style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 0.75rem 2rem; border-radius: 25px; font-weight: 700; font-size: 1.2rem; display: inline-block; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);">
+          ⚽ TIM LPS - FORMASI FUTSAL
+        </span>
+      </div>
+      
+      <div class="team-futsal-formation">
+        <!-- STRIKER -->
+        <div class="futsal-position futsal-striker">
+          <div class="futsal-player-card">
+            <div class="position-badge">⚡ STRIKER</div>
+            <div class="futsal-avatar">👨</div>
+            <div class="futsal-name">Muhammad Al Fatan Pratama</div>
+            <div class="futsal-role">Penyerang</div>
+          </div>
+        </div>
+        
+        <!-- FLANK KIRI -->
+        <div class="futsal-position futsal-flank-left">
+          <div class="futsal-player-card">
+            <div class="position-badge">◀️ FLANK</div>
+            <div class="futsal-avatar">👩</div>
+            <div class="futsal-name">Alfira Rizka Paradilla</div>
+            <div class="futsal-role">Sayap Kiri</div>
+          </div>
+        </div>
+        
+        <!-- FLANK KANAN -->
+        <div class="futsal-position futsal-flank-right">
+          <div class="futsal-player-card">
+            <div class="position-badge">▶️ FLANK</div>
+            <div class="futsal-avatar">👩</div>
+            <div class="futsal-name">Putri Zuhrotul Inansyah</div>
+            <div class="futsal-role">Sayap Kanan</div>
+          </div>
+        </div>
+        
+        <!-- PIVOT -->
+        <div class="futsal-position futsal-pivot">
+          <div class="futsal-player-card">
+            <div class="position-badge">⭐ PIVOT</div>
+            <div class="futsal-avatar">👩</div>
+            <div class="futsal-name">Reyna Putri Ramadani</div>
+            <div class="futsal-role">Gelandang</div>
+          </div>
+        </div>
+        
+        <!-- KIPER -->
+        <div class="futsal-position futsal-kiper">
+          <div class="futsal-player-card">
+            <div class="position-badge">🧤 KIPER</div>
+            <div class="futsal-avatar">👨</div>
+            <div class="futsal-name">Syauqi Hazami</div>
+            <div class="futsal-role">Penjaga Gawang</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="about-section">
+    <div class="container">
+      <div class="tentang-card full-width" style="text-align: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) !important; color: white; padding: 4rem 3rem;">
+        <h3 style="color: white; margin-bottom: 1.5rem; font-size: 2.5rem;">Bergabunglah dengan Kami</h3>
+        <p style="color: rgba(255, 255, 255, 0.95); margin-bottom: 2.5rem; font-size: 1.25rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+          Mari bersama membangun keuangan yang halal, amanah, dan berkah
+        </p>
+        <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+          <a href="index.html#produk" class="btn" style="background: white; color: #667eea; padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 700;">
+            Lihat Produk Kami
+          </a>
+          <a href="https://wa.me/6281296163263" target="_blank" class="btn" style="background: rgba(255, 255, 255, 0.2); color: white; border: 2px solid white; padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 700;">
+            Hubungi Kami
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Bank Melasa Syariah — Keuangan Amanah, No Drama.</p>
+      <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">🏦 Tim LPS</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Create floating particles
+    const particlesContainer = document.getElementById('particles');
+    for (let i = 0; i < 50; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.animationDelay = Math.random() * 20 + 's';
+      particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+      particlesContainer.appendChild(particle);
+    }
+
+    // Animate on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.tentang-card, .value-card, .stat-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(50px)';
+      el.style.transition = 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
+      observer.observe(el);
+    });
+
+    // Parallax effect
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const parallaxElements = document.querySelectorAll('.about-hero::before');
+      parallaxElements.forEach(el => {
+        el.style.transform = `translateY(${scrolled * 0.5}px)`;
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,509 @@
+/* ═══════════════════════════════════════════════════════════════
+   GREEN THEME - Bank Melasa Syariah
+   Mengubah semua warna menjadi hijau yang konsisten
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Primary Green Colors */
+  --primary: #10b981 !important;
+  --primary-dark: #059669 !important;
+  --primary-light: #34d399 !important;
+  --secondary: #047857 !important;
+  --accent: #10b981 !important;
+
+  /* Green Gradients */
+  --gradient-primary: linear-gradient(
+    135deg,
+    #10b981 0%,
+    #059669 100%
+  ) !important;
+  --gradient-bg: linear-gradient(
+    135deg,
+    #10b981 0%,
+    #059669 25%,
+    #34d399 50%,
+    #10b981 75%,
+    #059669 100%
+  ) !important;
+  --gradient-hero: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.1) 0%,
+    rgba(5, 150, 105, 0.1) 100%
+  ) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FLOATING SHAPES - Green
+   ═══════════════════════════════════════════════════════════════ */
+
+.shape-1 {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+}
+
+.shape-2 {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%) !important;
+}
+
+.shape-3 {
+  background: linear-gradient(135deg, #10b981 0%, #047857 100%) !important;
+}
+
+.shape-4 {
+  background: linear-gradient(135deg, #6ee7b7 0%, #34d399 100%) !important;
+}
+
+.shape-5 {
+  background: linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO SECTION - Green
+   ═══════════════════════════════════════════════════════════════ */
+
+.hero-bg::before {
+  background: linear-gradient(
+    135deg,
+    #10b981 0%,
+    #059669 25%,
+    #34d399 50%,
+    #10b981 75%,
+    #059669 100%
+  ) !important;
+}
+
+.hero-title {
+  background: linear-gradient(
+    135deg,
+    #10b981 0%,
+    #059669 50%,
+    #047857 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   NAVBAR - Green
+   ═══════════════════════════════════════════════════════════════ */
+
+.nav-btn:hover {
+  color: #10b981 !important;
+}
+
+.nav-btn.active {
+  color: #10b981 !important;
+}
+
+.nav-btn.active::before {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+}
+
+.center-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.center-btn:hover {
+  box-shadow: 0 15px 40px rgba(16, 185, 129, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+}
+
+.active-indicator {
+  background: linear-gradient(
+    90deg,
+    #10b981 0%,
+    #059669 50%,
+    #34d399 100%
+  ) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BRAND & HEADER - Green
+   ═══════════════════════════════════════════════════════════════ */
+
+.brand h1 {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.brand-text::after {
+  background: linear-gradient(90deg, #10b981 0%, #059669 100%) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO BADGE - Green
+   ═══════════════════════════════════════════════════════════════ */
+
+.hero-badge {
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.15) 0%,
+    rgba(5, 150, 105, 0.15) 100%
+  ) !important;
+  color: #10b981 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BUTTONS - Green
+   ═══════════════════════════════════════════════════════════════ */
+
+.btn-primary {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4) !important;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 15px 40px rgba(16, 185, 129, 0.6) !important;
+}
+
+.btn-secondary {
+  color: #10b981 !important;
+  border-color: #10b981 !important;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  border-color: #10b981 !important;
+}
+
+.btn-outline {
+  color: #10b981 !important;
+  border-color: #10b981 !important;
+}
+
+.btn-outline:hover {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  border-color: #10b981 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SECTIONS - Green
+   ═══════════════════════════════════════════════════════════════ */
+
+.section-head h3 {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.section-head::after {
+  background: linear-gradient(90deg, #10b981 0%, #059669 100%) !important;
+  box-shadow: 0 2px 10px rgba(16, 185, 129, 0.5) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TABS - Green
+   ═══════════════════════════════════════════════════════════════ */
+
+.tab-btn:hover {
+  border-color: #10b981 !important;
+  color: #10b981 !important;
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  border-color: #10b981 !important;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.tab-btn.active svg {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5)) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PRODUCT CARDS - Green
+   ═══════════════════════════════════════════════════════════════ */
+
+.product-badge {
+  background: rgba(16, 185, 129, 0.1) !important;
+  color: #10b981 !important;
+}
+
+.carousel-btn:hover {
+  background: #10b981 !important;
+  border-color: #10b981 !important;
+}
+
+.product-card::before {
+  background: linear-gradient(135deg, #10b981, #059669, #34d399) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SIMULATOR - Green
+   ═══════════════════════════════════════════════════════════════ */
+
+input[type="number"]:focus {
+  border-color: #10b981 !important;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1) !important;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4) !important;
+}
+
+input[type="range"]::-moz-range-thumb {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4) !important;
+}
+
+.range-value {
+  color: #10b981 !important;
+}
+
+.result-box {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4),
+    0 0 20px rgba(5, 150, 105, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   KANTOR CARDS - Green
+   ═══════════════════════════════════════════════════════════════ */
+
+.cabang-card {
+  border: 2px solid rgba(16, 185, 129, 0.2) !important;
+}
+
+.cabang-card::before {
+  background: linear-gradient(
+    135deg,
+    #10b981,
+    #059669,
+    #34d399,
+    #10b981
+  ) !important;
+}
+
+.cabang-icon {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  box-shadow: 0 15px 40px rgba(16, 185, 129, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3) !important;
+}
+
+.cabang-card::after {
+  background: linear-gradient(135deg, #10b981, #059669, #34d399) !important;
+}
+
+.cabang-card:hover .cabang-icon {
+  box-shadow: 0 20px 50px rgba(16, 185, 129, 0.7),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FAQ - Green
+   ═══════════════════════════════════════════════════════════════ */
+
+.faq-question:hover {
+  background: rgba(16, 185, 129, 0.05) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+.faq-icon {
+  color: #10b981 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TESTIMONIALS - Green
+   ═══════════════════════════════════════════════════════════════ */
+
+.testimonial-card {
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.05) 0%,
+    rgba(5, 150, 105, 0.05) 100%
+  ) !important;
+}
+
+.author-avatar {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.5) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TRUST BADGES - Green
+   ═══════════════════════════════════════════════════════════════ */
+
+.trust-section {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FOOTER - Green
+   ═══════════════════════════════════════════════════════════════ */
+
+.site-footer {
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.05) 0%,
+    rgba(5, 150, 105, 0.05) 100%
+  ) !important;
+  border-top: 1px solid rgba(16, 185, 129, 0.2) !important;
+}
+
+.site-footer::before {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(16, 185, 129, 0.3),
+    transparent
+  ) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   WHATSAPP BUTTON - Green (keep green as it's WhatsApp)
+   ═══════════════════════════════════════════════════════════════ */
+
+.whatsapp-float {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.5) !important;
+}
+
+.whatsapp-float:hover {
+  box-shadow: 0 12px 35px rgba(16, 185, 129, 0.7) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MODAL - Green
+   ═══════════════════════════════════════════════════════════════ */
+
+.modal-panel h3 {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ABOUT PAGE - Green
+   ═══════════════════════════════════════════════════════════════ */
+
+.about-hero {
+  background: linear-gradient(
+    135deg,
+    #10b981 0%,
+    #059669 50%,
+    #34d399 100%
+  ) !important;
+}
+
+.tentang-card h4 {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.tentang-icon {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  box-shadow: 0 15px 40px rgba(16, 185, 129, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3) !important;
+}
+
+.tentang-card::after {
+  background: linear-gradient(135deg, #10b981, #059669, #34d399) !important;
+}
+
+.tentang-card:hover h4 {
+  background: linear-gradient(
+    135deg,
+    #10b981 0%,
+    #059669 50%,
+    #34d399 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.tentang-card:hover::before {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(16, 185, 129, 0.3),
+    transparent
+  ) !important;
+}
+
+.misi-list li::before {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+}
+
+.misi-list li:hover::before {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+}
+
+.comparison-header {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+}
+
+.comparison-header::before {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  ) !important;
+}
+
+.comparison-row:hover .comparison-cell {
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.05) 0%,
+    rgba(5, 150, 105, 0.05) 100%
+  ) !important;
+}
+
+.comparison-row:hover .comparison-cell strong {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.value-icon {
+  background: linear-gradient(
+    135deg,
+    #10b981 0%,
+    #059669 50%,
+    #34d399 100%
+  ) !important;
+  box-shadow: 0 20px 50px rgba(16, 185, 129, 0.6),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3) !important;
+}
+
+.value-icon::before {
+  background: linear-gradient(135deg, #10b981, #059669, #34d399) !important;
+}
+
+.stat-number {
+  background: linear-gradient(
+    135deg,
+    #10b981 0%,
+    #059669 50%,
+    #34d399 100%
+  ) !important;
+  filter: drop-shadow(0 0 30px rgba(16, 185, 129, 0.6)) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FORMULA BOX - Green
+   ═══════════════════════════════════════════════════════════════ */
+
+div[style*="border-left: 4px solid #667eea"] {
+  border-left-color: #10b981 !important;
+  background: rgba(16, 185, 129, 0.08) !important;
+}
+
+div[style*="color: #667eea"] h5,
+div[style*="color: #667eea"] p {
+  color: #10b981 !important;
+}
+
+/* Cursor effects removed - was blocking content */

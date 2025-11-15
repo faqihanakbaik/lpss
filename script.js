@@ -1,4 +1,6 @@
 // Bank Melasa Syariah - Main Script
+let currentCalculatorType = "financing"; // Default calculator type
+
 document.addEventListener("DOMContentLoaded", () => {
   // Set current year
   document.getElementById("year").textContent = new Date().getFullYear();
@@ -14,6 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
   initProductCarousel();
   initSimulator();
   initModal();
+  initFAQ();
+
+  // Set default calculator to financing
+  currentCalculatorType = "financing";
+  renderCalculator("financing");
 });
 
 // ===== DATA PRODUK (35 PRODUK) =====
@@ -546,6 +553,8 @@ const productData = {
       id: "al-qardh-card",
       title: "Al-Qardh Card",
       desc: "Kartu kredit syariah dengan fitur cashback dan smartspending",
+      definisi:
+        "Al-Qardh Card adalah kartu kredit syariah dengan akad Kafalah, Qardh, dan Ijarah yang menawarkan berbagai fitur modern seperti welcome bonus cashback, smartspending (cicilan 0%), smartsadaqah (donasi rutin), dan smartbill (autodebet tagihan), dengan maksimal transaksi Rp 8 juta.",
       image:
         "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&q=80",
       details: {
@@ -726,6 +735,8 @@ const productData = {
       id: "letter-of-credit",
       title: "Letter of Credit (L/C) Syariah",
       desc: "Jasa penjaminan pembayaran untuk transaksi perdagangan",
+      definisi:
+        "Letter of Credit (L/C) Syariah adalah jasa penjaminan pembayaran untuk transaksi perdagangan internasional atau domestik yang dikeluarkan oleh bank atas permintaan importir untuk menjamin pembayaran kepada eksportir, menggunakan prinsip syariah dengan akad Wakalah Bil Ujrah atau Kafalah Bil Ujrah.",
       image:
         "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&q=80",
       details: {
@@ -746,6 +757,8 @@ const productData = {
       id: "standing-instruction",
       title: "Standing Instruction",
       desc: "Transfer atau pembayaran rutin secara otomatis",
+      definisi:
+        "Standing Instruction adalah layanan instruksi berdiri yang memungkinkan nasabah melakukan transfer atau pembayaran rutin secara otomatis pada tanggal yang telah ditentukan, memudahkan pembayaran cicilan, tagihan bulanan, atau transfer rutin lainnya tanpa harus melakukan transaksi manual setiap bulan.",
       image:
         "https://images.unsplash.com/photo-1554224154-22dec7ec8818?w=400&q=80",
       details: {
@@ -766,6 +779,8 @@ const productData = {
       id: "payroll-service",
       title: "Payroll Service iB",
       desc: "Layanan penggajian karyawan untuk perusahaan",
+      definisi:
+        "Payroll Service iB adalah layanan penggajian karyawan yang memudahkan perusahaan dalam mendistribusikan gaji karyawan secara otomatis dan terjadwal ke rekening masing-masing karyawan, dilengkapi dengan laporan lengkap dan sistem yang terintegrasi sesuai prinsip syariah.",
       image:
         "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&q=80",
       details: {
@@ -863,6 +878,9 @@ function initProductCarousel() {
       btn.classList.add("active");
       currentCategory = btn.dataset.category;
       renderProducts();
+
+      // Change calculator based on category
+      renderCalculator(currentCategory);
     });
   });
 
@@ -998,7 +1016,7 @@ function openModal(product) {
                 <p>${product.details.fitur}</p>
                 <h3>Tarif & Biaya</h3>
                 <p>${product.details.tarif}</p>
-                <a href="https://wa.me/6281234567890?text=Halo, saya tertarik dengan ${product.title}" 
+                <a href="https://wa.me/6281296163263?text=Halo, saya tertarik dengan ${product.title}" 
                    target="_blank" class="btn btn-primary" style="margin-top: 1.5rem;">
                     Hubungi Kami
                 </a>
@@ -1041,62 +1059,384 @@ function closeModal() {
   }, 300);
 }
 
+// ===== CALCULATOR RENDERER =====
+function renderCalculator(category) {
+  currentCalculatorType = category;
+  const panel = document.getElementById("simulasiPanel");
+  const title = document.getElementById("simulasiTitle");
+  const desc = document.getElementById("simulasiDesc");
+
+  if (category === "funding") {
+    // Kalkulator Bagi Hasil Tabungan/Deposito
+    title.textContent = "Kalkulator Bagi Hasil Simpanan";
+    desc.textContent = "Hitung estimasi bagi hasil tabungan atau deposito Anda";
+
+    panel.innerHTML = `
+      <div class="simulasi-form">
+        <div class="form-group">
+          <label for="nominalSimpanan">Nominal Simpanan</label>
+          <div class="input-wrapper">
+            <span class="input-prefix">Rp</span>
+            <input type="number" id="nominalSimpanan" value="10000000" min="100000" step="100000" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="jangkaWaktuFunding">Jangka Waktu (Bulan)</label>
+          <input type="range" id="jangkaWaktuFunding" min="1" max="60" value="12" step="1" />
+          <div class="range-value">
+            <span id="jangkaWaktuFundingValue">12</span> Bulan
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="nisbah">Nisbah Bagi Hasil (%)</label>
+          <input type="range" id="nisbah" min="30" max="60" value="40" step="5" />
+          <div class="range-value">
+            <span id="nisbahValue">40</span>% untuk Nasabah
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="equivalentRate">Equivalent Rate (% per tahun)</label>
+          <input type="range" id="equivalentRate" min="2" max="8" value="5" step="0.5" />
+          <div class="range-value">
+            <span id="equivalentRateValue">5</span>%
+          </div>
+        </div>
+      </div>
+      <div class="simulasi-result">
+        <h4>Estimasi Bagi Hasil Funding</h4>
+        <div class="result-box">
+          <p class="result-label">Bagi Hasil per Bulan (Funding)</p>
+          <p class="result-value" id="hasilBagiHasil">Rp 0</p>
+          <div class="result-details">
+            <div class="detail-item">
+              <span>Nominal Simpanan</span>
+              <strong id="nominalSimpananResult">Rp 0</strong>
+            </div>
+            <div class="detail-item">
+              <span>Total Bagi Hasil</span>
+              <strong id="totalBagiHasil">Rp 0</strong>
+            </div>
+            <div class="detail-item">
+              <span>Total Akhir</span>
+              <strong id="totalAkhirFunding">Rp 0</strong>
+            </div>
+          </div>
+        </div>
+        <p class="small-note">
+          * Perhitungan ini adalah simulasi. Bagi hasil aktual tergantung kinerja bank dan nisbah yang disepakati.
+        </p>
+        <div style="margin-top: 1.5rem; padding: 1.25rem; background: rgba(102, 126, 234, 0.08); border-left: 4px solid #667eea; border-radius: 12px;">
+          <h5 style="margin: 0 0 0.75rem 0; color: #667eea; font-size: 0.95rem; font-weight: 700;">📊 Rumus Perhitungan:</h5>
+          <div style="font-size: 0.85rem; line-height: 1.7; color: #475569;">
+            <p style="margin: 0.5rem 0;"><strong>1. Pendapatan Bank per Tahun</strong> = Nominal × Rate</p>
+            <p style="margin: 0.5rem 0;"><strong>2. Porsi Nasabah per Tahun</strong> = Pendapatan × Nisbah</p>
+            <p style="margin: 0.5rem 0;"><strong>3. Bagi Hasil per Bulan</strong> = Porsi Nasabah ÷ 12</p>
+            <p style="margin: 0.5rem 0;"><strong>4. Total Bagi Hasil</strong> = Bagi Hasil per Bulan × Jangka Waktu</p>
+            <p style="margin: 0.5rem 0;"><strong>5. Total Akhir</strong> = Nominal + Total Bagi Hasil</p>
+          </div>
+        </div>
+      </div>
+    `;
+  } else if (category === "financing") {
+    // Kalkulator Pembiayaan (yang sudah ada)
+    title.textContent = "Kalkulator Pembiayaan Syariah";
+    desc.textContent = "Hitung angsuran Anda sekarang. Transparan dan amanah.";
+
+    panel.innerHTML = `
+      <div class="simulasi-form">
+        <div class="form-group">
+          <label for="jumlahPinjaman">Harga Total / OTR</label>
+          <div class="input-wrapper">
+            <span class="input-prefix">Rp</span>
+            <input type="number" id="jumlahPinjaman" value="50000000" min="1000000" step="1000000" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="jangkaWaktu">Jangka Waktu (Bulan)</label>
+          <input type="range" id="jangkaWaktu" min="6" max="180" value="36" step="6" />
+          <div class="range-value">
+            <span id="jangkaWaktuValue">36</span> Bulan
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="dp">Uang Muka / DP (%)</label>
+          <input type="range" id="dp" min="0" max="50" value="20" step="5" />
+          <div class="range-value">
+            <span id="dpValue">20</span>% = <span id="dpRupiah">Rp 10.000.000</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="margin">Nisbah/Margin (%)</label>
+          <input type="range" id="margin" min="4" max="15" value="7.5" step="0.5" />
+          <div class="range-value">
+            <span id="marginValue">7.5</span>%
+          </div>
+        </div>
+      </div>
+      <div class="simulasi-result">
+        <h4>Estimasi Angsuran Financing</h4>
+        <div class="result-box">
+          <p class="result-label">Angsuran Bulanan (Financing)</p>
+          <p class="result-value" id="hasilAngsuran">Rp 0</p>
+          <div class="result-details">
+            <div class="detail-item">
+              <span>Harga Total</span>
+              <strong id="hargaTotal">Rp 0</strong>
+            </div>
+            <div class="detail-item">
+              <span>Uang Muka (DP)</span>
+              <strong id="uangMuka">Rp 0</strong>
+            </div>
+            <div class="detail-item">
+              <span>Jumlah Pembiayaan</span>
+              <strong id="jumlahPembiayaan">Rp 0</strong>
+            </div>
+            <div class="detail-item">
+              <span>Total Margin</span>
+              <strong id="totalMargin">Rp 0</strong>
+            </div>
+            <div class="detail-item">
+              <span>Total Pembiayaan</span>
+              <strong id="totalPembiayaan">Rp 0</strong>
+            </div>
+          </div>
+        </div>
+        <p class="small-note">
+          * Perhitungan ini adalah simulasi awal. Nilai akhir ditentukan berdasarkan akad dan negosiasi Bank.
+        </p>
+        <div style="margin-top: 1.5rem; padding: 1.25rem; background: rgba(102, 126, 234, 0.08); border-left: 4px solid #667eea; border-radius: 12px;">
+          <h5 style="margin: 0 0 0.75rem 0; color: #667eea; font-size: 0.95rem; font-weight: 700;">📊 Rumus Perhitungan (Murabahah):</h5>
+          <div style="font-size: 0.85rem; line-height: 1.7; color: #475569;">
+            <p style="margin: 0.5rem 0;"><strong>1. Uang Muka (DP)</strong> = Harga Total × DP%</p>
+            <p style="margin: 0.5rem 0;"><strong>2. Jumlah Pembiayaan</strong> = Harga Total - Uang Muka</p>
+            <p style="margin: 0.5rem 0;"><strong>3. Total Margin</strong> = Jumlah Pembiayaan × Margin × (Jangka Waktu ÷ 12)</p>
+            <p style="margin: 0.5rem 0;"><strong>4. Total Pembiayaan</strong> = Jumlah Pembiayaan + Total Margin</p>
+            <p style="margin: 0.5rem 0;"><strong>5. Angsuran Bulanan</strong> = Total Pembiayaan ÷ Jangka Waktu</p>
+            <p style="margin: 0.75rem 0 0 0; font-style: italic; color: #667eea;">
+              💡 Margin bersifat flat (tetap) sesuai prinsip Murabahah
+            </p>
+          </div>
+        </div>
+      </div>
+    `;
+  } else if (category === "fee_based") {
+    // Kalkulator Biaya Layanan
+    title.textContent = "Kalkulator Biaya Layanan";
+    desc.textContent = "Hitung estimasi biaya layanan fee based income";
+
+    panel.innerHTML = `
+      <div class="simulasi-form">
+        <div class="form-group">
+          <label for="jenisLayanan">Jenis Layanan</label>
+          <select id="jenisLayanan" style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--border); border-radius: 12px; font-size: 1rem; font-weight: 600;">
+            <option value="transfer">Transfer Antar Bank</option>
+            <option value="sms">SMS Banking</option>
+            <option value="atm">Kartu ATM</option>
+            <option value="admin">Administrasi Bulanan</option>
+            <option value="valas">Transaksi Valas</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="frekuensi">Frekuensi Transaksi per Bulan</label>
+          <input type="range" id="frekuensi" min="1" max="100" value="10" step="1" />
+          <div class="range-value">
+            <span id="frekuensiValue">10</span> kali
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="nominalTransaksi">Nominal per Transaksi (jika ada)</label>
+          <div class="input-wrapper">
+            <span class="input-prefix">Rp</span>
+            <input type="number" id="nominalTransaksi" value="1000000" min="0" step="100000" />
+          </div>
+        </div>
+      </div>
+      <div class="simulasi-result">
+        <h4>Estimasi Biaya Fee Based</h4>
+        <div class="result-box">
+          <p class="result-label">Total Biaya per Bulan (Fee Based)</p>
+          <p class="result-value" id="hasilBiaya">Rp 0</p>
+          <div class="result-details">
+            <div class="detail-item">
+              <span>Jenis Layanan</span>
+              <strong id="jenisLayananResult">-</strong>
+            </div>
+            <div class="detail-item">
+              <span>Biaya per Transaksi</span>
+              <strong id="biayaPerTransaksi">Rp 0</strong>
+            </div>
+            <div class="detail-item">
+              <span>Frekuensi</span>
+              <strong id="frekuensiResult">0 kali</strong>
+            </div>
+            <div class="detail-item">
+              <span>Total per Tahun</span>
+              <strong id="totalPerTahun">Rp 0</strong>
+            </div>
+          </div>
+        </div>
+        <p class="small-note">
+          * Biaya dapat berubah sesuai kebijakan bank. Cek tarif terbaru di kantor cabang.
+        </p>
+        <div style="margin-top: 1.5rem; padding: 1.25rem; background: rgba(102, 126, 234, 0.08); border-left: 4px solid #667eea; border-radius: 12px;">
+          <h5 style="margin: 0 0 0.75rem 0; color: #667eea; font-size: 0.95rem; font-weight: 700;">📊 Rumus Perhitungan:</h5>
+          <div style="font-size: 0.85rem; line-height: 1.7; color: #475569;">
+            <p style="margin: 0.5rem 0;"><strong>1. Biaya per Transaksi</strong> = Tarif sesuai jenis layanan</p>
+            <p style="margin: 0.5rem 0;"><strong>2. Total Biaya per Bulan</strong> = Biaya per Transaksi × Frekuensi</p>
+            <p style="margin: 0.5rem 0;"><strong>3. Total Biaya per Tahun</strong> = Total Biaya per Bulan × 12</p>
+            <p style="margin: 0.75rem 0 0 0; font-style: italic; color: #667eea;">
+              💡 Tarif: Transfer Rp 6.500 | SMS Rp 500 | ATM Rp 2.500 | Admin Rp 15.000 | Valas 0.2%
+            </p>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  // Re-initialize calculator after rendering
+  initSimulator();
+}
+
 // ===== SIMULATOR =====
 function initSimulator() {
+  if (currentCalculatorType === "funding") {
+    initFundingCalculator();
+  } else if (currentCalculatorType === "financing") {
+    initFinancingCalculator();
+  } else if (currentCalculatorType === "fee_based") {
+    initFeeBasedCalculator();
+  }
+}
+
+function initFundingCalculator() {
+  const nominalInput = document.getElementById("nominalSimpanan");
+  const jangkaInput = document.getElementById("jangkaWaktuFunding");
+  const nisbahInput = document.getElementById("nisbah");
+  const rateInput = document.getElementById("equivalentRate");
+
+  if (!nominalInput) return;
+
+  jangkaInput.addEventListener("input", () => {
+    document.getElementById("jangkaWaktuFundingValue").textContent =
+      jangkaInput.value;
+    calculateBagiHasil();
+  });
+
+  nisbahInput.addEventListener("input", () => {
+    document.getElementById("nisbahValue").textContent = nisbahInput.value;
+    calculateBagiHasil();
+  });
+
+  rateInput.addEventListener("input", () => {
+    document.getElementById("equivalentRateValue").textContent =
+      rateInput.value;
+    calculateBagiHasil();
+  });
+
+  [nominalInput, jangkaInput, nisbahInput, rateInput].forEach((input) => {
+    input.addEventListener("change", calculateBagiHasil);
+    input.addEventListener("input", calculateBagiHasil);
+  });
+
+  calculateBagiHasil();
+}
+
+function initFinancingCalculator() {
   const jumlahInput = document.getElementById("jumlahPinjaman");
   const jangkaInput = document.getElementById("jangkaWaktu");
   const marginInput = document.getElementById("margin");
-  const calculateBtn = document.getElementById("calculateBtn");
+  const dpInput = document.getElementById("dp");
 
-  // Update range values
+  if (!jumlahInput) return;
+
   jangkaInput.addEventListener("input", () => {
     document.getElementById("jangkaWaktuValue").textContent = jangkaInput.value;
+    calculateAngsuran();
   });
 
   marginInput.addEventListener("input", () => {
     document.getElementById("marginValue").textContent = marginInput.value;
+    calculateAngsuran();
   });
 
-  // Calculate on button click
-  calculateBtn.addEventListener("click", calculateAngsuran);
+  dpInput.addEventListener("input", () => {
+    const jumlah = parseFloat(jumlahInput.value) || 0;
+    const dpPersen = parseFloat(dpInput.value);
+    const dpRupiah = jumlah * (dpPersen / 100);
 
-  // Auto calculate on input change
-  [jumlahInput, jangkaInput, marginInput].forEach((input) => {
+    document.getElementById("dpValue").textContent = dpPersen;
+    document.getElementById("dpRupiah").textContent = formatRupiah(dpRupiah);
+    calculateAngsuran();
+  });
+
+  [jumlahInput, jangkaInput, marginInput, dpInput].forEach((input) => {
     input.addEventListener("change", calculateAngsuran);
+    input.addEventListener("input", calculateAngsuran);
   });
 
-  // Initial calculation
   calculateAngsuran();
 }
 
+function initFeeBasedCalculator() {
+  const jenisInput = document.getElementById("jenisLayanan");
+  const frekuensiInput = document.getElementById("frekuensi");
+  const nominalInput = document.getElementById("nominalTransaksi");
+
+  if (!jenisInput) return;
+
+  frekuensiInput.addEventListener("input", () => {
+    document.getElementById("frekuensiValue").textContent =
+      frekuensiInput.value;
+    calculateBiayaLayanan();
+  });
+
+  [jenisInput, frekuensiInput, nominalInput].forEach((input) => {
+    input.addEventListener("change", calculateBiayaLayanan);
+    input.addEventListener("input", calculateBiayaLayanan);
+  });
+
+  calculateBiayaLayanan();
+}
+
+// Format currency helper function
+function formatRupiah(num) {
+  return new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+    minimumFractionDigits: 0,
+  }).format(num);
+}
+
 function calculateAngsuran() {
-  const jumlah = parseFloat(document.getElementById("jumlahPinjaman").value);
+  const hargaTotal = parseFloat(
+    document.getElementById("jumlahPinjaman").value
+  );
   const jangka = parseInt(document.getElementById("jangkaWaktu").value);
   const margin = parseFloat(document.getElementById("margin").value) / 100;
+  const dpPersen = parseFloat(document.getElementById("dp").value) / 100;
 
-  if (isNaN(jumlah) || jumlah <= 0 || jangka <= 0) {
+  if (isNaN(hargaTotal) || hargaTotal <= 0 || jangka <= 0) {
     return;
   }
 
+  // Perhitungan dengan DP
+  const uangMuka = hargaTotal * dpPersen;
+  const jumlahPembiayaan = hargaTotal - uangMuka;
+
   // Perhitungan Murabahah (Flat)
-  const totalMargin = jumlah * margin * (jangka / 12);
-  const totalPembiayaan = jumlah + totalMargin;
+  const totalMargin = jumlahPembiayaan * margin * (jangka / 12);
+  const totalPembiayaan = jumlahPembiayaan + totalMargin;
   const angsuranBulanan = totalPembiayaan / jangka;
 
-  // Format currency
-  const formatRupiah = (num) => {
-    return new Intl.NumberFormat("id-ID", {
-      style: "currency",
-      currency: "IDR",
-      minimumFractionDigits: 0,
-    }).format(num);
-  };
-
-  // Animate result
+  // Update all result elements
   const resultValue = document.getElementById("hasilAngsuran");
+  const hargaTotalEl = document.getElementById("hargaTotal");
+  const uangMukaEl = document.getElementById("uangMuka");
+  const jumlahPembiayaanEl = document.getElementById("jumlahPembiayaan");
   const totalPembiayaanEl = document.getElementById("totalPembiayaan");
   const totalMarginEl = document.getElementById("totalMargin");
 
+  // Animate result
   if (typeof gsap !== "undefined") {
     const obj = { value: 0 };
     gsap.to(obj, {
@@ -1111,8 +1451,27 @@ function calculateAngsuran() {
     resultValue.textContent = formatRupiah(angsuranBulanan);
   }
 
+  // Update all details
+  hargaTotalEl.textContent = formatRupiah(hargaTotal);
+  uangMukaEl.textContent = formatRupiah(uangMuka);
+  jumlahPembiayaanEl.textContent = formatRupiah(jumlahPembiayaan);
   totalPembiayaanEl.textContent = formatRupiah(totalPembiayaan);
   totalMarginEl.textContent = formatRupiah(totalMargin);
+
+  // Update DP rupiah display
+  document.getElementById("dpRupiah").textContent = formatRupiah(uangMuka);
+
+  // Tampilkan rumus perhitungan di console
+  console.log("=== PERHITUNGAN PEMBIAYAAN MURABAHAH ===");
+  console.log("Harga Total:", formatRupiah(hargaTotal));
+  console.log("DP:", dpPersen * 100 + "% =", formatRupiah(uangMuka));
+  console.log("Jangka Waktu:", jangka, "bulan");
+  console.log("Margin:", margin * 100 + "% per tahun");
+  console.log("---");
+  console.log("Jumlah Pembiayaan:", formatRupiah(jumlahPembiayaan));
+  console.log("Total Margin:", formatRupiah(totalMargin));
+  console.log("Total Pembiayaan:", formatRupiah(totalPembiayaan));
+  console.log("Angsuran Bulanan:", formatRupiah(angsuranBulanan));
 }
 
 // ===== GSAP ANIMATIONS =====
@@ -1193,3 +1552,120 @@ console.log("Bank Melasa Syariah - Website Loaded Successfully! 🚀");
 console.log(
   "35 Produk Syariah Tersedia | Carousel Manual Scroll | Visi Misi Added"
 );
+
+// ===== FAQ ACCORDION =====
+function initFAQ() {
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach((item) => {
+    const question = item.querySelector(".faq-question");
+
+    question.addEventListener("click", () => {
+      // Close other items
+      faqItems.forEach((otherItem) => {
+        if (otherItem !== item && otherItem.classList.contains("active")) {
+          otherItem.classList.remove("active");
+        }
+      });
+
+      // Toggle current item
+      item.classList.toggle("active");
+    });
+  });
+}
+
+// Live Chat Widget
+const chatBubble = document.getElementById("chatBubble");
+const chatWindow = document.getElementById("chatWindow");
+const chatClose = document.getElementById("chatClose");
+const chatBody = document.querySelector(".chat-body");
+
+if (chatBubble && chatWindow) {
+  chatBubble.addEventListener("click", () => {
+    chatWindow.classList.toggle("active");
+    const badge = document.querySelector(".chat-badge");
+    if (badge && chatWindow.classList.contains("active")) {
+      badge.style.display = "none";
+    }
+  });
+
+  if (chatClose) {
+    chatClose.addEventListener("click", (e) => {
+      e.stopPropagation();
+      chatWindow.classList.remove("active");
+    });
+  }
+
+  // Quick replies
+  document.querySelectorAll(".quick-reply").forEach((button) => {
+    button.addEventListener("click", function () {
+      const message = this.dataset.message;
+
+      // Add user message
+      const userMsg = document.createElement("div");
+      userMsg.className = "chat-message user";
+      userMsg.innerHTML = `
+        <div class="message-avatar">👤</div>
+        <div class="message-content">
+          <p>${message}</p>
+        </div>
+      `;
+
+      // Insert before quick replies
+      const quickReplies = document.querySelector(".chat-quick-replies");
+      chatBody.insertBefore(userMsg, quickReplies);
+
+      // Scroll to bottom
+      chatBody.scrollTop = chatBody.scrollHeight;
+
+      // Bot response after delay
+      setTimeout(() => {
+        const botMsg = document.createElement("div");
+        botMsg.className = "chat-message bot";
+
+        let response = "";
+        if (message.includes("rekening")) {
+          response = `
+            <div class="message-avatar">🤖</div>
+            <div class="message-content">
+              <p>Untuk membuka rekening, Anda bisa:</p>
+              <p>1. Kunjungi kantor cabang terdekat<br>2. Hubungi kami via WhatsApp<br>3. Gunakan Product Finder untuk menemukan produk yang tepat</p>
+              <p>Dokumen yang diperlukan: KTP, NPWP (jika ada), dan setoran awal.</p>
+            </div>
+          `;
+        } else if (message.includes("pembiayaan")) {
+          response = `
+            <div class="message-avatar">🤖</div>
+            <div class="message-content">
+              <p>Kami menyediakan berbagai produk pembiayaan syariah:</p>
+              <p>🏠 KPR Syariah<br>🚗 Pembiayaan Kendaraan<br>💼 Modal Kerja<br>💰 Multiguna</p>
+              <p>Gunakan kalkulator simulasi di website untuk estimasi angsuran!</p>
+            </div>
+          `;
+        } else if (message.includes("cabang")) {
+          response = `
+            <div class="message-avatar">🤖</div>
+            <div class="message-content">
+              <p>Kami memiliki kantor cabang di:</p>
+              <p>📍 Jakarta Utara (Kantor Pusat)<br>📍 Surabaya<br>📍 Bandung</p>
+              <p>Lihat detail alamat di section Kantor Cabang di website kami.</p>
+            </div>
+          `;
+        } else {
+          response = `
+            <div class="message-avatar">🤖</div>
+            <div class="message-content">
+              <p>Terima kasih! Tim kami siap membantu Anda.</p>
+              <p>📧 Email: layanan@melasasyariah.co.id<br>💬 WhatsApp: +62 812-9616-3263</p>
+              <p>Jam operasional: Senin-Jumat 08:00-17:00 WIB</p>
+            </div>
+          `;
+        }
+
+        botMsg.innerHTML = response;
+        chatBody.insertBefore(botMsg, quickReplies);
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }, 1000);
+    });
+  });
+}

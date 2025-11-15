@@ -1,0 +1,376 @@
+/* ========================================
+   TEMA LPS - HIJAU
+   Override warna ungu ke hijau
+   ======================================== */
+
+/* Primary Colors - Hijau LPS */
+:root {
+  --primary: #10b981 !important;
+  --primary-dark: #059669 !important;
+  --secondary: #047857 !important;
+}
+
+/* Buttons */
+.btn-primary,
+.btn.btn-primary,
+a.btn-primary {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  color: white !important;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4) !important;
+  border: none !important;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+  box-shadow: 0 15px 40px rgba(16, 185, 129, 0.6) !important;
+}
+
+.btn-secondary {
+  background: white !important;
+  color: #10b981 !important;
+  border: 2px solid #10b981 !important;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  border-color: #10b981 !important;
+  color: white !important;
+}
+
+/* Hero Title - Hijau JELAS (tidak burem) */
+.hero-title {
+  color: #10b981 !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: #10b981 !important;
+  background-clip: unset !important;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9), 2px 2px 4px rgba(0, 0, 0, 0.8),
+    0 0 10px rgba(0, 0, 0, 0.6) !important;
+  filter: none !important;
+}
+
+/* Hero Subtitle - Hijau */
+.hero-subtitle {
+  color: #141313 !important;
+  text-shadow: 2px 2px 4px rgba(104, 247, 91, 0.9),
+    1px 1px 2px rgba(110, 244, 179, 0.8), 0 0 20px rgba(78, 228, 178, 0.5) !important;
+  font-weight: 500 !important;
+}
+
+/* Section Titles */
+.section-head h3 {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* Tab Buttons */
+.tab-btn.active {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  border-color: #10b981 !important;
+  color: rgb(151, 243, 89)25, 248, 101)40, 249, 118)55, 255, 255) !important;
+}
+
+.tab-btn:hover {
+  border-color: #10b981 !important;
+  color: #10b981 !important;
+}
+
+/* Nav Active */
+.nav-btn.active {
+  color: #10b981 !important;
+}
+
+.nav-btn.active::before {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+}
+
+.nav-btn:hover {
+  color: #10b981 !important;
+}
+
+/* Center Button */
+.center-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+}
+
+/* Active Indicator */
+.active-indicator {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+}
+
+/* Result Box */
+.result-box {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+}
+
+/* WhatsApp Float - Keep Green */
+.whatsapp-float {
+  background: #25d366 !important;
+}
+
+/* Product Card Hover */
+.product-card:hover {
+  border-color: #10b981 !important;
+}
+
+/* Simulasi Result */
+.result-value {
+  color: #10b981 !important;
+}
+
+/* FAQ Active */
+.faq-item.active .faq-question {
+  background: rgba(16, 185, 129, 0.1) !important;
+  border-left-color: #10b981 !important;
+}
+
+/* Trust Badges */
+.trust-badge:hover {
+  border-color: #10b981 !important;
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+  background: linear-gradient(90deg, #10b981 0%, #059669 100%) !important;
+}
+
+/* Back to Top */
+.back-to-top {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+}
+
+/* Links */
+a:hover {
+  color: #10b981 !important;
+}
+
+/* Input Focus */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #10b981 !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2) !important;
+}
+
+/* Carousel Buttons */
+.carousel-btn:hover {
+  background: #10b981 !important;
+  border-color: #10b981 !important;
+}
+
+/* Modal Close Hover */
+.modal-close:hover {
+  background: #10b981 !important;
+}
+
+/* Hero Badge */
+.hero-badge {
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.15) 0%,
+    rgba(5, 150, 105, 0.15) 100%
+  ) !important;
+  color: #10b981 !important;
+}
+
+/* Floating Shapes - Hijau */
+.shape-1 {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+}
+
+.shape-2 {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%) !important;
+}
+
+.shape-3 {
+  background: linear-gradient(135deg, #6ee7b7 0%, #34d399 100%) !important;
+}
+
+.shape-4 {
+  background: linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%) !important;
+}
+
+.shape-5 {
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%) !important;
+}
+
+/* ========================================
+   ANIMASI TOMBOL HERO
+   ======================================== */
+
+/* Semua Button di Hero */
+.hero-cta .btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Hover Effect */
+.hero-cta .btn:hover {
+  transform: translateY(-3px) scale(1.05) !important;
+  box-shadow: 0 15px 40px rgba(16, 185, 129, 0.5) !important;
+}
+
+/* Active/Click Effect */
+.hero-cta .btn:active {
+  transform: translateY(-1px) scale(0.98) !important;
+  box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3) !important;
+}
+
+/* Ripple Effect on Click */
+.hero-cta .btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.hero-cta .btn:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Button Primary - Hijau */
+.hero-cta .btn-primary {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  animation: pulse-green 2s infinite !important;
+}
+
+.hero-cta .btn-primary:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+  animation: none !important;
+}
+
+/* Button Secondary - White with Green Border */
+.hero-cta .btn-secondary {
+  background: white !important;
+  color: #10b981 !important;
+  border: 2px solid #10b981 !important;
+}
+
+.hero-cta .btn-secondary:hover {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  color: white !important;
+  border-color: #10b981 !important;
+}
+
+/* Pulse Animation */
+@keyframes pulse-green {
+  0%,
+  100% {
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+  }
+  50% {
+    box-shadow: 0 10px 40px rgba(16, 185, 129, 0.6);
+  }
+}
+
+/* Smooth Slide In Animation */
+.hero-cta {
+  animation: slideInUp 0.8s ease-out !important;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   ANIMASI TAB PRODUK
+   ======================================== */
+
+/* Tab Buttons - Smooth Animations */
+.tab-btn {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+}
+
+/* Hover Effect */
+.tab-btn:hover {
+  transform: translateY(-3px) scale(1.03) !important;
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3) !important;
+  border-color: #10b981 !important;
+  color: #10b981 !important;
+}
+
+/* Active Tab - Hijau */
+.tab-btn.active {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  border-color: #10b981 !important;
+  color: white !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4) !important;
+}
+
+/* Click Effect */
+.tab-btn:active {
+  transform: translateY(0) scale(0.98) !important;
+  box-shadow: 0 5px 15px rgba(16, 185, 129, 0.2) !important;
+}
+
+/* Ripple Effect on Tab Click */
+.tab-btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+  pointer-events: none;
+}
+
+.tab-btn:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Tab Icon Animation */
+.tab-btn svg {
+  transition: transform 0.3s ease !important;
+}
+
+.tab-btn:hover svg {
+  transform: scale(1.1) rotate(5deg) !important;
+}
+
+.tab-btn.active svg {
+  transform: scale(1.05) !important;
+}
+
+/* Smooth Tab Content Transition */
+.product-carousel {
+  transition: opacity 0.3s ease, transform 0.3s ease !important;
+}
+
+/* Product Card Animations */
+.product-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.product-card:hover {
+  transform: translateY(-8px) scale(1.03) !important;
+  box-shadow: 0 15px 40px rgba(16, 185, 129, 0.25) !important;
+  border-color: #10b981 !important;
+}
+
+.product-card:active {
+  transform: translateY(-4px) scale(1.01) !important;
+}

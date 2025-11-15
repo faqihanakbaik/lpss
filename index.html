@@ -9,6 +9,11 @@
       content="Bank Melasa Syariah — Solusi perbankan syariah modern dengan produk lengkap, simulasi interaktif, dan layanan amanah."
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="theme-lps.css" />
+    <link rel="stylesheet" href="green-theme.css" />
+    <link rel="stylesheet" href="fix-animations.css" />
+    <link rel="stylesheet" href="value-animations.css" />
+    <link rel="stylesheet" href="whatsapp-fix.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -32,27 +37,20 @@
           </button>
         </li>
         <li class="nav-item">
-          <button data-target="tentang" class="nav-btn">
+          <a href="about.html" class="nav-btn" style="text-decoration: none">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path
                 d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
               />
             </svg>
-            <span>Tentang</span>
-          </button>
+            <span>Tentang Kami</span>
+          </a>
         </li>
-        <li class="nav-item">
-          <button data-target="produk" class="nav-btn">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
-            </svg>
-            <span>Produk</span>
-          </button>
-        </li>
+        <!-- Produk removed - Buka Rekening now in center -->
         <li class="nav-item center">
           <a
             class="center-btn"
-            href="https://wa.me/6281234567890"
+            href="https://wa.me/6281296163263"
             target="_blank"
             title="Buka Rekening"
           >
@@ -128,175 +126,46 @@
           <div class="hero-badge">PT Bank Melasa Syariah, Tbk.</div>
           <h2 class="hero-title">Keuangan Amanah, Tanpa Riba, Tanpa Drama</h2>
           <p class="hero-subtitle">
-            Kami menggabungkan prinsip syariah dan teknologi modern untuk solusi
-            perbankan terbaik Anda
+            GASPOL KE BANK SYARIAH,
+KEUANGAN AMANAH,
+NO
+ DRAMA,TANPA RIBA TANPA PHP
           </p>
-          <div class="hero-cta">
-            <a href="#produk" class="btn btn-primary">Jelajahi Produk</a>
-            <a href="#simulasi" class="btn btn-secondary">Coba Simulasi</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Tentang Kami Section -->
-      <section id="tentang" class="section tentang-section">
-        <div class="container">
-          <div class="section-head">
-            <h3>Tentang Bank Melasa Syariah</h3>
-            <p class="muted">
-              Mengenal lebih dekat perbankan syariah yang amanah
-            </p>
-          </div>
-
-          <!-- Pengertian Bank Syariah -->
-          <div class="tentang-card full-width">
-            <div class="tentang-icon">
+          <div
+            class="hero-cta"
+            style="
+              display: flex;
+              gap: 1rem;
+              justify-content: center;
+              flex-wrap: wrap;
+            "
+          >
+            <a
+              href="product-finder.html"
+              class="tab-btn"
+              style="text-decoration: none"
+            >
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                  d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"
                 />
               </svg>
-            </div>
-            <h4>Pengertian Bank Syariah</h4>
-            <p>
-              Bank Syariah merupakan Bank yang menjalankan kegiatan usahanya
-              berdasarkan Prinsip Syariah, yang berdasarkan Al-Quran, Hadist,
-              Ijma, dan Qiyas.
-            </p>
-          </div>
-
-          <!-- Visi & Misi Grid -->
-          <div class="tentang-grid">
-            <!-- Visi -->
-            <div class="tentang-card">
-              <div class="tentang-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
-                  />
-                </svg>
-              </div>
-              <h4>Visi Kami</h4>
-              <p>
-                Menjadi Bank Syariah terdepan yang Terpercaya dalam pengelolaan
-                dana, Transparan dalam praktik bagi hasil dan penimpanan dana,
-                serta Akuntabel dalam tata kelola perusahaan, demi mewujudkan
-                kemaslahatan ekonomi umat.
-              </p>
-            </div>
-
-            <!-- Misi -->
-            <div class="tentang-card">
-              <div class="tentang-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"
-                  />
-                </svg>
-              </div>
-              <h4>Misi Kami</h4>
-              <ul class="misi-list">
-                <li>
-                  Menyediakan layanan perbankan syariah terbaik dengan prinsip
-                  kehati-hatian (prudence) dan integritas tinggi, memastikan
-                  setiap produk dan akad sesuai dengan syariat.
-                </li>
-                <li>
-                  Menyajikan informasi biaya, risiko, dan mekanisme bagi hasil
-                  (nisbah) secara jelas dan mudah dipahami oleh seluruh nasabah
-                  dan pemangku kepentingan.
-                </li>
-                <li>
-                  Melaksanakan Good Corporate Governance (GCG) secara konsisten
-                  dan bertanggung jawab, didukung oleh sistem audit dan
-                  pelaporan yang kredibel untuk menjamin pertanggungjawaban
-                  kepada nasabah dan shareholder.
-                </li>
-                <li>
-                  Terus mengembangkan produk dan layanan yang inovatif dan
-                  relevan, yang sekaligus memperkuat fondasi amanah,
-                  transparansi, dan keadilan dalam bertransaksi.
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Perbedaan Bank Syariah vs Konvensional -->
-          <div class="tentang-card full-width">
-            <div class="tentang-icon">
+              Temukan Produk Anda
+            </a>
+            <a href="#produk" class="tab-btn" style="text-decoration: none">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
+              </svg>
+              Jelajahi Produk
+            </a>
+            <a href="about.html" class="tab-btn" style="text-decoration: none">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path
-                  d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"
+                  d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
                 />
               </svg>
-            </div>
-            <h4>Perbedaan Bank Syariah & Bank Konvensional</h4>
-            <div class="comparison-table">
-              <div class="comparison-row">
-                <div class="comparison-header">Aspek</div>
-                <div class="comparison-header">Bank Syariah</div>
-                <div class="comparison-header">Bank Konvensional</div>
-              </div>
-              <div class="comparison-row">
-                <div class="comparison-cell">
-                  <strong>Prinsip Operasional</strong>
-                </div>
-                <div class="comparison-cell">
-                  Berdasarkan prinsip syariah Islam (Al-Quran & Hadist)
-                </div>
-                <div class="comparison-cell">
-                  Berdasarkan prinsip ekonomi konvensional
-                </div>
-              </div>
-              <div class="comparison-row">
-                <div class="comparison-cell">
-                  <strong>Sistem Bunga</strong>
-                </div>
-                <div class="comparison-cell">
-                  Tidak menggunakan bunga (riba), menggunakan bagi hasil
-                </div>
-                <div class="comparison-cell">
-                  Menggunakan sistem bunga (interest)
-                </div>
-              </div>
-              <div class="comparison-row">
-                <div class="comparison-cell">
-                  <strong>Akad/Kontrak</strong>
-                </div>
-                <div class="comparison-cell">
-                  Mudharabah, Musyarakah, Murabahah, Ijarah, dll
-                </div>
-                <div class="comparison-cell">Perjanjian kredit standar</div>
-              </div>
-              <div class="comparison-row">
-                <div class="comparison-cell"><strong>Pengawasan</strong></div>
-                <div class="comparison-cell">
-                  OJK + Dewan Pengawas Syariah (DPS)
-                </div>
-                <div class="comparison-cell">OJK</div>
-              </div>
-              <div class="comparison-row">
-                <div class="comparison-cell"><strong>Orientasi</strong></div>
-                <div class="comparison-cell">
-                  Profit & Falah (kesejahteraan dunia-akhirat)
-                </div>
-                <div class="comparison-cell">Profit oriented</div>
-              </div>
-              <div class="comparison-row">
-                <div class="comparison-cell">
-                  <strong>Hubungan dengan Nasabah</strong>
-                </div>
-                <div class="comparison-cell">Kemitraan (partnership)</div>
-                <div class="comparison-cell">Debitur-Kreditur</div>
-              </div>
-              <div class="comparison-row">
-                <div class="comparison-cell"><strong>Investasi</strong></div>
-                <div class="comparison-cell">
-                  Hanya pada sektor halal dan produktif
-                </div>
-                <div class="comparison-cell">Bebas, selama legal</div>
-              </div>
-            </div>
+              Tentang Kami
+            </a>
           </div>
         </div>
       </section>
@@ -358,15 +227,15 @@
       <section id="simulasi" class="section simulasi-section">
         <div class="container">
           <div class="section-head">
-            <h3>Kalkulator Pembiayaan Syariah</h3>
-            <p class="muted">
+            <h3 id="simulasiTitle">Kalkulator Pembiayaan Syariah</h3>
+            <p class="muted" id="simulasiDesc">
               Hitung angsuran Anda sekarang. Transparan dan amanah.
             </p>
           </div>
-          <div class="simulasi-panel">
+          <div class="simulasi-panel" id="simulasiPanel">
             <div class="simulasi-form">
               <div class="form-group">
-                <label for="jumlahPinjaman">Jumlah Pembiayaan</label>
+                <label for="jumlahPinjaman">Harga Total / OTR</label>
                 <div class="input-wrapper">
                   <span class="input-prefix">Rp</span>
                   <input
@@ -393,6 +262,21 @@
                 </div>
               </div>
               <div class="form-group">
+                <label for="dp">Uang Muka / DP (%)</label>
+                <input
+                  type="range"
+                  id="dp"
+                  min="0"
+                  max="50"
+                  value="20"
+                  step="5"
+                />
+                <div class="range-value">
+                  <span id="dpValue">20</span>% =
+                  <span id="dpRupiah">Rp 10.000.000</span>
+                </div>
+              </div>
+              <div class="form-group">
                 <label for="margin">Nisbah/Margin (%)</label>
                 <input
                   type="range"
@@ -406,9 +290,7 @@
                   <span id="marginValue">7.5</span>%
                 </div>
               </div>
-              <button class="btn btn-primary btn-calculate" id="calculateBtn">
-                Hitung Angsuran
-              </button>
+              <!-- Button removed - auto calculate -->
             </div>
             <div class="simulasi-result">
               <h4>Estimasi Hasil Perhitungan</h4>
@@ -417,12 +299,24 @@
                 <p class="result-value" id="hasilAngsuran">Rp 0</p>
                 <div class="result-details">
                   <div class="detail-item">
-                    <span>Total Pembiayaan</span>
-                    <strong id="totalPembiayaan">Rp 0</strong>
+                    <span>Harga Total</span>
+                    <strong id="hargaTotal">Rp 0</strong>
+                  </div>
+                  <div class="detail-item">
+                    <span>Uang Muka (DP)</span>
+                    <strong id="uangMuka">Rp 0</strong>
+                  </div>
+                  <div class="detail-item">
+                    <span>Jumlah Pembiayaan</span>
+                    <strong id="jumlahPembiayaan">Rp 0</strong>
                   </div>
                   <div class="detail-item">
                     <span>Total Margin</span>
                     <strong id="totalMargin">Rp 0</strong>
+                  </div>
+                  <div class="detail-item">
+                    <span>Total Pembiayaan</span>
+                    <strong id="totalPembiayaan">Rp 0</strong>
                   </div>
                 </div>
               </div>
@@ -454,7 +348,10 @@
                 </svg>
               </div>
               <h4>Kantor Pusat</h4>
-              <p>Jl. Jenderal Sudirman Kav. 52-53, Jakarta Pusat 10210</p>
+              <p>
+                Ruko Gading Park View Blok A No. 12, Jl. Boulevard Raya, Kel.
+                Kelapa Gading Timur, Kec. Kelapa Gading, Jakarta Utara 14240
+              </p>
               <p class="muted">Telp: (021) 8567-9000</p>
               <a
                 href="https://maps.google.com"
@@ -472,7 +369,7 @@
                 </svg>
               </div>
               <h4>Cabang Surabaya</h4>
-              <p>Jl. Raya Gubeng No. 100, Surabaya</p>
+              <p>Jl. Rawa Kopi No.132, Pangkalan Jati Baru, Cinere, Depok</p>
               <p class="muted">Telp: (031) 500-2000</p>
               <a
                 href="https://maps.google.com"
@@ -490,7 +387,10 @@
                 </svg>
               </div>
               <h4>Cabang Bandung</h4>
-              <p>Jl. Asia Afrika No. 8, Bandung</p>
+              <p>
+                Jl. Melati 1 No.26, Pondok Labu, Cilandak, Jakarta Selatan, DKI
+                Jakarta
+              </p>
               <p class="muted">Telp: (022) 420-3000</p>
               <a
                 href="https://maps.google.com"
@@ -508,7 +408,7 @@
         <div class="container">
           <h3>Kontak & Informasi</h3>
           <p class="muted">
-            Call Center: 1500-777 • Email: layanan@melasasyariah.co.id
+            WhatsApp: +62 812-9616-3263 • Email: layanan@melasasyariah.co.id
           </p>
           <p class="muted">
             Diawasi oleh OJK, Islamic Banking, & Dewan Pengawas Syariah
@@ -532,6 +432,201 @@
       </div>
     </div>
 
+    <!-- FAQ Section -->
+    <section id="faq" class="section faq-section">
+      <div class="container">
+        <div class="section-head">
+          <h3>Pertanyaan yang Sering Diajukan</h3>
+          <p class="muted">Temukan jawaban untuk pertanyaan Anda</p>
+        </div>
+        <div class="faq-container">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Apa itu Bank Syariah?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7 10l5 5 5-5z" />
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Bank Syariah adalah bank yang menjalankan kegiatan usahanya
+                berdasarkan Prinsip Syariah, yang berdasarkan Al-Quran, Hadist,
+                Ijma, dan Qiyas. Bank Syariah tidak menggunakan sistem bunga
+                (riba), melainkan menggunakan sistem bagi hasil dan akad-akad
+                syariah lainnya.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Apa perbedaan Bank Syariah dengan Bank Konvensional?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7 10l5 5 5-5z" />
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Perbedaan utama: Bank Syariah tidak menggunakan bunga (riba)
+                melainkan bagi hasil, menggunakan akad syariah (Mudharabah,
+                Murabahah, dll), diawasi oleh Dewan Pengawas Syariah, dan
+                berorientasi pada profit & falah (kesejahteraan dunia-akhirat).
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Bagaimana cara membuka rekening?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7 10l5 5 5-5z" />
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Anda bisa membuka rekening dengan mengunjungi kantor cabang kami
+                atau hubungi kami melalui WhatsApp. Siapkan KTP, NPWP (jika
+                ada), dan setoran awal sesuai produk yang dipilih. Proses
+                pembukaan rekening cepat dan mudah!
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Berapa setoran awal minimum?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7 10l5 5 5-5z" />
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Setoran awal bervariasi tergantung produk: Tabunganku iB mulai
+                dari Rp 100.000, Tabungan Si-Pintar iB hanya Rp 5.000, Deposito
+                Lock iB mulai dari Rp 5.000.000. Lihat detail setiap produk
+                untuk informasi lengkap.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Apakah dana saya aman?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7 10l5 5 5-5z" />
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Ya, sangat aman! Dana Anda dijamin oleh Lembaga Penjamin
+                Simpanan (LPS) hingga Rp 2 miliar per nasabah. Kami juga diawasi
+                oleh OJK dan Dewan Pengawas Syariah untuk memastikan kepatuhan
+                syariah dan keamanan dana Anda.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Bagaimana sistem bagi hasil bekerja?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7 10l5 5 5-5z" />
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Sistem bagi hasil (nisbah) adalah pembagian keuntungan antara
+                bank dan nasabah sesuai kesepakatan di awal. Misalnya nisbah
+                40:60 berarti 40% untuk nasabah dan 60% untuk bank. Bagi hasil
+                dihitung dari pendapatan bank yang dibagihasilkan, bukan dari
+                bunga.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section">
+      <div class="container">
+        <div class="section-head">
+          <h3>Apa Kata Nasabah Kami</h3>
+          <p class="muted">Kepercayaan nasabah adalah prioritas kami</p>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">
+              "Pelayanan sangat memuaskan! Proses pembukaan rekening cepat dan
+              staff sangat membantu menjelaskan produk-produk syariah. Sangat
+              recommended!"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">👨</div>
+              <div class="author-info">
+                <h5>Msrsha</h5>
+                <p>Nasabah Tabungan Tijarah iB</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">
+              "Alhamdulillah, dengan Tabungan Hijrah Baitullah saya bisa
+              mewujudkan impian umroh. Sistemnya mudah dan transparan. Terima
+              kasih Bank Melasa Syariah!"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">👩</div>
+              <div class="author-info">
+                <h5>Aneira</h5>
+                <p>Nasabah Tabungan Hijrah Baitullah iB</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">
+              "Deposito Lock iB memberikan bagi hasil yang kompetitif. Prosesnya
+              mudah dan sesuai syariah. Sangat puas dengan layanan Bank Melasa
+              Syariah!"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">👨</div>
+              <div class="author-info">
+                <h5>Kayla</h5>
+                <p>Nasabah Deposito Lock iB</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Badges Section -->
+    <section class="section trust-section">
+      <div class="container">
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <div class="trust-icon">🛡️</div>
+            <h4>Dijamin LPS</h4>
+            <p>Dana aman hingga Rp 2 Miliar</p>
+          </div>
+          <div class="trust-badge">
+            <div class="trust-icon">✅</div>
+            <h4>Diawasi OJK</h4>
+            <p>Terdaftar & diawasi resmi</p>
+          </div>
+          <div class="trust-badge">
+            <div class="trust-icon">🕌</div>
+            <h4>Syariah Compliant</h4>
+            <p>Diawasi Dewan Pengawas Syariah</p>
+          </div>
+          <div class="trust-badge">
+            <div class="trust-icon">🏆</div>
+            <h4>15+ Tahun</h4>
+            <p>Pengalaman melayani nasabah</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer class="site-footer">
       <div class="container">
@@ -539,10 +634,29 @@
           &copy; <span id="year"></span> Bank Melasa Syariah — Keuangan Amanah,
           No Drama.
         </p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8">
+          🏦 Tim LPS
+        </p>
       </div>
     </footer>
 
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="https://wa.me/6281296163263"
+      class="whatsapp-float"
+      target="_blank"
+      title="Chat WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </svg>
+    </a>
+
     <script src="script.js"></script>
+    <script src="calculator-dynamic.js"></script>
+    <script src="smooth-enhancements.js"></script>
     <script>
       // Particle Animation
       const canvas = document.getElementById("particleCanvas");
@@ -623,43 +737,6 @@
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
       });
-
-      // Simple Zoom Effect - removed 3D tilt
-      // Cards now only zoom in/out from center via CSS hover
-
-      // Cursor Trail Effect
-      const cursorDot = document.createElement("div");
-      cursorDot.className = "cursor-dot";
-      document.body.appendChild(cursorDot);
-
-      const cursorOutline = document.createElement("div");
-      cursorOutline.className = "cursor-outline";
-      document.body.appendChild(cursorOutline);
-
-      let mouseX = 0,
-        mouseY = 0;
-      let outlineX = 0,
-        outlineY = 0;
-
-      document.addEventListener("mousemove", (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-
-        cursorDot.style.left = mouseX + "px";
-        cursorDot.style.top = mouseY + "px";
-      });
-
-      function animateCursor() {
-        outlineX += (mouseX - outlineX) * 0.15;
-        outlineY += (mouseY - outlineY) * 0.15;
-
-        cursorOutline.style.left = outlineX + "px";
-        cursorOutline.style.top = outlineY + "px";
-
-        requestAnimationFrame(animateCursor);
-      }
-
-      animateCursor();
 
       // Parallax Effect
       window.addEventListener("scroll", () => {
