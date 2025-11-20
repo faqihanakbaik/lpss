@@ -8,6 +8,14 @@ if (typeof fundingProducts !== "undefined") {
     fundingProducts.length,
     "products"
   );
+  // Verify first product has complete definisi
+  if (fundingProducts[0] && fundingProducts[0].definisi) {
+    console.log(
+      "📝 Sample definisi length:",
+      fundingProducts[0].definisi.length,
+      "chars"
+    );
+  }
 }
 if (typeof feeBasedProducts !== "undefined") {
   console.log(
@@ -101,14 +109,10 @@ const productData = {
               "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=400&q=80",
             details: {
               syarat: [
-                "1. Setoran awal ringan",
-                "2. Bebas Biaya Administrasi",
-                "3. Setoran fleksibel",
-                "4. Terhubung dengan SISKOHAT",
-                "5. Aman dan dijamin LPS",
+                "1. Memberikan Identitas Diri KITAP/KITAS/KTP/ 2. Membawa NPWP 3. Mengisi Formulir Pembukaan Rekening 4. Memiliki Paspor",
               ],
               fitur:
-                "1. Memberikan Identitas Diri KITAP/KITAS/KTP/ 2. Membawa NPWP 3. Mengisi Formulir Pembukaan Rekening 4. Memiliki Paspor",
+                "1. Setoran awal ringan. 2. Bebas Biaya Administrasi. 3. Setoran fleksibel. 4. Terhubung dengan SISKOHAT. 5. Aman dan dijamin LPS.",
               tarif:
                 "1. Pembukaan Rekening = • Tabungan Haji Dewasa: Rp100.000 • Tabungan Haji Anak: Rp50.000 2. Setoran awal minimum= Rp 100.000 3. Biaya Haji Reguler = Rp. 90.000.000 4. Biaya Umrah Reguler = Rp. 25.000.000-30.000.000 5. Setoran Porsi Haji: Rp25.100.000 Setoran Porsi Umrah: Rp 2.000.000 6. Biaya Penutupan Rekening Sebelum Mendapatkan Porsi Haji: Rp 100.000",
             },
@@ -139,7 +143,7 @@ const productData = {
             title: "Deposito On Call iB Amanah",
             desc: "Deposito fleksibel untuk dana jangka pendek 7-30 hari",
             definisi:
-              "Deposito On Call dengan akad Mudharabah Mutlaqah adalah produk simpanan investasi berjangka pendek yang memungkinkan nasabah memperoleh bagi hasil optimal dan kompetitif dengan jangka waktu singkat 7-30 hari, pencairan disertai pemberitahuan sebelumnya (on call) minimal 3 hari kerja.",
+              "Deposito On Call dengan akad Mudharabah Mutlaqah adalah produk simpanan investasi berjangka pendek yang menggunakan akad Mudharabah Mutlaqah, Nasabah dapat memperoleh bagi hasil yang optimal, kompetitif, dan dapat dinegosiasikan dengan Bank yang akan dibayarkan setelah jangka waktu penempatan yang singkat tersebut berakhir, yang mekanismenya disepakati dan diadministrasikan langsung di kantor Bank. Pencairan disertai pemberitahuan sebelumnya (on call) minimal 3 hari kerja.",
             image:
               "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&q=80",
             details: {
@@ -274,7 +278,7 @@ const productData = {
             title: "Tabungan My Qurbani iB",
             desc: "Tabungan berencana untuk persiapan qurban",
             definisi:
-              "Tabungan My Qurbani iB adalah produk simpanan dengan akad Wadiah Yad Dhamanah yang dirancang khusus untuk membantu nasabah mempersiapkan dana qurban dengan cara menabung secara rutin, penarikan hanya dapat dilakukan menjelang Idul Adha atau sesuai kesepakatan.",
+              "Tabungan Qurban Syariah adalah produk simpanan berencana yang ditujukan bagi nasabah perorangan yang ingin mempersiapkan dana untuk pembelian hewan kurban secara terencana dan disiplin di mana dana tersebut disetorkan secara rutin dalam jangka waktu tertentu, dikelola oleh Bank dengan akad Aadiah Yad Dhamanah dan hanya dapat dicairkan atau digunakan untuk pembelian kurban pada saat mendekati Hari Raya Idul Adha.",
             image:
               "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=400&q=80",
             details: {
@@ -294,7 +298,7 @@ const productData = {
             title: "Tabungan Emas-slahah",
             desc: "Investasi emas dengan cara mencicil secara syariah",
             definisi:
-              "Tabungan Emas-slahah dengan Akad Wadiah Yad Dhamanah adalah layanan simpanan dalam bentuk saldo emas digital atau fisik yang memungkinkan nasabah berinvestasi dalam emas dengan cara mencicil atau menabung secara rutin, emas dapat dicairkan atau ditarik kapan saja dengan datang langsung ke kantor cabang.",
+              " Tabungan Emas-slahah  dengan Akad Wadhi'ah Yad Dhamanah adalah layanan simpanan dalam bentuk saldo emas digital atau fisik, kepada nasabah/masyarakat umum yang ingin berinvestasi dalam emas dengan cara mencicil atau menabung secara rutin, emas tersebut dapat nasabah lakukan pencairan atau penarikan kapan saja , dengan datang langsung ke kantor cabang.",
             image:
               "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=400&q=80",
             details: {
@@ -316,7 +320,7 @@ const productData = {
             title: "Tabungan EduDream iB",
             desc: "Tabungan pendidikan untuk masa depan anak",
             definisi:
-              "Tabungan EduDream iB adalah produk simpanan dengan akad Wadiah Yad Dhamanah yang dirancang khusus untuk membantu orang tua mempersiapkan dana pendidikan anak dengan setoran ringan dan bebas biaya administrasi, dana hanya dapat ditarik pada waktu tertentu seperti saat pembayaran uang sekolah atau awal tahun ajaran.",
+              " Tabungan Pendidikan Al-‘Ilm adalah produk simpanan  yang membantu nasabah mempersiapkan dana pendidikan secara aman dan terencana sesuai prinsip syariah. Ditujukan untuk orang tua, wali, dan pelajar, produk ini mendorong kebiasaan menabung rutin dengan pencairan pada waktu tertentu. untuk persiapan masa depan dengan Menggunakan akad Wadiah Yad Dhamanah.",
             image:
               "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=400&q=80",
             details: {
@@ -338,18 +342,18 @@ const productData = {
             title: "Tabungan GlobalUnity iB",
             desc: "Tabungan valuta asing untuk transaksi internasional",
             definisi:
-              "Tabungan GlobalUnity iB adalah produk simpanan valuta asing dengan akad Wadiah Yad Dhamanah dan Sharf yang tersedia dalam mata uang USD, GBP, EUR, SGD, dan AUD, memungkinkan nasabah melakukan transaksi internasional dengan mudah dan sesuai prinsip syariah.",
+              "Tabungan Valuta Asing (Valas) iB  adalah produk simpanan dalam mata uang asing seperti USD diperuntukan bagi nasabah perorangan atau badan usaha untuk memfasilitasi transaksi internasional, diversifikasi aset, dan lindung nilaiterhadap fluktuasi kurs Rupiah dan tabungan ini dapat digunakan untuk transaksi atau penarikan valuta asing kapan saja, baik di dalam maupun di luar negeri, dengan menggunakan akad Wadiah Yad Dhamanah dan Shaf.",
             image:
               "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=400&q=80",
             details: {
               syarat: [
                 "WNI: Berusia minimal 18 tahun atau sudah menikah, Mengisi formulir pembukaan rekening, Menyerahkan fotokopi KTP dan NPWP (jika ada), Menyetorkan dana awal USD 300 atau setara Rp 4.800.000",
-                "WNA: Berusia minimal 18 tahun, Mengisi formulir pembukaan rekening, Menyerahkan Paspor dan Kartu Izin Tinggal (KITAS/KITAP) yang masih berlaku, Menyetorkan dana awal USD 300 atau setara Rp 4.800.000",
+                "WNA: Berusia minimal 18 tahun, Mengisi formulir pembukaan rekening Tabungan Asing, Menyerahkan Paspor dan Kartu Izin Tinggal (KITAS/KITAP) yang masih berlaku, Menyetorkan dana awal USD 300 atau setara Rp 4.800.000, Menyetujui prinsip dan ketentuan akad syariah Warga Negara asing(WNA)",
               ],
               fitur:
                 "Mata Uang Tersedia USD, GBP, EUR, SGD, AUD. Akad Syariah: Wadiah Yad Dhamanah & Sharf. Imbalan (Hibah) Dapat diberikan sukarela oleh bank. Akses Transaksi Online Banking, Mobile Banking, Kantor Cabang. Kartu Debit Global Bisa digunakan untuk transaksi internasional. Kepatuhan Syariah Disertifikasi oleh Dewan Pengawas Syariah. Tabungan dapat digunakan untuk transaksi atau penarikan valuta asing kapan saja.",
               tarif:
-                "Setoran Awal Minimum: Rp 4.800.000 (setara USD 300). Saldo Minimum: Rp3.200.000 (setara USD 200). Administrasi Bulanan Gratis, jika saldo ≥USD 200. Biaya Saldo di Bawah Minimum USD 2 per bulan (jika saldo < USD 200). Biaya Penutupan Rekening USD 5. Transfer Antar Negara Mengikuti biaya bank koresponden (sekitar USD 10–15). Tarik Tunai di ATM Luar Negeri Gratis di jaringan Bank Nusantara Syariah dan mitra global",
+                "Setoran Awal Minimum: Rp 4.800.000 (setara USD 300). Saldo Minimum: Rp3.200.000 (setara USD 200). Administrasi Bulanan Gratis, jika saldo ≥USD 200. Biaya Saldo di Bawah Minimum USD 2 per bulan (jika saldo < USD 200). Biaya Penutupan Rekening USD 5. Transfer Antar Negara Mengikuti biaya bank koresponden (sekitar USD 10–15). Tarik Tunai di ATM Luar Negeri Gratis di jaringan Bank Melasa Syariah dan mitra global",
             },
           },
           {
@@ -395,7 +399,7 @@ const productData = {
             title: "Reksa Dana Syariah",
             desc: "Investasi reksa dana sesuai prinsip syariah",
             definisi:
-              "Reksa Dana Syariah adalah produk investasi dengan akad Mudharabah Muqayyadah yang berbasis prinsip syariah, diawasi Dewan Pengawas Syariah (DPS), investasi hanya pada efek syariah dengan mekanisme cleansing (pembersihan pendapatan non-halal) untuk memastikan kehalalan investasi.",
+              "  Reksa Dana dengan Akad Mudharabah Muqayyadah adalah produk investasi syariah yang menghimpun dana dari masyarakat umum (Shahibul Maal / Investor) dan menyerahkannya kepada Manajer Investasi atau Bank Syariah (Mudharib / Pengelola) dengan ketentuan bahwa dana tersebut hanya boleh disalurkan atau diinvestasikan pada portofolio atau sektor usaha tertentu yang telah disepakati dan dibatasi secara spesifik oleh Investor, untuk memperoleh imbal hasil berupa bagi hasil (profit sharing) yang besarnya sangat tergantung pada kinerja real dari aset yang terikat tersebut, dan pembagian keuntungannya dilakukan secara periodik sesuai jadwal yang disepakati",
             image:
               "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&q=80",
             details: {
@@ -417,7 +421,7 @@ const productData = {
             title: "Sya-Inves GO",
             desc: "Special Investment dengan akad Mudharabah Muqayadah",
             definisi:
-              "Sya-Inves GO adalah produk investasi khusus dengan akad Mudharabah Muqayadah yang ditujukan untuk nasabah dengan dana kelolaan besar (minimum Rp100 juta), menawarkan diversifikasi aset halal dengan transparansi penuh, bagi hasil langsung (profit sharing), dan pencatatan off-balance sheet.",
+              "Special Investment dengan akad Mudharabah Muqayadah adalah skema investasi syariah non-tabungan dan non-deposito yang berfungsi sebagai sarana penempatan dana oleh investor dalam jumlah besar dari Nasabah (sebagai pemilik dana/Shahibul Maal) kepada Bank Syariah (sebagai pengelola dana/Mudharib) untuk diinvestasikan dengan menetapkan batasan dan persyaratan tertentu yang ketat kepada Bank , seperti menentukan jenis proyek, sektor usaha untuk mengelola dana tersebut, demi memperoleh potensi bagi hasil yang optimal, yang akan dibagikan sesuai nisbah yang disepakati dan dihitung berdasarkan kinerja Bank dalam periode tertentu",
             image:
               "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80",
             details: {
@@ -440,10 +444,10 @@ const productData = {
       : [
           {
             id: "gadai-emas",
-            title: "Gadai Emas Albarkah Syariah",
+            title: "Gadai Emas Alberkah Syariah",
             desc: "Solusi dana cepat dengan jaminan emas",
             definisi:
-              "Gadai Emas Albarkah Syariah adalah produk pembiayaan dengan akad Rahn dan Ijarah yang memberikan solusi dana cepat dengan jaminan emas perhiasan atau batangan, maksimal pinjaman 80% dari taksiran harga pasar dengan jangka waktu hingga 4 bulan dan dapat diperpanjang.",
+              "Gadai Emas Alberkah Syariah adalah produk pembiayaan dengan akad Rahn dan Ijarah yang memberikan solusi dana cepat dengan jaminan emas perhiasan atau batangan, maksimal pinjaman 80% dari taksiran harga pasar dengan jangka waktu hingga 4 bulan dan dapat diperpanjang.",
             image:
               "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=400&q=80",
             details: {
@@ -627,7 +631,7 @@ const productData = {
             title: "Safe Deposit Box (SDB) iB",
             desc: "Penyimpanan barang berharga dengan keamanan tinggi",
             definisi:
-              "Safe Deposit Box (SDB) iB adalah layanan penyewaan kotak penyimpanan dengan akad Ijarah yang menyediakan tempat aman untuk menyimpan barang berharga dengan sistem keamanan 24 jam, akses kunci ganda, dan kerahasiaan aset terjamin.",
+              " Safe Deposit Box (SDB) Syariah adalah layanan jasa penyewaan kotak penyimpanan aset berharga (seperti perhiasan, logam mulia, dan dokumen penting) yang memanfaatkan ruang khazanah bank dengan sistem keamanan canggih, yang diikat dengan akad Ijarah atau sewa-menyewa antara bank (sebagai pemilik aset yang disewakan) dan Nasabah (sebagai penyewa manfaat kotak)  untuk memberikan perlindungan keamanan dan kerahasiaan maksimal terhadap harta Nasabah dari risiko pencurian atau bencana, sehingga Nasabah dapat menyimpan barang-barang tersebut dengan tenang dan sesuai prinsip syariah selama periode waktu yang disepakati, dengan membayar biaya sewa (Ujrah) tahunan di muka kepada bank.  Aset hanya dapat di ambil jika nasabah mengkonfirmasi dan datang langsung ke cabang membwa tanda kepemilikan SDB",
             image:
               "https://images.unsplash.com/photo-1582139329536-e7284fece509?w=400&q=80",
             details: {
@@ -649,7 +653,7 @@ const productData = {
             title: "Layanan Inkaso iB",
             desc: "Layanan penagihan cek/bilyet giro",
             definisi:
-              "Layanan Inkaso iB adalah layanan penagihan dengan akad Wakalah untuk warkat berharga seperti cek, bilyet giro, wesel, dan promissory notes yang dapat dilaksanakan di seluruh kantor cabang, tersedia bagi nasabah maupun non-nasabah dengan proses 1-3 hari kerja.",
+              " Inkaso Syariah adalah layanan jasa perbankan syariah yang dilakukan oleh bank sebagai wakil (Wakil/Al-Wakil) atas amanat Nasabah selaku pemberi kuasa (Muwakkil) untuk melakukan penagihan warkat atau surat berharga (seperti Cek, Bilyet Giro, atau dokumen berharga lainnya) dari pihak ketiga yang berada di luar wilayah kliring atau kota bank Nasabah , dengan imbalan berupa Ujrah (fee) yang disepakati, sehingga Nasabah dapat mencairkan dana dari warkat tersebut secara aman dan efisien. Prosesnya bisa memakan waktu 1–3 hari kerja, tergantung lokasi dan jenis inkaso (dalam kota atau luar kota)",
             image:
               "https://images.unsplash.com/photo-1554224154-22dec7ec8818?w=400&q=80",
             details: {
@@ -668,7 +672,7 @@ const productData = {
             title: "Kiriman uang melalui RTGS",
             desc: "Transfer dana antar bank real-time untuk nominal besar",
             definisi:
-              "Kiriman uang melalui RTGS adalah layanan transfer dengan akad Wakalah untuk transaksi dana antar bank secara real-time dengan nominal besar (≥ Rp100 juta), dana diterima di bank tujuan dalam waktu sangat cepat dan terverifikasi langsung di sistem Bank Indonesia.",
+              " Produk Kiriman Uang melalui RTGS Syariah adalah layanan jasa yang disediakan oleh bank syariah sebagai wakil (Wakil/Al-Wakil) atas perintah Nasabah selaku pemberi kuasa (Muwakkil) untuk memindahkan dana elektronik dalam jumlah besar ( minimal di atas Rp 100 juta)  melalui Sistem Bank Indonesia – Real Time Gross Settlement (BI-RTGS) ke rekening bank lain, di mana penyelesaian transaksi dilakukan secara individual dan seketika (real-time)  sehingga dana diterima di bank tujuan dengan cepat, aman, dan pasti, dengan imbalan berupa Ujrah (fee) yang dibayarkan Nasabah kepada bank atas jasa perwakilan tersebut",
             image:
               "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&q=80",
             details: {
@@ -691,7 +695,7 @@ const productData = {
             title: "Kiriman uang melalui SKNBI",
             desc: "Transfer antar bank dengan biaya efisien",
             definisi:
-              "Kiriman uang melalui SKNBI adalah layanan transfer antarbank dengan akad Wakalah yang berbasis syariah, cocok untuk nominal menengah (hingga Rp 1 M) dengan biaya lebih efisien dari RTGS, proses penyelesaian dana dilakukan secara kolektif dalam beberapa siklus kliring per hari kerja.",
+              " Kiriman Uang melalui SKNBI adalah layanan jasa yang ditawarkan oleh bank syariah sebagai wakil (Wakil/Al-Wakil) atas perintah Nasabahselaku pemberi kuasa (Muwakkil) untuk melakukan pemindahan dana elektronik (transfer) dengan batas nominal maksimum tertentu Rp 1 miliar melalui mekanisme Sistem Kliring Nasional Bank Indonesia (SKNBI),di mana proses penyelesaian (settlement) dana dilakukan secara kolektif (netting) dan terjadwal dalam beberapa kali siklus kliring per hari kerja Senin-jumat pukul 08.00-15.00 WIB, dengan pembayaran Ujrah (fee) yang disepakati oleh Nasabah atas jasa perwakilan tersebut, sehingga transfer dana antarbank dapat terselesaikan dengan biaya yang efisien",
             image:
               "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&q=80",
             details: {
@@ -715,7 +719,7 @@ const productData = {
             title: "Bank Garansi iB (Garansi Ta'awun)",
             desc: "Jaminan bank untuk tender dan kontrak",
             definisi:
-              "Bank Garansi iB (Garansi Ta'awun) adalah layanan jaminan bank dengan akad Kafalah Bil Ujroh yang diberikan kepada nasabah perorangan dan badan usaha untuk keperluan tender, pelaksanaan proyek, uang muka, dan pemeliharaan, merupakan non-funded facility tanpa pencairan dana.",
+              "Bank Garansi Syariah adalah sebuah fasilitas non-dana berupa surat jaminan tertulis yang diterbitkan oleh bank syariah dengan menggunakan Akad Kafalah bil Ujrah yang diberikan atas permintaan nasabahnya (pihak yang dijamin) kepada pihak penerima jaminan untuk berbagai keperluan transaksi bisnis seperti mengikuti tender, menjamin pelaksanaan proyek, atau uang muka di mana bank berjanji akan membayar sejumlah dana kepada penerima jaminan jika nasabahnya tersebut terbukti gagal memenuhi kewajibannya (wanprestasi) sesuai kontrak dalam jangka waktu yang telah ditetapkan sehingga prosedur ini berfungsi sebagai penjaminan yang aman dan sesuai prinsip syariah untuk meningkatkan kredibilitas dan kelancaran usaha nasabah",
             image:
               "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&q=80",
             details: {
@@ -739,7 +743,7 @@ const productData = {
             title: "Jual Beli Valuta Asing",
             desc: "Transaksi valuta asing sesuai prinsip syariah",
             definisi:
-              "Jual Beli Valuta Asing adalah layanan transaksi jual beli valuta asing dengan akad Sharf secara tunai (spot) untuk berbagai mata uang seperti USD, SGD, EUR, JPY, AUD, SAR dengan kurs transparan mengikuti pergerakan pasar, hanya untuk tujuan syar'i seperti perjalanan, pendidikan, atau dagang internasional.",
+              " BC Card adalah kartu pembiayaan berbasis syariah yang diterbitkan oleh Bank Brilliant Core (BC). Kartu ini berfungsi serupa dengan kartu kredit konvensional, digunakan sebagai alat pembayaran untuk transaksi serta berfungsi seperti kartu kredit namun dijalankan sesuai prinsip syariah berdasarkan fatwa DSN MUI No. 54/DSN-MUI/X/2006. BC Card menggunakan tiga akad syariah yaitu Kafalah (penjaminan), Qardh (pinjaman), dan ljarah (sewa jasa)",
             image:
               "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=400&q=80",
             details: {
@@ -761,7 +765,7 @@ const productData = {
             title: "Payment Point (PPOB)",
             desc: "Pembayaran multi tagihan dalam satu platform",
             definisi:
-              "Payment Point (PPOB) adalah layanan pembayaran multi tagihan dalam satu platform yang memudahkan nasabah membayar berbagai tagihan seperti listrik, air, telepon, internet, BPJS, dan lainnya secara praktis melalui counter bank atau aplikasi mobile banking.",
+              "Payment Point Online Bank (PPOB) adalah layanan sistem pembayaran berbasis online yang memanfaatkan infrastruktur perbankan, yang disediakan kepada masyarakat dan pelaku usaha (agen) untuk memfasilitasi transaksi pembayaran berbagai jenis tagihan rutin (seperti listrik, air, pulsa, BPJS, dan cicilan) secara kolektif di satu tempat atau platform , sehingga transaksi dapat diselesaikan dengan mudah, cepat, dan real-time tanpa perlu mendatangi kantor penyedia tagihan secara fisik",
             image:
               "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&q=80",
             details: {
@@ -782,7 +786,7 @@ const productData = {
             title: "Letter of Credit (L/C) Syariah",
             desc: "Jasa penjaminan pembayaran untuk transaksi perdagangan",
             definisi:
-              "Letter of Credit (L/C) Syariah adalah jasa penjaminan pembayaran untuk transaksi perdagangan internasional atau domestik yang dikeluarkan oleh bank atas permintaan importir untuk menjamin pembayaran kepada eksportir, menggunakan prinsip syariah dengan akad Wakalah Bil Ujrah atau Kafalah Bil Ujrah.",
+              "Letter of Credit (L/C) Syariah dengan Akad Wakalah Bil Ujrah adalah jasa penjaminan pembayaran yang disediakan oleh Bank Syariah kepada importir (muwakkil) sebagai pembeli , untuk menjamin pembayaran kepada eksportir (beneficiary) dengan syarat penyerahan dokumen pengiriman yang lengkap, sehingga transaksi perdagangan internasional/domestik menjadi aman dan dapat diselesaikan segera setelah dokumen diverifikas, melalui jaringan korespondensi antarbank di seluruh dunia (Where?), di mana bank berhak menerima ujrah (upah jasa) atas perannya sebagai wakil (agen) penerbit L/C",
             image:
               "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&q=80",
             details: {
@@ -804,7 +808,7 @@ const productData = {
             title: "Standing Instruction",
             desc: "Transfer atau pembayaran rutin secara otomatis",
             definisi:
-              "Standing Instruction adalah layanan instruksi berdiri yang memungkinkan nasabah melakukan transfer atau pembayaran rutin secara otomatis pada tanggal yang telah ditentukan, memudahkan pembayaran cicilan, tagihan bulanan, atau transfer rutin lainnya tanpa harus melakukan transaksi manual setiap bulan.",
+            "Standing Instruction Syariah dengan Akad Wakalah Bil Ujrah adalah layanan pelimpahan kuasa dari nasabah kepada Bank Syariah untuk melaksanakan perintah transfer atau pembayaran rutin secara otomatis dari rekening nasabah ke rekening tujuan (seperti rekening tabungan berencana, pembiayaan, atau donasi) secara periodik. Tujuannya adalah membantu nasabah memenuhi kewajiban finansial dan tujuan menabung (saving) secara disiplin dan tepat waktu,di mana bank akan mengeksekusi perintah tersebut pada tanggal yang ditetapkan(kapan saja sesuai jadwal) dan atas jasa perwakilan tersebut, bank berhak menerima ujrah(biaya/ upah jasa) yang telah disepakati di awal akad",
             image:
               "https://images.unsplash.com/photo-1554224154-22dec7ec8818?w=400&q=80",
             details: {
@@ -826,7 +830,7 @@ const productData = {
             title: "Payroll Service iB",
             desc: "Layanan penggajian karyawan untuk perusahaan",
             definisi:
-              "Payroll Service iB adalah layanan penggajian karyawan yang memudahkan perusahaan dalam mendistribusikan gaji karyawan secara otomatis dan terjadwal ke rekening masing-masing karyawan, dilengkapi dengan laporan lengkap dan sistem yang terintegrasi sesuai prinsip syariah.",
+              "Layanan Payroll Syariah adalah produk perbankan yang menggunakan akad Wadiah Yad Dhamanah (Titipan dengan Jaminan), ditujukan oleh Bank Syariah (sebagai penjamin) kepada perusahaan dan instansi (sebagai mitra) untuk mendistribusikan gaji karyawannya (sebagai penitip dana).   Tujuannya adalah memastikan transfer gaji berjalan aman, efisien, dan real-time setiap periode pembayaran, di mana dana yang dititipkan tersebut dapat diambil kapan saja oleh karyawan, dengan fasilitas pendukung yang umumnya diakses melalui CMS perusahaan dan mobile banking karyawan",
             image:
               "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&q=80",
             details: {
@@ -1069,21 +1073,89 @@ function initModal() {
   });
 }
 
+// Helper function to escape HTML
+function escapeHtml(text) {
+  const div = document.createElement("div");
+  div.textContent = text;
+  return div.innerHTML;
+}
+
 function openModal(product) {
   const modal = document.getElementById("modal");
   const modalInner = document.getElementById("modalInner");
 
   console.log("Opening modal for:", product.title);
+  console.log(
+    "📝 Definisi length:",
+    product.definisi ? product.definisi.length : 0,
+    "chars"
+  );
+  console.log(
+    "📝 Definisi preview:",
+    product.definisi
+      ? product.definisi.substring(0, 100) + "..."
+      : "No definisi"
+  );
+  console.log("📝 Definisi full:", product.definisi);
 
+  // Test escapeHtml
+  if (product.definisi) {
+    const escaped = escapeHtml(product.definisi);
+    console.log("📝 Escaped length:", escaped.length, "chars");
+    console.log("📝 Escaped preview:", escaped.substring(0, 100) + "...");
+  }
+
+  // Format syarat dengan numbering
   const syaratList = product.details.syarat
-    .map((s) => `<li>${s}</li>`)
+    .map(
+      (s, index) => `<li><strong>${index + 1}.</strong> ${escapeHtml(s)}</li>`
+    )
     .join("");
 
-  const definisiSection = product.definisi
-    ? `<div style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); 
-                   padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; border-left: 4px solid #667eea;">
-                <h3 style="margin-top: 0; color: #667eea; font-size: 1.1rem;">📖 Definisi Produk</h3>
-                <p style="margin-bottom: 0; line-height: 1.8; color: #334155;">${product.definisi}</p>
+  // Format fitur dengan numbering jika berupa array, atau split by sentence
+  let fiturFormatted = product.details.fitur;
+  if (typeof product.details.fitur === "string") {
+    // Split by period or newline and add numbering
+    const fiturItems = product.details.fitur
+      .split(/\.\s+|\n/)
+      .filter((item) => item.trim().length > 0)
+      .map(
+        (item, index) =>
+          `<div style="margin-bottom: 0.5rem;"><strong>${
+            index + 1
+          }.</strong> ${escapeHtml(item.trim())}${
+            item.endsWith(".") ? "" : "."
+          }</div>`
+      )
+      .join("");
+    fiturFormatted = fiturItems;
+  }
+
+  // Format tarif dengan numbering
+  let tarifFormatted = product.details.tarif;
+  if (typeof product.details.tarif === "string") {
+    const tarifItems = product.details.tarif
+      .split(/\.\s+|\n/)
+      .filter((item) => item.trim().length > 0)
+      .map(
+        (item, index) =>
+          `<div style="margin-bottom: 0.5rem;"><strong>${
+            index + 1
+          }.</strong> ${escapeHtml(item.trim())}${
+            item.endsWith(".") ? "" : "."
+          }</div>`
+      )
+      .join("");
+    tarifFormatted = tarifItems;
+  }
+
+  // Escape definisi untuk mencegah HTML injection dan text truncation
+  const escapedDefinisi = product.definisi ? escapeHtml(product.definisi) : "";
+
+  const definisiSection = escapedDefinisi
+    ? `<div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; border-left: 4px solid #10b981;">
+                <h3 style="margin-top: 0; color: #10b981; font-size: 1.1rem;">📖 Definisi Produk</h3>
+                <p style="margin-bottom: 0; line-height: 1.8; color: #334155; white-space: normal; word-wrap: break-word; overflow-wrap: break-word;">${escapedDefinisi}</p>
             </div>`
     : "";
 
@@ -1095,13 +1167,15 @@ function openModal(product) {
             <div>
                 <h2>${product.title}</h2>
                 ${definisiSection}
-                <h3>Syarat Pembukaan/Pengajuan</h3>
-                <ul>${syaratList}</ul>
-                <h3>Fitur & Keunggulan</h3>
-                <p>${product.details.fitur}</p>
-                <h3>Tarif & Biaya</h3>
-                <p>${product.details.tarif}</p>
-                <a href="https://wa.me/6281296163263?text=Halo, saya tertarik dengan ${product.title}" 
+                <h3>📋 Syarat Pembukaan/Pengajuan</h3>
+                <ol style="padding-left: 0; list-style: none;">${syaratList}</ol>
+                <h3>✨ Fitur & Keunggulan</h3>
+                <div style="line-height: 1.8;">${fiturFormatted}</div>
+                <h3>💰 Tarif & Biaya</h3>
+                <div style="line-height: 1.8;">${tarifFormatted}</div>
+                <a href="https://wa.me/6281296163263?text=Halo, saya tertarik dengan ${encodeURIComponent(
+                  product.title
+                )}" 
                    target="_blank" class="btn btn-primary" style="margin-top: 1.5rem;">
                     Hubungi Kami
                 </a>

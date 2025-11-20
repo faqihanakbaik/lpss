@@ -3129,3 +3129,63 @@ button:focus {
   animation: none !important;
   opacity: 1 !important;
 }
+
+/* ===== MODAL NUMBERING STYLE ===== */
+.modal-detail-grid ol {
+  list-style: none;
+  padding: 0;
+  counter-reset: item;
+}
+
+.modal-detail-grid ol li {
+  padding: 0.75rem 0;
+  padding-left: 0;
+  position: relative;
+  line-height: 1.6;
+}
+
+.modal-detail-grid ol li strong {
+  color: #10b981;
+  font-size: 1.1em;
+  margin-right: 0.5rem;
+  display: inline-block;
+  min-width: 2rem;
+}
+
+.modal-detail-grid ol li::before {
+  display: none;
+}
+
+/* Numbered divs for fitur and tarif */
+.modal-detail-grid div[style*="margin-bottom"] strong {
+  color: #10b981;
+  font-size: 1.05em;
+  margin-right: 0.5rem;
+}
+
+/* ===== FIX DEFINISI PRODUK - PREVENT TEXT TRUNCATION ===== */
+.modal-detail-grid p {
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+}
+
+/* Ensure modal inner can scroll properly */
+.modal-inner {
+  max-height: 85vh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+/* Definisi section specific styling */
+.modal-detail-grid div[style*="background: linear-gradient"] p {
+  display: block !important;
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  hyphens: auto !important;
+}
