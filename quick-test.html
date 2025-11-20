@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quick Test</title>
+    <style>
+      body {
+        font-family: Arial;
+        padding: 20px;
+        background: #f0f0f0;
+      }
+      .box {
+        background: white;
+        padding: 20px;
+        margin: 10px 0;
+        border-radius: 8px;
+      }
+      button {
+        padding: 10px 20px;
+        background: #667eea;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 5px;
+      }
+      button:hover {
+        background: #5568d3;
+      }
+      .result {
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 4px;
+      }
+      .success {
+        background: #d4edda;
+        color: #155724;
+      }
+      .error {
+        background: #f8d7da;
+        color: #721c24;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🔍 Quick Test - Bank Melasa Syariah</h1>
+
+    <div class="box">
+      <h2>Test 1: Buka Website</h2>
+      <button onclick="window.open('index.html', '_blank')">
+        Buka Website Utama
+      </button>
+      <button onclick="window.open('index.html#produk', '_blank')">
+        Langsung ke Produk
+      </button>
+      <button onclick="window.open('index.html#simulasi', '_blank')">
+        Langsung ke Kalkulator
+      </button>
+    </div>
+
+    <div class="box">
+      <h2>Test 2: Preview Foto Produk</h2>
+      <button onclick="window.open('preview-foto-produk.html', '_blank')">
+        Lihat Preview Foto
+      </button>
+      <p>Halaman ini menampilkan semua foto produk yang sudah disiapkan</p>
+    </div>
+
+    <div class="box">
+      <h2>Test 3: Product Finder</h2>
+      <button onclick="window.open('product-finder.html', '_blank')">
+        Buka Product Finder
+      </button>
+      <p>Tool untuk menemukan produk yang sesuai dengan kebutuhan</p>
+    </div>
+
+    <div class="box">
+      <h2>Test 4: Diagnostic</h2>
+      <button onclick="runDiagnostic()">Run Diagnostic</button>
+      <div id="diagnosticResult"></div>
+    </div>
+
+    <div class="box">
+      <h2>📝 Instruksi:</h2>
+      <ol>
+        <li>Klik "Buka Website Utama" untuk membuka website</li>
+        <li>Scroll ke bagian "Produk Unggulan Kami"</li>
+        <li>Pastikan ada card produk yang muncul</li>
+        <li>Scroll ke bagian "Simulasi"</li>
+        <li>Geser slider dan pastikan angka berubah</li>
+        <li>Jika ada masalah, tekan F12 dan lihat console</li>
+      </ol>
+    </div>
+
+    <div class="box">
+      <h2>🐛 Jika Ada Masalah:</h2>
+      <ul>
+        <li>Tekan <code>F12</code> untuk buka Developer Tools</li>
+        <li>Klik tab "Console"</li>
+        <li>Screenshot error yang muncul</li>
+        <li>Atau jalankan diagnostic di atas</li>
+      </ul>
+    </div>
+
+    <script>
+      function runDiagnostic() {
+        const result = document.getElementById("diagnosticResult");
+        result.innerHTML = '<div class="result">Running diagnostic...</div>';
+
+        // Open website in new window and run diagnostic
+        const win = window.open("index.html", "_blank");
+
+        setTimeout(() => {
+          result.innerHTML = `
+                    <div class="result success">
+                        ✅ Website dibuka di tab baru<br>
+                        📋 Buka Console (F12) di tab tersebut<br>
+                        💻 Copy-paste script dari file diagnostic.js
+                    </div>
+                `;
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

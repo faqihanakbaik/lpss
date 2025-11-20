@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Test Products</title>
+    <style>
+      body {
+        font-family: Arial;
+        padding: 20px;
+        background: #f5f5f5;
+      }
+      .product-card {
+        background: white;
+        padding: 20px;
+        margin: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+        width: 250px;
+      }
+      .product-title {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .product-desc {
+        color: #666;
+        font-size: 14px;
+      }
+      #productCarousel {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .debug {
+        background: #333;
+        color: #0f0;
+        padding: 15px;
+        margin: 10px 0;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🧪 Test Product Rendering</h1>
+
+    <div class="debug" id="debugLog"></div>
+
+    <div id="productCarousel"></div>
+
+    <script>
+      const debugLog = document.getElementById("debugLog");
+      function log(msg) {
+        console.log(msg);
+        debugLog.innerHTML += msg + "<br>";
+      }
+
+      log("Starting test...");
+    </script>
+
+    <script src="script.js"></script>
+
+    <script>
+      setTimeout(() => {
+        log("Checking productData...");
+        if (typeof productData !== "undefined") {
+          log("✅ productData found");
+          log("Categories: " + Object.keys(productData).join(", "));
+          log("Funding products: " + productData.funding.length);
+          log("Financing products: " + productData.financing.length);
+          log("Fee based products: " + productData.fee_based.length);
+        } else {
+          log("❌ productData NOT FOUND");
+        }
+
+        log("Checking renderProducts function...");
+        if (typeof renderProducts === "function") {
+          log("✅ renderProducts found");
+          log("Calling renderProducts()...");
+          try {
+            renderProducts();
+            log("✅ renderProducts() executed");
+            const cards = document.querySelectorAll(".product-card");
+            log("Product cards rendered: " + cards.length);
+          } catch (e) {
+            log("❌ Error: " + e.message);
+          }
+        } else {
+          log("❌ renderProducts NOT FOUND");
+        }
+      }, 500);
+    </script>
+  </body>
+</html>

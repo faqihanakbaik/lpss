@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .result {
+        margin: 20px 0;
+        padding: 15px;
+        background: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Test Kalkulator Pembiayaan</h1>
+
+    <div>
+      <label
+        >Harga Total: <input type="number" id="jumlahPinjaman" value="50000000"
+      /></label>
+    </div>
+    <div>
+      <label
+        >Jangka Waktu (Bulan): <input type="number" id="jangkaWaktu" value="36"
+      /></label>
+    </div>
+    <div>
+      <label>DP (%): <input type="number" id="dp" value="20" /></label>
+    </div>
+    <div>
+      <label>Margin (%): <input type="number" id="margin" value="7.5" /></label>
+    </div>
+
+    <button onclick="calculateAngsuran()">Hitung</button>
+
+    <div class="result">
+      <h3>Hasil:</h3>
+      <p>Angsuran Bulanan: <span id="hasilAngsuran">Rp 0</span></p>
+      <p>Harga Total: <span id="hargaTotal">Rp 0</span></p>
+      <p>Uang Muka: <span id="uangMuka">Rp 0</span></p>
+      <p>Jumlah Pembiayaan: <span id="jumlahPembiayaan">Rp 0</span></p>
+      <p>Total Margin: <span id="totalMargin">Rp 0</span></p>
+      <p>Total Pembiayaan: <span id="totalPembiayaan">Rp 0</span></p>
+      <p id="dpRupiah"></p>
+    </div>
+
+    <div
+      id="console"
+      style="
+        margin-top: 20px;
+        padding: 15px;
+        background: #333;
+        color: #0f0;
+        font-family: monospace;
+      "
+    ></div>
+
+    <script>
+      function formatRupiah(angka) {
+        return "Rp " + Math.floor(angka).toLocaleString("id-ID");
+      }
+
+      function calculateAngsuran() {
+        console.log("=== MULAI PERHITUNGAN ===");
+
+        const hargaTotal = parseFloat(
+          document.getElementById("jumlahPinjaman").value
+        );
+        const jangka = parseInt(document.getElementById("jangkaWaktu").value);
+        const margin =
+          parseFloat(document.getElementById("margin").value) / 100;
+        const dpPersen = parseFloat(document.getElementById("dp").value) / 100;
+
+        console.log("Input values:");
+        console.log("- Harga Total:", hargaTotal);
+        console.log("- Jangka:", jangka);
+        console.log("- Margin:", margin);
+        console.log("- DP Persen:", dpPersen);
+
+        if (isNaN(hargaTotal) || hargaTotal <= 0 || jangka <= 0) {
+          console.log("ERROR: Invalid input!");
+          return;
+        }
+
+        // Perhitungan dengan DP
+        const uangMuka = hargaTotal * dpPersen;
+        const jumlahPembiayaan = hargaTotal - uangMuka;
+
+        // Perhitungan Murabahah (Flat)
+        const totalMargin = jumlahPembiayaan * margin * (jangka / 12);
+        const totalPembiayaan = jumlahPembiayaan + totalMargin;
+        const angsuranBulanan = totalPembiayaan / jangka;
+
+        console.log("Hasil perhitungan:");
+        console.log("- Uang Muka:", uangMuka);
+        console.log("- Jumlah Pembiayaan:", jumlahPembiayaan);
+        console.log("- Total Margin:", totalMargin);
+        console.log("- Total Pembiayaan:", totalPembiayaan);
+        console.log("- Angsuran Bulanan:", angsuranBulanan);
+
+        // Update UI
+        document.getElementById("hasilAngsuran").textContent =
+          formatRupiah(angsuranBulanan);
+        document.getElementById("hargaTotal").textContent =
+          formatRupiah(hargaTotal);
+        document.getElementById("uangMuka").textContent =
+          formatRupiah(uangMuka);
+        document.getElementById("jumlahPembiayaan").textContent =
+          formatRupiah(jumlahPembiayaan);
+        document.getElementById("totalMargin").textContent =
+          formatRupiah(totalMargin);
+        document.getElementById("totalPembiayaan").textContent =
+          formatRupiah(totalPembiayaan);
+        document.getElementById("dpRupiah").textContent =
+          formatRupiah(uangMuka);
+
+        // Show in console div
+        const consoleDiv = document.getElementById("console");
+        consoleDiv.innerHTML = `
+                <div>Harga Total: ${formatRupiah(hargaTotal)}</div>
+                <div>DP ${dpPersen * 100}%: ${formatRupiah(uangMuka)}</div>
+                <div>Jumlah Pembiayaan: ${formatRupiah(jumlahPembiayaan)}</div>
+                <div>Margin ${
+                  margin * 100
+                }% × ${jangka}/12 bulan: ${formatRupiah(totalMargin)}</div>
+                <div>Total Pembiayaan: ${formatRupiah(totalPembiayaan)}</div>
+                <div><strong>Angsuran Bulanan: ${formatRupiah(
+                  angsuranBulanan
+                )}</strong></div>
+            `;
+      }
+
+      // Auto calculate on load
+      calculateAngsuran();
+    </script>
+  </body>
+</html>

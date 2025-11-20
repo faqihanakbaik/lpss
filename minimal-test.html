@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minimal Test</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        padding: 20px;
+      }
+      .debug {
+        background: #000;
+        color: #0f0;
+        padding: 20px;
+        margin: 20px 0;
+        font-family: monospace;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Minimal Product Test</h1>
+
+    <div class="debug" id="log"></div>
+
+    <!-- Tab Navigation -->
+    <div class="tab-nav">
+      <button class="tab-btn active" data-category="funding">Funding</button>
+      <button class="tab-btn" data-category="financing">Financing</button>
+      <button class="tab-btn" data-category="fee_based">Fee Based</button>
+    </div>
+
+    <!-- Product Carousel -->
+    <div class="product-carousel-wrapper">
+      <button class="carousel-btn prev">←</button>
+      <div class="product-carousel" id="productCarousel"></div>
+      <button class="carousel-btn next">→</button>
+    </div>
+
+    <!-- Calculator Panel -->
+    <div id="simulasiPanel">
+      <div class="simulasi-form">
+        <input type="number" id="jumlahPinjaman" value="50000000" />
+        <input type="range" id="jangkaWaktu" value="36" />
+        <input type="range" id="dp" value="20" />
+        <input type="range" id="margin" value="7.5" />
+        <span id="jangkaWaktuValue">36</span>
+        <span id="marginValue">7.5</span>
+        <span id="dpValue">20</span>
+        <span id="dpRupiah">Rp 10.000.000</span>
+      </div>
+      <div class="simulasi-result">
+        <span id="hasilAngsuran">Rp 0</span>
+        <span id="hargaTotal">Rp 0</span>
+        <span id="uangMuka">Rp 0</span>
+        <span id="jumlahPembiayaan">Rp 0</span>
+        <span id="totalMargin">Rp 0</span>
+        <span id="totalPembiayaan">Rp 0</span>
+      </div>
+    </div>
+
+    <script>
+      // Capture console logs
+      const logDiv = document.getElementById("log");
+      const originalLog = console.log;
+      const originalError = console.error;
+
+      console.log = function (...args) {
+        logDiv.textContent += args.join(" ") + "\n";
+        originalLog.apply(console, args);
+      };
+
+      console.error = function (...args) {
+        logDiv.textContent += "❌ ERROR: " + args.join(" ") + "\n";
+        originalError.apply(console, args);
+      };
+
+      console.log("=== MINIMAL TEST STARTED ===");
+      console.log("DOM Ready State:", document.readyState);
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+      setTimeout(() => {
+        console.log("\n=== POST-LOAD CHECK ===");
+        console.log("productData exists:", typeof productData !== "undefined");
+        console.log(
+          "renderProducts exists:",
+          typeof renderProducts === "function"
+        );
+        console.log(
+          "calculateAngsuran exists:",
+          typeof calculateAngsuran === "function"
+        );
+
+        const carousel = document.getElementById("productCarousel");
+        console.log("Carousel element:", !!carousel);
+        console.log(
+          "Carousel children:",
+          carousel ? carousel.children.length : 0
+        );
+
+        const angsuran = document.getElementById("hasilAngsuran");
+        console.log(
+          "Angsuran value:",
+          angsuran ? angsuran.textContent : "NOT FOUND"
+        );
+      }, 2000);
+    </script>
+  </body>
+</html>

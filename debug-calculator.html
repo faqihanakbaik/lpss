@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Debug Calculator</title>
+    <style>
+      body {
+        font-family: Arial;
+        padding: 20px;
+        background: #f5f5f5;
+      }
+      .debug {
+        background: #fff;
+        padding: 20px;
+        margin: 10px 0;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .error {
+        color: red;
+      }
+      .success {
+        color: green;
+      }
+      .info {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🔍 Debug Kalkulator Pembiayaan</h1>
+
+    <div class="debug">
+      <h2>Status Elemen DOM:</h2>
+      <div id="domStatus"></div>
+    </div>
+
+    <div class="debug">
+      <h2>Status Fungsi:</h2>
+      <div id="functionStatus"></div>
+    </div>
+
+    <div class="debug">
+      <h2>Test Perhitungan:</h2>
+      <div id="calculationTest"></div>
+    </div>
+
+    <div class="debug">
+      <h2>Console Log:</h2>
+      <div
+        id="consoleLog"
+        style="font-family: monospace; font-size: 12px"
+      ></div>
+    </div>
+
+    <!-- Load scripts in same order as index.html -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Create minimal DOM structure for calculator -->
+    <div id="simulasiPanel" style="display: none">
+      <div class="simulasi-form">
+        <input type="number" id="jumlahPinjaman" value="50000000" />
+        <input type="range" id="jangkaWaktu" value="36" />
+        <input type="range" id="dp" value="20" />
+        <input type="range" id="margin" value="7.5" />
+        <span id="jangkaWaktuValue">36</span>
+        <span id="marginValue">7.5</span>
+        <span id="dpValue">20</span>
+        <span id="dpRupiah">Rp 10.000.000</span>
+      </div>
+      <div class="simulasi-result">
+        <span id="hasilAngsuran">Rp 0</span>
+        <span id="hargaTotal">Rp 0</span>
+        <span id="uangMuka">Rp 0</span>
+        <span id="jumlahPembiayaan">Rp 0</span>
+        <span id="totalMargin">Rp 0</span>
+        <span id="totalPembiayaan">Rp 0</span>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="calculator-dynamic.js"></script>
+
+    <script>
+      // Override console.log to capture logs
+      const originalLog = console.log;
+      const logs = [];
+      console.log = function (...args) {
+        logs.push(args.join(" "));
+        originalLog.apply(console, args);
+        updateConsoleLog();
+      };
+
+      function updateConsoleLog() {
+        document.getElementById("consoleLog").innerHTML = logs
+          .map((log) => `<div>${log}</div>`)
+          .join("");
+      }
+
+      // Wait for everything to load
+      setTimeout(() => {
+        // Check DOM elements
+        const domStatus = document.getElementById("domStatus");
+        const elements = [
+          "jumlahPinjaman",
+          "jangkaWaktu",
+          "dp",
+          "margin",
+          "hasilAngsuran",
+          "hargaTotal",
+          "uangMuka",
+          "jumlahPembiayaan",
+          "totalMargin",
+          "totalPembiayaan",
+        ];
+
+        let domHtml = "<ul>";
+        elements.forEach((id) => {
+          const el = document.getElementById(id);
+          if (el) {
+            domHtml += `<li class="success">✅ ${id}: Found (value: ${
+              el.value || el.textContent
+            })</li>`;
+          } else {
+            domHtml += `<li class="error">❌ ${id}: NOT FOUND</li>`;
+          }
+        });
+        domHtml += "</ul>";
+        domStatus.innerHTML = domHtml;
+
+        // Check functions
+        const functionStatus = document.getElementById("functionStatus");
+        const functions = [
+          "calculateAngsuran",
+          "calculateBagiHasil",
+          "calculateBiayaLayanan",
+          "formatRupiah",
+          "initFinancingCalculator",
+          "initSimulator",
+        ];
+
+        let funcHtml = "<ul>";
+        functions.forEach((name) => {
+          if (typeof window[name] === "function") {
+            funcHtml += `<li class="success">✅ ${name}: Defined</li>`;
+          } else {
+            funcHtml += `<li class="error">❌ ${name}: NOT DEFINED</li>`;
+          }
+        });
+        funcHtml += "</ul>";
+        functionStatus.innerHTML = funcHtml;
+
+        // Test calculation
+        const calculationTest = document.getElementById("calculationTest");
+        if (typeof calculateAngsuran === "function") {
+          calculationTest.innerHTML =
+            '<p class="info">⏳ Calling calculateAngsuran()...</p>';
+          try {
+            calculateAngsuran();
+            const result = document.getElementById("hasilAngsuran").textContent;
+            if (result === "Rp 0") {
+              calculationTest.innerHTML +=
+                '<p class="error">❌ Result is still Rp 0</p>';
+            } else {
+              calculationTest.innerHTML += `<p class="success">✅ Result: ${result}</p>`;
+            }
+          } catch (e) {
+            calculationTest.innerHTML += `<p class="error">❌ Error: ${e.message}</p>`;
+          }
+        } else {
+          calculationTest.innerHTML =
+            '<p class="error">❌ calculateAngsuran not defined</p>';
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>

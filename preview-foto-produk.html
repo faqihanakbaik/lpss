@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preview Foto Produk - Bank Melasa Syariah</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 2rem;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .header {
+        text-align: center;
+        color: white;
+        margin-bottom: 3rem;
+      }
+
+      .header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .header p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+
+      .category {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .category-title {
+        font-size: 1.8rem;
+        color: #667eea;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 3px solid #667eea;
+      }
+
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .product-card {
+        background: #f8f9fa;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 2px solid #e9ecef;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+      }
+
+      .product-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        background: #e9ecef;
+      }
+
+      .product-info {
+        padding: 1.5rem;
+      }
+
+      .product-title {
+        font-size: 1.2rem;
+        color: #1a202c;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      .product-desc {
+        color: #718096;
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .product-url {
+        margin-top: 1rem;
+        padding: 0.5rem;
+        background: #e9ecef;
+        border-radius: 6px;
+        font-size: 0.75rem;
+        color: #495057;
+        word-break: break-all;
+      }
+
+      .stats {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+
+      .stat-box {
+        background: white;
+        padding: 1.5rem 2rem;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #667eea;
+      }
+
+      .stat-label {
+        color: #718096;
+        margin-top: 0.5rem;
+      }
+
+      @media (max-width: 768px) {
+        .products-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .header h1 {
+          font-size: 1.8rem;
+        }
+
+        .stats {
+          flex-direction: column;
+          gap: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>📸 Preview Foto Produk Bank Melasa Syariah</h1>
+        <p>Semua foto produk siap pakai dari Unsplash</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat-box">
+          <div class="stat-number">17</div>
+          <div class="stat-label">Produk Funding</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">10</div>
+          <div class="stat-label">Produk Financing</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">8</div>
+          <div class="stat-label">Layanan Fee-Based</div>
+        </div>
+      </div>
+
+      <!-- FUNDING PRODUCTS -->
+      <div class="category">
+        <h2 class="category-title">💰 Produk Funding (Simpanan)</h2>
+        <div class="products-grid">
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80"
+              alt="Tabungan T-Trip iB"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Tabungan T-Trip iB</h3>
+              <p class="product-desc">
+                Tabungan wisata syariah untuk merencanakan perjalanan Anda
+              </p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1436491865332-7a61a109cc05
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=800&q=80"
+              alt="Tabungan Hijrah Baitullah iB"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Tabungan Hijrah Baitullah iB</h3>
+              <p class="product-desc">
+                Tabungan haji dan umroh untuk mewujudkan ibadah Anda
+              </p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?w=800&q=80"
+              alt="Deposito Lock iB"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Deposito Lock iB</h3>
+              <p class="product-desc">
+                Investasi berjangka dengan bagi hasil yang menarik
+              </p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1579621970795-87facc2f976d
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80"
+              alt="Deposito On Call iB"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Deposito On Call iB Amanah</h3>
+              <p class="product-desc">
+                Deposito fleksibel untuk dana jangka pendek 7-30 hari
+              </p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1563013544-824ae1b704d3
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80"
+              alt="Tabunganku iB"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Tabunganku iB</h3>
+              <p class="product-desc">
+                Tabungan dengan setoran awal ringan untuk semua kalangan
+              </p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1579621970563-ebec7560ff3e
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&q=80"
+              alt="Tabungan Prioritas Safwah iB"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Tabungan Prioritas Safwah iB</h3>
+              <p class="product-desc">
+                Tabungan prioritas dengan layanan eksklusif dan bagi hasil
+                menarik
+              </p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1559526324-4b87b5e36e44
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80"
+              alt="Tabungan Si-Pintar iB"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Tabungan Si-Pintar iB</h3>
+              <p class="product-desc">
+                Tabungan khusus untuk pelajar dari PAUD hingga SMA
+              </p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1523050854058-8df90110c9f1
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+              alt="Tabungan Tijarah iB"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Tabungan Tijarah iB</h3>
+              <p class="product-desc">
+                Tabungan bisnis untuk pelaku usaha dengan bagi hasil menarik
+              </p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1460925895917-afdab827c52f
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80"
+              alt="Tabungan Mulia Pensiunan iB"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Tabungan iB Mulia Pensiunan</h3>
+              <p class="product-desc">
+                Tabungan khusus untuk persiapan masa pensiun
+              </p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1581091226825-a6a2a5aee158
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=800&q=80"
+              alt="Tabungan My Qurbani iB"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Tabungan My Qurbani iB</h3>
+              <p class="product-desc">
+                Tabungan berencana untuk persiapan qurban
+              </p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1532629345422-7515f3d16bb6
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=800&q=80"
+              alt="Tabungan Emas-slahah"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Tabungan Emas-slahah</h3>
+              <p class="product-desc">
+                Investasi emas dengan cara mencicil secara syariah
+              </p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1610375461246-83df859d849d
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&q=80"
+              alt="Tabungan EduDream iB"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Tabungan EduDream iB</h3>
+              <p class="product-desc">
+                Tabungan pendidikan untuk masa depan anak
+              </p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1427504494785-3a9ca7044f45
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&q=80"
+              alt="Tabungan GlobalUnity iB"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Tabungan GlobalUnity iB</h3>
+              <p class="product-desc">
+                Tabungan valuta asing untuk transaksi internasional
+              </p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1526304640581-d334cdbbf45e
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80"
+              alt="Giro MyTijarah iB"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Giro MyTijarah iB</h3>
+              <p class="product-desc">
+                Giro bisnis syariah untuk transaksi perusahaan
+              </p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1450101499163-c8848c66ca85
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&q=80"
+              alt="Giro Platinum iB"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Giro Platinum iB</h3>
+              <p class="product-desc">Giro premium dengan layanan eksklusif</p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1559526324-4b87b5e36e44
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80"
+              alt="Reksa Dana Syariah"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Reksa Dana Syariah</h3>
+              <p class="product-desc">
+                Investasi reksa dana sesuai prinsip syariah
+              </p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+              alt="Sya-Inves GO"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Sya-Inves GO</h3>
+              <p class="product-desc">
+                Special Investment dengan akad Mudharabah Muqayadah
+              </p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1551288049-bebda4e38f71
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FINANCING PRODUCTS -->
+      <div class="category">
+        <h2 class="category-title">💳 Produk Financing (Pembiayaan)</h2>
+        <div class="products-grid">
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80"
+              alt="Pembiayaan KPR iB"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Pembiayaan Kepemilikan Rumah iB</h3>
+              <p class="product-desc">KPR Syariah untuk rumah impian Anda</p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1560518883-ce09059eeffa
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80"
+              alt="Pembiayaan Kendaraan iB"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Pembiayaan Kendaraan iB</h3>
+              <p class="product-desc">Pembiayaan mobil dan motor syariah</p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1549317661-bd32c8ce0db2
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80"
+              alt="Pembiayaan Multiguna iB"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Pembiayaan Multiguna iB</h3>
+              <p class="product-desc">
+                Pembiayaan fleksibel untuk berbagai kebutuhan
+              </p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1450101499163-c8848c66ca85
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&q=80"
+              alt="Pembiayaan Modal Kerja iB"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Pembiayaan Modal Kerja iB</h3>
+              <p class="product-desc">Pembiayaan untuk pengembangan usaha</p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1556761175-b413da4baf72
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=800&q=80"
+              alt="Gadai Emas"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Gadai Emas Albarkah Syariah</h3>
+              <p class="product-desc">Solusi dana cepat dengan jaminan emas</p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1610375461246-83df859d849d
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FEE BASED SERVICES -->
+      <div class="category">
+        <h2 class="category-title">🔧 Layanan Fee-Based Income</h2>
+        <div class="products-grid">
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80"
+              alt="Transfer & Kliring"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Transfer & Kliring</h3>
+              <p class="product-desc">
+                Layanan transfer antar bank yang cepat dan aman
+              </p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1563986768609-322da13575f3
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&q=80"
+              alt="Pembayaran Tagihan"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Pembayaran Tagihan</h3>
+              <p class="product-desc">
+                Bayar listrik, air, telepon, dan lainnya
+              </p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1554224154-26032ffc0d07
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1582139329536-e7284fece509?w=800&q=80"
+              alt="Safe Deposit Box"
+              class="product-image"
+              loading="lazy"
+            />
+            <div class="product-info">
+              <h3 class="product-title">Safe Deposit Box</h3>
+              <p class="product-desc">Penyimpanan barang berharga yang aman</p>
+              <div class="product-url">
+                https://images.unsplash.com/photo-1582139329536-e7284fece509
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

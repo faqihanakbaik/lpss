@@ -1,0 +1,43 @@
+/* Fix untuk Active Indicator - Sudut Melengkung */
+/* Gunakan selector yang sangat spesifik untuk override semua CSS lain */
+nav.floating-nav .active-indicator,
+.floating-nav #activeIndicator,
+#activeIndicator,
+.active-indicator {
+  border-radius: 999px !important;
+  height: 5px !important;
+  /* Pastikan tidak ada border yang membuat sudut tajam */
+  border: none !important;
+  /* Smooth edges untuk semua browser */
+  -webkit-border-radius: 999px !important;
+  -moz-border-radius: 999px !important;
+  -ms-border-radius: 999px !important;
+  -o-border-radius: 999px !important;
+  /* Tambahkan overflow hidden untuk memastikan konten tidak keluar */
+  overflow: hidden !important;
+  /* Pastikan box-sizing tidak mempengaruhi */
+  box-sizing: border-box !important;
+}
+
+/* Double check dengan class dan ID */
+.active-indicator#activeIndicator {
+  border-radius: 999px !important;
+  height: 5px !important;
+}
+
+/* Override untuk semua media query */
+@media (max-width: 768px) {
+  .active-indicator,
+  #activeIndicator {
+    border-radius: 999px !important;
+    height: 5px !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .active-indicator,
+  #activeIndicator {
+    border-radius: 999px !important;
+    height: 5px !important;
+  }
+}

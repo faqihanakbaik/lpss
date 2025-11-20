@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Produk & Kalkulator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 2rem;
+        background: #f5f5f5;
+      }
+      .test-section {
+        background: white;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      .status {
+        padding: 1rem;
+        border-radius: 4px;
+        margin: 0.5rem 0;
+      }
+      .success {
+        background: #d4edda;
+        color: #155724;
+      }
+      .error {
+        background: #f8d7da;
+        color: #721c24;
+      }
+      button {
+        padding: 0.75rem 1.5rem;
+        background: #667eea;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 0.5rem;
+      }
+      button:hover {
+        background: #5568d3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🔧 Test Produk & Kalkulator</h1>
+
+    <div class="test-section">
+      <h2>Test 1: Data Produk</h2>
+      <button onclick="testProdukData()">Test Data Produk</button>
+      <div id="produkResult"></div>
+    </div>
+
+    <div class="test-section">
+      <h2>Test 2: Render Produk</h2>
+      <button onclick="testRenderProduk()">Test Render</button>
+      <div id="renderResult"></div>
+    </div>
+
+    <div class="test-section">
+      <h2>Test 3: Kalkulator</h2>
+      <button onclick="testKalkulator()">Test Kalkulator</button>
+      <div id="kalkulatorResult"></div>
+    </div>
+
+    <div class="test-section">
+      <h2>Test 4: Open Website</h2>
+      <button onclick="window.open('index.html', '_blank')">
+        Buka Website
+      </button>
+      <button onclick="window.open('index.html#produk', '_blank')">
+        Buka Bagian Produk
+      </button>
+      <button onclick="window.open('index.html#simulasi', '_blank')">
+        Buka Kalkulator
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      function testProdukData() {
+        const result = document.getElementById("produkResult");
+        try {
+          if (typeof productData === "undefined") {
+            result.innerHTML =
+              '<div class="status error">❌ productData tidak ditemukan!</div>';
+            return;
+          }
+
+          const fundingCount = productData.funding
+            ? productData.funding.length
+            : 0;
+          const financingCount = productData.financing
+            ? productData.financing.length
+            : 0;
+          const feeBasedCount = productData.fee_based
+            ? productData.fee_based.length
+            : 0;
+
+          result.innerHTML = `
+                    <div class="status success">
+                        ✅ Data produk ditemukan!<br>
+                        - Funding: ${fundingCount} produk<br>
+                        - Financing: ${financingCount} produk<br>
+                        - Fee Based: ${feeBasedCount} produk
+                    </div>
+                `;
+        } catch (e) {
+          result.innerHTML = `<div class="status error">❌ Error: ${e.message}</div>`;
+        }
+      }
+
+      function testRenderProduk() {
+        const result = document.getElementById("renderResult");
+        try {
+          if (typeof renderProducts !== "function") {
+            result.innerHTML =
+              '<div class="status error">❌ Fungsi renderProducts tidak ditemukan!</div>';
+            return;
+          }
+
+          result.innerHTML =
+            '<div class="status success">✅ Fungsi renderProducts ditemukan! Cek console untuk detail.</div>';
+          console.log("Testing renderProducts...");
+        } catch (e) {
+          result.innerHTML = `<div class="status error">❌ Error: ${e.message}</div>`;
+        }
+      }
+
+      function testKalkulator() {
+        const result = document.getElementById("kalkulatorResult");
+        try {
+          if (typeof calculateAngsuran !== "function") {
+            result.innerHTML =
+              '<div class="status error">❌ Fungsi calculateAngsuran tidak ditemukan!</div>';
+            return;
+          }
+
+          if (typeof renderCalculator !== "function") {
+            result.innerHTML =
+              '<div class="status error">❌ Fungsi renderCalculator tidak ditemukan!</div>';
+            return;
+          }
+
+          result.innerHTML =
+            '<div class="status success">✅ Fungsi kalkulator ditemukan!</div>';
+        } catch (e) {
+          result.innerHTML = `<div class="status error">❌ Error: ${e.message}</div>`;
+        }
+      }
+    </script>
+  </body>
+</html>
