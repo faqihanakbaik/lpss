@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initProductCarousel();
   initSimulator();
   initModal();
-  initFAQ();
+  // initFAQ(); // Disabled - using smooth-enhancements.js initAccordion instead
 
   // Ensure calculator runs on page load
   setTimeout(() => {
@@ -808,7 +808,7 @@ const productData = {
             title: "Standing Instruction",
             desc: "Transfer atau pembayaran rutin secara otomatis",
             definisi:
-            "Standing Instruction Syariah dengan Akad Wakalah Bil Ujrah adalah layanan pelimpahan kuasa dari nasabah kepada Bank Syariah untuk melaksanakan perintah transfer atau pembayaran rutin secara otomatis dari rekening nasabah ke rekening tujuan (seperti rekening tabungan berencana, pembiayaan, atau donasi) secara periodik. Tujuannya adalah membantu nasabah memenuhi kewajiban finansial dan tujuan menabung (saving) secara disiplin dan tepat waktu,di mana bank akan mengeksekusi perintah tersebut pada tanggal yang ditetapkan(kapan saja sesuai jadwal) dan atas jasa perwakilan tersebut, bank berhak menerima ujrah(biaya/ upah jasa) yang telah disepakati di awal akad",
+              "Standing Instruction Syariah dengan Akad Wakalah Bil Ujrah adalah layanan pelimpahan kuasa dari nasabah kepada Bank Syariah untuk melaksanakan perintah transfer atau pembayaran rutin secara otomatis dari rekening nasabah ke rekening tujuan (seperti rekening tabungan berencana, pembiayaan, atau donasi) secara periodik. Tujuannya adalah membantu nasabah memenuhi kewajiban finansial dan tujuan menabung (saving) secara disiplin dan tepat waktu,di mana bank akan mengeksekusi perintah tersebut pada tanggal yang ditetapkan(kapan saja sesuai jadwal) dan atas jasa perwakilan tersebut, bank berhak menerima ujrah(biaya/ upah jasa) yang telah disepakati di awal akad",
             image:
               "https://images.unsplash.com/photo-1554224154-22dec7ec8818?w=400&q=80",
             details: {
