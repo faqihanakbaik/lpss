@@ -93,9 +93,24 @@ input[type="range"]::-moz-range-thumb:hover {
   color: #1e293b !important;
 }
 
-/* Fix FAQ hover */
+/* Fix FAQ hover and clickability */
+.faq-question {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
 .faq-question:hover {
   background: rgba(16, 185, 129, 0.05) !important;
+}
+
+.faq-question span {
+  pointer-events: none !important;
+}
+
+.faq-icon {
+  pointer-events: none !important;
 }
 
 /* Hapus glow effect yang menutupi */
@@ -1368,13 +1383,23 @@ div[style*="border-left"] {
 }
 
 .trust-icon {
-  font-size: 3rem !important;
-  margin-bottom: 1rem !important;
-  display: block !important;
+  width: 60px !important;
+  height: 60px !important;
+  margin: 0 auto 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   opacity: 1 !important;
   visibility: visible !important;
   position: relative !important;
   z-index: 10 !important;
+}
+
+.trust-icon svg {
+  width: 48px !important;
+  height: 48px !important;
+  color: #10b981 !important;
+  fill: #10b981 !important;
 }
 
 .trust-badge h4 {

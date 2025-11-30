@@ -754,7 +754,6 @@ body {
   display: flex;
   gap: 1rem;
   justify-content: center;
-  margin-bottom: 3rem;
   flex-wrap: wrap;
 }
 
@@ -889,9 +888,7 @@ body {
 }
 
 .carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  position: relative;
   width: 48px;
   height: 48px;
   background: white;
@@ -902,27 +899,19 @@ body {
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  z-index: 10;
+  flex-shrink: 0;
 }
 
 .carousel-btn:hover {
   background: var(--primary);
   border-color: var(--primary);
   color: white;
-  transform: translateY(-50%) scale(1.1);
+  transform: scale(1.1);
 }
 
 .carousel-btn svg {
   width: 24px;
   height: 24px;
-}
-
-.carousel-btn.prev {
-  left: 0;
-}
-
-.carousel-btn.next {
-  right: 0;
 }
 
 /* ===== SIMULASI SECTION ===== */
@@ -1448,6 +1437,8 @@ input[type="range"]::-webkit-slider-thumb:hover {
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .faq-item:hover {
@@ -1468,6 +1459,9 @@ input[type="range"]::-webkit-slider-thumb:hover {
   color: var(--text-dark);
   text-align: left;
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
 }
 
 .faq-question:hover {
@@ -1576,75 +1570,85 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 /* ===== TRUST BADGES ===== */
 .trust-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #10b981;
   color: white;
+  padding: 3rem 0;
 }
 
 .trust-badges {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
 }
 
 .trust-badge {
   text-align: center;
-  padding: 2rem 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  padding: 2rem 1.5rem;
+  background: white;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
 .trust-badge:hover {
   transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .trust-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trust-icon svg {
+  width: 48px;
+  height: 48px;
+  color: #10b981;
 }
 
 .trust-badge h4 {
-  color: white;
-  font-size: 1.2rem;
+  color: #1e293b;
+  font-size: 1.1rem;
   margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
 .trust-badge p {
-  color: rgba(255, 255, 255, 0.9);
+  color: #64748b;
   font-size: 0.9rem;
   margin: 0;
+  line-height: 1.5;
 }
 
 /* ===== FLOATING WHATSAPP BUTTON ===== */
 .whatsapp-float {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 60px;
-  height: 60px;
-  background: #25d366;
+  position: fixed !important;
+  bottom: 2rem !important;
+  right: 2rem !important;
+  left: auto !important;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
   z-index: 999;
   transition: all 0.3s ease;
-  animation: pulse 2s infinite;
 }
 
 .whatsapp-float:hover {
-  transform: scale(1.1);
-  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+  transform: scale(1.05);
+  box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
 }
 
 .whatsapp-float svg {
-  width: 32px;
-  height: 32px;
-  color: white;
+  width: 64px;
+  height: 64px;
 }
 
 @keyframes pulse {
@@ -2605,7 +2609,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-color: #667eea;
   color: white;
-  transform: translateY(-50%) scale(1.15);
+  transform: scale(1.15);
   box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 

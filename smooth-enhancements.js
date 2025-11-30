@@ -180,8 +180,20 @@
 
   // ===== SMOOTH ACCORDION =====
   function initAccordion() {
-    document.querySelectorAll(".faq-question").forEach((question) => {
-      question.addEventListener("click", function () {
+    const faqQuestions = document.querySelectorAll(".faq-question");
+    console.log(
+      "🔧 FAQ Accordion initialized:",
+      faqQuestions.length,
+      "questions found"
+    );
+
+    faqQuestions.forEach((question, index) => {
+      question.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        console.log("✅ FAQ clicked:", index);
+
         const faqItem = this.parentElement;
         const answer = faqItem.querySelector(".faq-answer");
         const isOpen = faqItem.classList.contains("active");
@@ -189,13 +201,19 @@
         // Close all other items
         document.querySelectorAll(".faq-item").forEach((item) => {
           item.classList.remove("active");
-          item.querySelector(".faq-answer").style.maxHeight = "0";
+          const itemAnswer = item.querySelector(".faq-answer");
+          if (itemAnswer) {
+            itemAnswer.style.maxHeight = "0";
+          }
         });
 
         // Toggle current item
         if (!isOpen) {
           faqItem.classList.add("active");
           answer.style.maxHeight = answer.scrollHeight + "px";
+          console.log("📖 FAQ opened, height:", answer.scrollHeight);
+        } else {
+          console.log("📕 FAQ closed");
         }
       });
     });
